@@ -13,6 +13,9 @@
 import UIKit
 
 protocol LoginBusinessLogic {
+	
+	/// Функция логина, отправляет запрос валидации
+	/// - Parameter request: Запрос с данными для логина
 	func login(request: Login.Something.Request)
 }
 

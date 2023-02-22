@@ -20,9 +20,5 @@ enum Login {
 		struct Response {
 			let isLoginSuccessed: Bool
 		}
-
-		struct ViewModel {
-			let greeting: String
-		}
 	}
 }

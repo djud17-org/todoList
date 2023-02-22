@@ -10,6 +10,8 @@ import Foundation
 protocol ITaskPresenter: AnyObject {
 	var viewController: TaskListDisplayLogic? { get set }
 
+	/// Функция для отображения данных на экране
+	/// - Parameter data: Данные для отображения
 	func displayData(data: DataModel.InteractorData)
 }
 

@@ -13,7 +13,12 @@
 import UIKit
 
 protocol TaskListBusinessLogic {
+	
+	/// Функция сообщает о готовности представления к отображению данных
 	func viewIsReady()
+	
+	/// Функция сообщает о выборе задачи
+	/// - Parameter indexPath: Индекс задачи
 	func didTaskSelected(at indexPath: IndexPath)
 }
 

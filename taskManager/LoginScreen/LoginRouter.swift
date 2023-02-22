@@ -14,7 +14,11 @@ import UIKit
 
 @objc
 protocol LoginRoutingLogic {
+	
+	/// Функция показывает сообщение об ошибке
 	func showError()
+	
+	/// Функция показывает главный экран
 	func navigateToMainScreen()
 }
 

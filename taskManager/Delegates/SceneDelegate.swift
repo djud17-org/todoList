@@ -19,7 +19,6 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 		let window = UIWindow(windowScene: windowScene)
 
-		//window.rootViewController = assemblyMainScreen()
 		window.rootViewController = assemblyLoginScreen()
 		window.makeKeyAndVisible()
 		self.window = window

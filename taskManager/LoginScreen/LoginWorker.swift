@@ -13,6 +13,12 @@
 import UIKit
 
 final class LoginWorker {
+	
+	/// Функция валидирует логин и пароль
+	/// - Parameters:
+	///   - login: Логин
+	///   - password: Пароль
+	/// - Returns: Результат валидации
 	func login(login: String, password: String) -> Bool{
 		return login == "Admin" && password == "pa$$32!"
 	}

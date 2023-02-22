@@ -13,6 +13,9 @@
 import UIKit
 
 protocol LoginPresentationLogic {
+	
+	///  Функция сообщает презентеру, что нужно отобразить
+	/// - Parameter response: Ответ интерактора от которого зависит отображение
 	func presentSomething(response: Login.Something.Response)
 }
 
@@ -23,9 +26,7 @@ final class LoginPresenter: LoginPresentationLogic {
 
 	func presentSomething(response: Login.Something.Response) {
 		if response.isLoginSuccessed {
-			let greeting = "Добро пожаловать!"
-			let viewModel = Login.Something.ViewModel(greeting: greeting)
-			viewController?.processLogin(viewModel: viewModel)
+			viewController?.processLogin()
 		} else {
 			viewController?.displayError()
 		}

@@ -13,8 +13,12 @@
 import UIKit
 
 protocol LoginDisplayLogic: AnyObject {
+	
+	/// Функция отображает ошибку
 	func displayError()
-	func processLogin(viewModel: Login.Something.ViewModel)
+	
+	/// Функция процессинга при успешной валидации логина
+	func processLogin()
 }
 
 class LoginViewController: UIViewController, LoginDisplayLogic {
@@ -61,17 +65,15 @@ class LoginViewController: UIViewController, LoginDisplayLogic {
 	// MARK: Do something
 	
 	func displayError() {
-//		router?.showError()
-		processLogin(viewModel: .init(greeting: ""))
+		router?.showError()
 	}
 	
-	func processLogin(viewModel: Login.Something.ViewModel) {
-		print(viewModel.greeting)
+	func processLogin() {
 		router?.navigateToMainScreen()
 	}
 
 	@IBAction
-	func loginButtonTapped(_ sender: UIButton) {
+	private func loginButtonTapped(_ sender: UIButton) {
 		guard let loginText = loginTextField.text,
 		      let passwordText = passwordTextField.text
 		else {
