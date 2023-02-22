@@ -10,7 +10,11 @@ import Foundation
 protocol ITaskPresenter: AnyObject {
 	var delegate: IViewDelegate? { get set }
 
+	/// Функция сообщает о готовности представления к отображению данных
 	func viewIsReady()
+	
+	/// Функция сообщает о выборе задачи по индексу
+	/// - Parameter indexPath: Индекс задачи
 	func didTaskSelected(at indexPath: IndexPath)
 }
 
