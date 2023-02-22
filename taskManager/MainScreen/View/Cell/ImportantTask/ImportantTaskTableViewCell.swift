@@ -103,11 +103,12 @@ final class ImportantTaskTableViewCell: UITableViewCell {
 
 /// Модель для конфигурации ячейки
 struct ImportantTaskCellModel {
-	let taskStatus: ImportantTask.TaskStatus
-	let taskPriority: ImportantTask.TaskPriority
+	let taskStatus: TaskStatus
+	let taskPriority: TaskPriority
 	let taskName: String
 	let taskImportanceImage = UIImage(systemName: "exclamationmark.octagon")
 	let taskDeadline: String
+	let taskIsOverue: Bool
 }
 
 extension ImportantTaskCellModel: ICellViewModel {
@@ -123,15 +124,14 @@ extension ImportantTaskCellModel: ICellViewModel {
 		cell.taskDeadlineLabel.text = "\(taskDeadline)"
 		cell.taskDeadlineLabel.textColor = Constants.Color.red
 
-		let today = Date().description
-		if today > taskDeadline {
+		if taskIsOverue {
 			cell.backgroundColor = Constants.Color.lightRed
 		} else {
 			cell.backgroundColor = Constants.Color.blue
 		}
 	}
 
-	private func getImportanceColor(taskPriority: ImportantTask.TaskPriority) -> UIColor {
+	private func getImportanceColor(taskPriority: TaskPriority) -> UIColor {
 		switch taskPriority {
 		case .low:
 			return Constants.Color.green

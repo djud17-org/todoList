@@ -11,6 +11,7 @@ final class TaskListViewController: UITableViewController {
 	// MARK: - Parameters
 
 	private let presenter: ITaskPresenter
+	private var viewData: MainModel.ViewData = .init(tasksBySections: [])
 
 	// MARK: - Inits
 
@@ -33,6 +34,7 @@ final class TaskListViewController: UITableViewController {
 
 		setupView()
 		setupTableView()
+		presenter.viewIsReady()
 	}
 
 	// MARK: - Setups
@@ -66,15 +68,33 @@ final class TaskListViewController: UITableViewController {
 
 extension TaskListViewController {
 	override func numberOfSections(in tableView: UITableView) -> Int {
-		presenter.numberOfSections
+		viewData.tasksBySections.count
 	}
 
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		presenter.getNumberOfRows(inSection: section)
+		viewData.tasksBySections[section].tasks.count
 	}
 
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		guard let model = presenter.getDataModel(forRowAt: indexPath) else { return UITableViewCell() }
+		let tasks = viewData.tasksBySections[indexPath.section].tasks
+		let taskData = tasks[indexPath.row]
+
+		let model: ICellViewAnyModel
+		switch taskData {
+		case let .regularTask(task):
+			model = RegularTaskCellModel(
+				taskStatus: task.taskStatus,
+				taskName: task.title
+			)
+		case let .importantTask(task):
+			model = ImportantTaskCellModel(
+				taskStatus: task.taskStatus,
+				taskPriority: task.priority,
+				taskName: task.title,
+				taskDeadline: task.deadLine,
+				taskIsOverue: task.isOverdue
+			)
+		}
 
 		return tableView.dequeueReusableCell(withModel: model, for: indexPath)
 	}
@@ -84,26 +104,27 @@ extension TaskListViewController {
 
 extension TaskListViewController {
 	override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-		50
+		Constants.Size.tableViewRowHeight
 	}
 
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		presenter.cellTapped(at: indexPath)
+		presenter.didTaskSelected(at: indexPath)
 		tableView.deselectRow(at: indexPath, animated: true)
 	}
 
 	override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-		presenter.getTitle(forHeaderInSection: section)
+		viewData.tasksBySections[section].title
 	}
 }
 
 protocol IViewDelegate: AnyObject {
 	/// Функция для "общения" с view
-	func renderData()
+	func render(viewData: MainModel.ViewData)
 }
 
 extension TaskListViewController: IViewDelegate {
-	func renderData() {
+	func render(viewData: MainModel.ViewData) {
+		self.viewData = viewData
 		tableView.reloadData()
 	}
 }

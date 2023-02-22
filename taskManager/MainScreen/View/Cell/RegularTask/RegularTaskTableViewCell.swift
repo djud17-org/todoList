@@ -73,7 +73,7 @@ final class RegularTaskTableViewCell: UITableViewCell {
 
 /// Модель для конфигурации ячейки
 struct RegularTaskCellModel {
-	let taskStatus: ImportantTask.TaskStatus
+	let taskStatus: TaskStatus
 	let taskName: String
 }
 

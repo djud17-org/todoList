@@ -7,6 +7,11 @@
 
 import Foundation
 
+enum TaskStatus: String {
+	case planned
+	case completed
+}
+
 /// Базовый класс Задача
 class Task {
 	var title: String
@@ -15,26 +20,27 @@ class Task {
 	init(title: String) {
 		self.title = title
 	}
-
-	enum TaskStatus: String {
-		case planned
-		case completed
-	}
 }
 
 /// Обычные задачи
 final class RegularTask: Task {}
 
+enum TaskPriority: Int {
+	case high = 1
+	case medium = 2
+	case low = 3
+}
+
 /// Важные задачи с дедлайном и приоритетом
 final class ImportantTask: Task {
-	var deadLine: Date? {
+	var deadLine: Date {
 		let value = taskPriority.rawValue
 
 		return Calendar.current.date(
 			byAdding: .day,
 			value: value,
 			to: Date()
-		)
+		) ?? Date()
 	}
 
 	var taskPriority: TaskPriority
@@ -42,11 +48,5 @@ final class ImportantTask: Task {
 	init(title: String, taskPriority: TaskPriority) {
 		self.taskPriority = taskPriority
 		super.init(title: title)
-	}
-
-	enum TaskPriority: Int {
-		case high = 1
-		case medium = 2
-		case low = 3
 	}
 }
