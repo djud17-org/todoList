@@ -24,4 +24,8 @@ enum Constants {
 		static let mediumOffset: CGFloat = 10
 		static let largeOffset: CGFloat = 20
 	}
+
+	enum Size {
+		static let tableViewRowHeight: CGFloat = 50
+	}
 }
