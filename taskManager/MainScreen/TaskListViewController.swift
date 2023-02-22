@@ -10,21 +10,44 @@ import UIKit
 final class TaskListViewController: UITableViewController {
 	// MARK: - Parameters
 
-	private let presenter: ITaskPresenter
 	private var viewData: MainModel.ViewData = .init(tasksBySections: [])
+	var interactor: TaskListBusinessLogic?
 
-	// MARK: - Inits
+	// MARK: Inits
 
-	init(presenter: ITaskPresenter) {
-		self.presenter = presenter
-		super.init(nibName: nil, bundle: nil)
-
-		self.presenter.delegate = self
+	override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+		super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+		setup()
 	}
 
-	@available(*, unavailable)
-	required init?(coder: NSCoder) {
-		fatalError("init(coder:) has not been implemented")
+	required init?(coder aDecoder: NSCoder) {
+		super.init(coder: aDecoder)
+		setup()
+	}
+
+	// MARK: Setup
+
+	private func setup() {
+		let viewController = self
+		let interactor = TaskListInteractor(sectionManager: configureSectionManager())
+		let presenter = TaskPresenter()
+		viewController.interactor = interactor
+		interactor.presenter = presenter
+		presenter.viewController = viewController
+	}
+
+	private func configureSectionManager() -> ISectionForTaskManagerAdapter {
+		let taskRepository: ITaskRepository = TaskRepository()
+		let taskManager: ITaskManager = TaskManager()
+		let orderedTaskManager: ITaskManager = OrderedTaskManager(taskManager: taskManager)
+
+		let tasks = taskRepository.loadTasks()
+		tasks.forEach { orderedTaskManager.addTask(task: $0) }
+
+		let sectionManager: ISectionForTaskManagerAdapter =
+			SectionForTaskManagerAdapter(taskManager: orderedTaskManager)
+
+		return sectionManager
 	}
 
 	// MARK: - ViewController Lifecycle
@@ -34,7 +57,7 @@ final class TaskListViewController: UITableViewController {
 
 		setupView()
 		setupTableView()
-		presenter.viewIsReady()
+		interactor?.viewIsReady()
 	}
 
 	// MARK: - Setups
@@ -108,7 +131,7 @@ extension TaskListViewController {
 	}
 
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		presenter.didTaskSelected(at: indexPath)
+		interactor?.didTaskSelected(at: indexPath)
 		tableView.deselectRow(at: indexPath, animated: true)
 	}
 
@@ -117,12 +140,12 @@ extension TaskListViewController {
 	}
 }
 
-protocol IViewDelegate: AnyObject {
+protocol TaskListDisplayLogic: AnyObject {
 	/// Функция для "общения" с view
 	func render(viewData: MainModel.ViewData)
 }
 
-extension TaskListViewController: IViewDelegate {
+extension TaskListViewController: TaskListDisplayLogic {
 	func render(viewData: MainModel.ViewData) {
 		self.viewData = viewData
 		tableView.reloadData()

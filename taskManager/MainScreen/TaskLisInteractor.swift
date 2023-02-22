@@ -12,30 +12,60 @@
 
 import UIKit
 
-protocol TaskLisBusinessLogic
-{
-  func doSomething(request: TaskLis.Something.Request)
+protocol TaskListBusinessLogic {
+	func viewIsReady()
+	func didTaskSelected(at indexPath: IndexPath)
 }
 
-protocol TaskLisDataStore
-{
-  //var name: String { get set }
+enum DataModel {
+	struct InteractorData {
+		let sections: [Section]
+		let data: [Section: [Task]]
+	}
 }
 
-class TaskLisInteractor: TaskLisBusinessLogic, TaskLisDataStore
-{
-  var presenter: TaskLisPresentationLogic?
-  var worker: TaskLisWorker?
-  //var name: String = ""
-  
-  // MARK: Do something
-  
-  func doSomething(request: TaskLis.Something.Request)
-  {
-    worker = TaskLisWorker()
-    worker?.doSomeWork()
-    
-    let response = TaskLis.Something.Response()
-    presenter?.presentSomething(response: response)
-  }
+final class TaskListInteractor: TaskListBusinessLogic {
+	private let sectionManager: ISectionForTaskManagerAdapter
+	var presenter: ITaskPresenter?
+
+	init(sectionManager: ISectionForTaskManagerAdapter) {
+		self.sectionManager = sectionManager
+	}
+
+	// MARK: Do something
+
+	func viewIsReady() {
+		let datamodel = createDataModel()
+		presenter?.displayData(data: datamodel)
+	}
+
+	func didTaskSelected(at indexPath: IndexPath) {
+		let sections = sectionManager.getSections()
+		let sectionTasks = sectionManager.getTasksForSection(section: sections[indexPath.section])
+		let task = sectionTasks[indexPath.row]
+
+		task.taskStatus = task.taskStatus == .completed ? .planned : .completed
+
+		let datamodel = createDataModel()
+		presenter?.displayData(data: datamodel)
+	}
+
+	private func createDataModel() -> DataModel.InteractorData {
+		let data = configureData()
+		let datamodel = DataModel.InteractorData(
+			sections: sectionManager.getSections(),
+			data: data
+		)
+
+		return datamodel
+	}
+
+	private func configureData() -> [Section: [Task]] {
+		var data: [Section: [Task]] = [:]
+		for section in sectionManager.getSections() {
+			data[section] = sectionManager.getTasksForSection(section: section)
+		}
+
+		return data
+	}
 }

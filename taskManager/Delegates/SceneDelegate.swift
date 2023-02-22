@@ -19,27 +19,18 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 		let window = UIWindow(windowScene: windowScene)
 
-		let sectionManager: ISectionForTaskManagerAdapter = configureSectionManager()
-		let taskListPresenter: ITaskPresenter = TaskPresenter(sectionManager: sectionManager)
-		let taskListController = TaskListViewController(presenter: taskListPresenter)
-		let navigationController = UINavigationController(rootViewController: taskListController)
-
-		window.rootViewController = navigationController
+		//window.rootViewController = assemblyMainScreen()
+		window.rootViewController = assemblyLoginScreen()
 		window.makeKeyAndVisible()
 		self.window = window
 	}
-
-	private func configureSectionManager() -> ISectionForTaskManagerAdapter {
-		let taskRepository: ITaskRepository = TaskRepository()
-		let taskManager: ITaskManager = TaskManager()
-		let orderedTaskManager: ITaskManager = OrderedTaskManager(taskManager: taskManager)
-
-		let tasks = taskRepository.loadTasks()
-		tasks.forEach { orderedTaskManager.addTask(task: $0) }
-
-		let sectionManager: ISectionForTaskManagerAdapter =
-			SectionForTaskManagerAdapter(taskManager: orderedTaskManager)
-
-		return sectionManager
+	
+	private func assemblyLoginScreen() -> UIViewController {
+		let storyboard = UIStoryboard(name: "LoginStoryboard", bundle: nil)
+		guard let controller = storyboard.instantiateViewController(withIdentifier: "loginVC") as? LoginViewController else {
+			fatalError("Нет на LoginStoryboard LoginViewController")
+		}
+		
+		return controller
 	}
 }

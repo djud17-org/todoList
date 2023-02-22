@@ -8,60 +8,45 @@
 import Foundation
 
 protocol ITaskPresenter: AnyObject {
-	var delegate: IViewDelegate? { get set }
+	var viewController: TaskListDisplayLogic? { get set }
 
-	/// Функция сообщает о готовности представления к отображению данных
-	func viewIsReady()
-	
-	/// Функция сообщает о выборе задачи по индексу
-	/// - Parameter indexPath: Индекс задачи
-	func didTaskSelected(at indexPath: IndexPath)
+	func displayData(data: DataModel.InteractorData)
 }
 
 final class TaskPresenter: ITaskPresenter {
 	// MARK: - Parameters
 
-	weak var delegate: IViewDelegate?
-	private let sectionManager: ISectionForTaskManagerAdapter
-
-	// MARK: - Inits
-
-	init(sectionManager: ISectionForTaskManagerAdapter) {
-		self.sectionManager = sectionManager
-	}
+	weak var viewController: TaskListDisplayLogic?
 
 	// MARK: - Funcs
 
-	func viewIsReady() {
-		delegate?.render(viewData: mapViewData())
+	func displayData(data: DataModel.InteractorData) {
+		let viewData = mapViewData(
+			sections: data.sections,
+			data: data.data
+		)
+
+		viewController?.render(viewData: viewData)
 	}
 
-	func didTaskSelected(at indexPath: IndexPath) {
-		let sections = sectionManager.getSections()
-		let sectionTasks = sectionManager.getTasksForSection(section: sections[indexPath.section])
-		let task = sectionTasks[indexPath.row]
-
-		task.taskStatus = task.taskStatus == .completed ? .planned : .completed
-
-		delegate?.render(viewData: mapViewData())
-	}
-
-	private func mapViewData() -> MainModel.ViewData {
-		var sections = [MainModel.ViewData.Section]()
-		for section in sectionManager.getSections() {
+	private func mapViewData(sections: [Section], data: [Section: [Task]]) -> MainModel.ViewData {
+		var result = [MainModel.ViewData.Section]()
+		for section in sections {
 			let sectionData = MainModel.ViewData.Section(
 				title: section.title,
-				tasks: mapTasksData(tasks: sectionManager.getTasksForSection(section: section))
+				tasks: mapTasksData(tasks: data[section])
 			)
 
-			sections.append(sectionData)
+			result.append(sectionData)
 		}
 
-		return MainModel.ViewData(tasksBySections: sections)
+		return MainModel.ViewData(tasksBySections: result)
 	}
 
-	private func mapTasksData(tasks: [Task]) -> [MainModel.ViewData.Task] {
-		tasks.map { mapTaskData(task: $0) }
+	private func mapTasksData(tasks: [Task]?) -> [MainModel.ViewData.Task] {
+		guard let tasks = tasks else { return [] }
+
+		return tasks.map { mapTaskData(task: $0) }
 	}
 
 	private func mapTaskData(task: Task) -> MainModel.ViewData.Task {
