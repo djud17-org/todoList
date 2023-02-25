@@ -80,7 +80,7 @@ class LoginViewController: UIViewController, LoginDisplayLogic {
 			return
 		}
 
-		let request = Login.Something.Request(
+		let request = LoginModel.Something.Request(
 			login: loginText,
 			password: passwordText
 		)

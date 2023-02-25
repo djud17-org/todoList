@@ -10,7 +10,7 @@
 //  see http://clean-swift.com
 //
 
-enum Login {
+enum LoginModel {
 	enum Something {
 		struct Request {
 			let login: String

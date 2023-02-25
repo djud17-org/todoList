@@ -16,7 +16,7 @@ protocol LoginBusinessLogic {
 	
 	/// Функция логина, отправляет запрос валидации
 	/// - Parameter request: Запрос с данными для логина
-	func login(request: Login.Something.Request)
+	func login(request: LoginModel.Something.Request)
 }
 
 class LoginInteractor: LoginBusinessLogic {
@@ -25,10 +25,12 @@ class LoginInteractor: LoginBusinessLogic {
 
 	// MARK: Do something
 
-	func login(request: Login.Something.Request) {
+	func login(request: LoginModel.Something.Request) {
 		worker = LoginWorker()
-		let result = worker?.login(login: request.login, password: request.password) ?? false
-		let response = Login.Something.Response(isLoginSuccessed: result)
+		let login = Login(rawValue: request.login)
+		let pass = Password(rawValue: request.password)
+		let result = worker?.login(login: login, password: pass) ?? false
+		let response = LoginModel.Something.Response(isLoginSuccessed: result)
 		presenter?.presentSomething(response: response)
 	}
 }

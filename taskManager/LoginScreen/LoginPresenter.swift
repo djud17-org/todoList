@@ -16,7 +16,7 @@ protocol LoginPresentationLogic {
 	
 	///  Функция сообщает презентеру, что нужно отобразить
 	/// - Parameter response: Ответ интерактора от которого зависит отображение
-	func presentSomething(response: Login.Something.Response)
+	func presentSomething(response: LoginModel.Something.Response)
 }
 
 final class LoginPresenter: LoginPresentationLogic {
@@ -24,7 +24,7 @@ final class LoginPresenter: LoginPresentationLogic {
 
 	// MARK: Do something
 
-	func presentSomething(response: Login.Something.Response) {
+	func presentSomething(response: LoginModel.Something.Response) {
 		if response.isLoginSuccessed {
 			viewController?.processLogin()
 		} else {

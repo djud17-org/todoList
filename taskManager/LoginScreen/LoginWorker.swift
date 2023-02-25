@@ -12,6 +12,22 @@
 
 import UIKit
 
+struct Login {
+	let rawValue: String
+	
+	init(rawValue: String) {
+		self.rawValue = rawValue
+	}
+}
+
+struct Password {
+	let rawValue: String
+	
+	init(rawValue: String) {
+		self.rawValue = rawValue
+	}
+}
+
 final class LoginWorker {
 	
 	/// Функция валидирует логин и пароль
@@ -19,7 +35,7 @@ final class LoginWorker {
 	///   - login: Логин
 	///   - password: Пароль
 	/// - Returns: Результат валидации
-	func login(login: String, password: String) -> Bool{
-		return login == "Admin" && password == "pa$$32!"
+	func login(login: Login, password: Password) -> Bool{
+		return login.rawValue == "Admin" && password.rawValue == "pa$$32!"
 	}
 }
