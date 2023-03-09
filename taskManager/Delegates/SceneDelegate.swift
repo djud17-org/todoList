@@ -19,17 +19,9 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 		let window = UIWindow(windowScene: windowScene)
 
-		window.rootViewController = assemblyLoginScreen()
+		let loginAssembly: IAssembly = LoginAssembly()
+		window.rootViewController = loginAssembly.assembly()
 		window.makeKeyAndVisible()
 		self.window = window
-	}
-	
-	private func assemblyLoginScreen() -> UIViewController {
-		let storyboard = UIStoryboard(name: "LoginStoryboard", bundle: nil)
-		guard let controller = storyboard.instantiateViewController(withIdentifier: "loginVC") as? LoginViewController else {
-			fatalError("Нет на LoginStoryboard LoginViewController")
-		}
-		
-		return controller
 	}
 }

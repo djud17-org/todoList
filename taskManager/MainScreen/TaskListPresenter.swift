@@ -12,7 +12,7 @@ protocol ITaskPresenter: AnyObject {
 
 	/// Функция для отображения данных на экране
 	/// - Parameter data: Данные для отображения
-	func displayData(data: DataModel.InteractorData)
+	func displayData(data: MainModel.DataModel)
 }
 
 final class TaskPresenter: ITaskPresenter {
@@ -22,7 +22,7 @@ final class TaskPresenter: ITaskPresenter {
 
 	// MARK: - Funcs
 
-	func displayData(data: DataModel.InteractorData) {
+	func displayData(data: MainModel.DataModel) {
 		let viewData = mapViewData(
 			sections: data.sections,
 			data: data.data

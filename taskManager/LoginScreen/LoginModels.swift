@@ -11,14 +11,12 @@
 //
 
 enum LoginModel {
-	enum Something {
-		struct Request {
-			let login: String
-			let password: String
-		}
+	struct Request {
+		let login: String
+		let password: String
+	}
 
-		struct Response {
-			let isLoginSuccessed: Bool
-		}
+	struct Response {
+		let isLoginSuccessed: Bool
 	}
 }

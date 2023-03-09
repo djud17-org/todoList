@@ -21,40 +21,19 @@ protocol LoginDisplayLogic: AnyObject {
 	func processLogin()
 }
 
-class LoginViewController: UIViewController, LoginDisplayLogic {
+final class LoginViewController: UIViewController, LoginDisplayLogic {
+	
+	// MARK: - Outlets
+	
 	@IBOutlet
 	weak var loginTextField: UITextField!
 	@IBOutlet
 	weak var passwordTextField: UITextField!
 
-	var interactor: LoginBusinessLogic?
-	var router: (NSObjectProtocol & LoginRoutingLogic)?
-
-	// MARK: Object lifecycle
-
-	override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-		super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-		setup()
-	}
-
-	required init?(coder aDecoder: NSCoder) {
-		super.init(coder: aDecoder)
-		setup()
-	}
-
-	// MARK: Setup
-
-	private func setup() {
-		let viewController = self
-		let interactor = LoginInteractor()
-		let presenter = LoginPresenter()
-		let router = LoginRouter()
-		viewController.interactor = interactor
-		viewController.router = router
-		interactor.presenter = presenter
-		presenter.viewController = viewController
-		router.viewController = viewController
-	}
+	// MARK: - Parameters
+	
+	var interactor: ILoginBusinessLogic?
+	var router: (NSObjectProtocol & ILoginRoutingLogic)?
 
 	// MARK: View lifecycle
 
@@ -80,7 +59,7 @@ class LoginViewController: UIViewController, LoginDisplayLogic {
 			return
 		}
 
-		let request = LoginModel.Something.Request(
+		let request = LoginModel.Request(
 			login: loginText,
 			password: passwordText
 		)

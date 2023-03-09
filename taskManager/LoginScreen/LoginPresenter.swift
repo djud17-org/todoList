@@ -12,19 +12,19 @@
 
 import UIKit
 
-protocol LoginPresentationLogic {
+protocol ILoginPresentationLogic {
 	
 	///  Функция сообщает презентеру, что нужно отобразить
 	/// - Parameter response: Ответ интерактора от которого зависит отображение
-	func presentSomething(response: LoginModel.Something.Response)
+	func presentSomething(response: LoginModel.Response)
 }
 
-final class LoginPresenter: LoginPresentationLogic {
+final class LoginPresenter: ILoginPresentationLogic {
 	weak var viewController: LoginDisplayLogic?
 
 	// MARK: Do something
 
-	func presentSomething(response: LoginModel.Something.Response) {
+	func presentSomething(response: LoginModel.Response) {
 		if response.isLoginSuccessed {
 			viewController?.processLogin()
 		} else {

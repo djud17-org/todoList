@@ -12,7 +12,7 @@
 
 import UIKit
 
-protocol TaskListBusinessLogic {
+protocol ITaskListBusinessLogic {
 	
 	/// Функция сообщает о готовности представления к отображению данных
 	func viewIsReady()
@@ -22,14 +22,7 @@ protocol TaskListBusinessLogic {
 	func didTaskSelected(at indexPath: IndexPath)
 }
 
-enum DataModel {
-	struct InteractorData {
-		let sections: [Section]
-		let data: [Section: [Task]]
-	}
-}
-
-final class TaskListInteractor: TaskListBusinessLogic {
+final class TaskListInteractor: ITaskListBusinessLogic {
 	private let sectionManager: ISectionForTaskManagerAdapter
 	var presenter: ITaskPresenter?
 
@@ -55,9 +48,9 @@ final class TaskListInteractor: TaskListBusinessLogic {
 		presenter?.displayData(data: datamodel)
 	}
 
-	private func createDataModel() -> DataModel.InteractorData {
+	private func createDataModel() -> MainModel.DataModel {
 		let data = configureData()
-		let datamodel = DataModel.InteractorData(
+		let datamodel = MainModel.DataModel(
 			sections: sectionManager.getSections(),
 			data: data
 		)

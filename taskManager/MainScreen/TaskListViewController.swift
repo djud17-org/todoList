@@ -11,44 +11,7 @@ final class TaskListViewController: UITableViewController {
 	// MARK: - Parameters
 
 	private var viewData: MainModel.ViewData = .init(tasksBySections: [])
-	var interactor: TaskListBusinessLogic?
-
-	// MARK: Inits
-
-	override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-		super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-		setup()
-	}
-
-	required init?(coder aDecoder: NSCoder) {
-		super.init(coder: aDecoder)
-		setup()
-	}
-
-	// MARK: Setup
-
-	private func setup() {
-		let viewController = self
-		let interactor = TaskListInteractor(sectionManager: configureSectionManager())
-		let presenter = TaskPresenter()
-		viewController.interactor = interactor
-		interactor.presenter = presenter
-		presenter.viewController = viewController
-	}
-
-	private func configureSectionManager() -> ISectionForTaskManagerAdapter {
-		let taskRepository: ITaskRepository = TaskRepository()
-		let taskManager: ITaskManager = TaskManager()
-		let orderedTaskManager: ITaskManager = OrderedTaskManager(taskManager: taskManager)
-
-		let tasks = taskRepository.loadTasks()
-		tasks.forEach { orderedTaskManager.addTask(task: $0) }
-
-		let sectionManager: ISectionForTaskManagerAdapter =
-			SectionForTaskManagerAdapter(taskManager: orderedTaskManager)
-
-		return sectionManager
-	}
+	var interactor: ITaskListBusinessLogic?
 
 	// MARK: - ViewController Lifecycle
 

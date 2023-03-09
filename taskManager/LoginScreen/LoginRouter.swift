@@ -13,7 +13,7 @@
 import UIKit
 
 @objc
-protocol LoginRoutingLogic {
+protocol ILoginRoutingLogic {
 	
 	/// Функция показывает сообщение об ошибке
 	func showError()
@@ -22,7 +22,7 @@ protocol LoginRoutingLogic {
 	func navigateToMainScreen()
 }
 
-final class LoginRouter: NSObject, LoginRoutingLogic {
+final class LoginRouter: NSObject, ILoginRoutingLogic {
 	weak var viewController: LoginViewController?
 
 	// MARK: Navigation
@@ -39,7 +39,8 @@ final class LoginRouter: NSObject, LoginRoutingLogic {
 	}
 	
 	func navigateToMainScreen() {
-		let mainScreen = TaskListViewController(nibName: nil, bundle: nil)
+		let taskListAssembly = TaskListAssembly()
+		let mainScreen = taskListAssembly.assembly()
 		viewController?.present(mainScreen, animated: true)
 	}
 }

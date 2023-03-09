@@ -12,25 +12,25 @@
 
 import UIKit
 
-protocol LoginBusinessLogic {
+protocol ILoginBusinessLogic {
 	
 	/// Функция логина, отправляет запрос валидации
 	/// - Parameter request: Запрос с данными для логина
-	func login(request: LoginModel.Something.Request)
+	func login(request: LoginModel.Request)
 }
 
-class LoginInteractor: LoginBusinessLogic {
-	var presenter: LoginPresentationLogic?
+class LoginInteractor: ILoginBusinessLogic {
+	var presenter: ILoginPresentationLogic?
 	var worker: LoginWorker?
 
 	// MARK: Do something
 
-	func login(request: LoginModel.Something.Request) {
+	func login(request: LoginModel.Request) {
 		worker = LoginWorker()
 		let login = Login(rawValue: request.login)
 		let pass = Password(rawValue: request.password)
 		let result = worker?.login(login: login, password: pass) ?? false
-		let response = LoginModel.Something.Response(isLoginSuccessed: result)
+		let response = LoginModel.Response(isLoginSuccessed: result)
 		presenter?.presentSomething(response: response)
 	}
 }

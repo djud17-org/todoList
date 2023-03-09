@@ -34,4 +34,9 @@ enum MainModel {
 
 		let tasksBySections: [Section]
 	}
+
+	struct DataModel {
+		let sections: [Section]
+		let data: [Section: [Task]]
+	}
 }
