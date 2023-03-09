@@ -19,7 +19,7 @@ protocol ILoginBusinessLogic {
 	func login(request: LoginModel.Request)
 }
 
-class LoginInteractor: ILoginBusinessLogic {
+final class LoginInteractor: ILoginBusinessLogic {
 	var presenter: ILoginPresentationLogic?
 	var worker: LoginWorker?
 

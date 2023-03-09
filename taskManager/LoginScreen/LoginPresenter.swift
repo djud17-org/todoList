@@ -20,7 +20,7 @@ protocol ILoginPresentationLogic {
 }
 
 final class LoginPresenter: ILoginPresentationLogic {
-	weak var viewController: LoginDisplayLogic?
+	weak var viewController: ILoginDisplayLogic?
 
 	// MARK: Do something
 

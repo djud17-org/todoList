@@ -103,12 +103,12 @@ extension TaskListViewController {
 	}
 }
 
-protocol TaskListDisplayLogic: AnyObject {
+protocol ITaskListDisplayLogic: AnyObject {
 	/// Функция для "общения" с view
 	func render(viewData: MainModel.ViewData)
 }
 
-extension TaskListViewController: TaskListDisplayLogic {
+extension TaskListViewController: ITaskListDisplayLogic {
 	func render(viewData: MainModel.ViewData) {
 		self.viewData = viewData
 		tableView.reloadData()

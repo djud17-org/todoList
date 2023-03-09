@@ -12,7 +12,7 @@
 
 import UIKit
 
-protocol LoginDisplayLogic: AnyObject {
+protocol ILoginDisplayLogic: AnyObject {
 	
 	/// Функция отображает ошибку
 	func displayError()
@@ -21,7 +21,7 @@ protocol LoginDisplayLogic: AnyObject {
 	func processLogin()
 }
 
-final class LoginViewController: UIViewController, LoginDisplayLogic {
+final class LoginViewController: UIViewController, ILoginDisplayLogic {
 	
 	// MARK: - Outlets
 	

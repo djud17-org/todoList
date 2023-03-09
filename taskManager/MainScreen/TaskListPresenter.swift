@@ -8,7 +8,7 @@
 import Foundation
 
 protocol ITaskPresenter: AnyObject {
-	var viewController: TaskListDisplayLogic? { get set }
+	var viewController: ITaskListDisplayLogic? { get set }
 
 	/// Функция для отображения данных на экране
 	/// - Parameter data: Данные для отображения
@@ -18,7 +18,7 @@ protocol ITaskPresenter: AnyObject {
 final class TaskPresenter: ITaskPresenter {
 	// MARK: - Parameters
 
-	weak var viewController: TaskListDisplayLogic?
+	weak var viewController: ITaskListDisplayLogic?
 
 	// MARK: - Funcs
 
