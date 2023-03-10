@@ -14,14 +14,13 @@ import UIKit
 
 protocol ILoginDisplayLogic: AnyObject {
 	
-	/// Функция отображает ошибку
-	func displayError()
 	
-	/// Функция процессинга при успешной валидации логина
-	func processLogin()
+	/// Функция рендерит вью по модели
+	/// - Parameter viewModel: модель для отображения
+	func renderData(with viewModel: LoginModel.ViewModel)
 }
 
-final class LoginViewController: UIViewController, ILoginDisplayLogic {
+final class LoginViewController: UIViewController {
 	
 	// MARK: - Outlets
 	
@@ -33,23 +32,9 @@ final class LoginViewController: UIViewController, ILoginDisplayLogic {
 	// MARK: - Parameters
 	
 	var interactor: ILoginBusinessLogic?
-	var router: (NSObjectProtocol & ILoginRoutingLogic)?
+	var router: ILoginRoutingLogic?
 
-	// MARK: View lifecycle
-
-	override func viewDidLoad() {
-		super.viewDidLoad()
-	}
-
-	// MARK: Do something
-	
-	func displayError() {
-		router?.showError()
-	}
-	
-	func processLogin() {
-		router?.navigateToMainScreen()
-	}
+	// MARK: - Actions
 
 	@IBAction
 	private func loginButtonTapped(_ sender: UIButton) {
@@ -64,5 +49,16 @@ final class LoginViewController: UIViewController, ILoginDisplayLogic {
 			password: passwordText
 		)
 		interactor?.login(request: request)
+	}
+}
+
+extension LoginViewController: ILoginDisplayLogic {
+	func renderData(with viewModel: LoginModel.ViewModel) {
+		switch viewModel {
+		case .success:
+			router?.navigateToMainScreen()
+		case .failure(let errorMessage):
+			router?.showError(errorMessage: errorMessage)
+		}
 	}
 }

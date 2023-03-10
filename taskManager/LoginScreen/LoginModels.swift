@@ -19,4 +19,9 @@ enum LoginModel {
 	struct Response {
 		let isLoginSuccessed: Bool
 	}
+	
+	enum ViewModel {
+		case success
+		case failure(String)
+	}
 }

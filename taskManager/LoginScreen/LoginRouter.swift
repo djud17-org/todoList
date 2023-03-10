@@ -16,21 +16,28 @@ import UIKit
 protocol ILoginRoutingLogic {
 	
 	/// Функция показывает сообщение об ошибке
-	func showError()
+	/// - Parameter errorMessage: сообщение об ошибке
+	func showError(errorMessage: String)
 	
 	/// Функция показывает главный экран
 	func navigateToMainScreen()
 }
 
 final class LoginRouter: NSObject, ILoginRoutingLogic {
-	weak var viewController: LoginViewController?
-
-	// MARK: Navigation
+	weak var viewController: UIViewController?
+	let mainScreen: UIViewController
 	
-	func showError() {
+	init(viewController: UIViewController, mainScreen: UIViewController) {
+		self.viewController = viewController
+		self.mainScreen = mainScreen
+	}
+
+	// MARK: - Navigation
+	
+	func showError(errorMessage: String) {
 		let alertController = UIAlertController(
 			title: "Ошибка",
-			message: "Введены некорректный данные!",
+			message: errorMessage,
 			preferredStyle: .alert
 		)
 		let okButton = UIAlertAction(title: "Ok", style: .default)
@@ -39,8 +46,6 @@ final class LoginRouter: NSObject, ILoginRoutingLogic {
 	}
 	
 	func navigateToMainScreen() {
-		let taskListAssembly = TaskListAssembly()
-		let mainScreen = taskListAssembly.assembly()
 		viewController?.present(mainScreen, animated: true)
 	}
 }
