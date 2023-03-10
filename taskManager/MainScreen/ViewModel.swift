@@ -8,7 +8,7 @@
 import Foundation
 
 enum MainModel {
-	struct ViewData {
+	struct ViewModel {
 		struct RegularTask {
 			let title: String
 			let taskStatus: TaskStatus
@@ -35,8 +35,12 @@ enum MainModel {
 		let tasksBySections: [Section]
 	}
 
-	struct DataModel {
-		let sections: [Section]
-		let data: [Section: [Task]]
+	struct ResponseDataModel {
+		struct SectionWithTask {
+			let section: Section
+			let tasks: [Task]
+		}
+		
+		let sections: [SectionWithTask]
 	}
 }

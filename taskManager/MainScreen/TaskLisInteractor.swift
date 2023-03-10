@@ -48,22 +48,20 @@ final class TaskListInteractor: ITaskListBusinessLogic {
 		presenter?.displayData(data: datamodel)
 	}
 
-	private func createDataModel() -> MainModel.DataModel {
-		let data = configureData()
-		let datamodel = MainModel.DataModel(
-			sections: sectionManager.getSections(),
-			data: data
-		)
-
-		return datamodel
-	}
-
-	private func configureData() -> [Section: [Task]] {
-		var data: [Section: [Task]] = [:]
-		for section in sectionManager.getSections() {
-			data[section] = sectionManager.getTasksForSection(section: section)
+	private func createDataModel() -> MainModel.ResponseDataModel {
+		let sections = sectionManager.getSections()
+		var result: [MainModel.ResponseDataModel.SectionWithTask] = []
+		
+		for section in sections {
+			let tasks = sectionManager.getTasksForSection(section: section)
+			let sectionWithTasks = MainModel.ResponseDataModel.SectionWithTask(
+				section: section,
+				tasks: tasks
+			)
+			result.append(sectionWithTasks)
 		}
-
-		return data
+		let response: MainModel.ResponseDataModel = .init(sections: result)
+		
+		return response
 	}
 }

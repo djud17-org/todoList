@@ -12,7 +12,7 @@ protocol ITaskPresenter: AnyObject {
 
 	/// Функция для отображения данных на экране
 	/// - Parameter data: Данные для отображения
-	func displayData(data: MainModel.DataModel)
+	func displayData(data: MainModel.ResponseDataModel)
 }
 
 final class TaskPresenter: ITaskPresenter {
@@ -22,38 +22,34 @@ final class TaskPresenter: ITaskPresenter {
 
 	// MARK: - Funcs
 
-	func displayData(data: MainModel.DataModel) {
-		let viewData = mapViewData(
-			sections: data.sections,
-			data: data.data
-		)
+	func displayData(data: MainModel.ResponseDataModel) {
+		let viewData = mapViewData(data: data)
 
 		viewController?.render(viewData: viewData)
 	}
 
-	private func mapViewData(sections: [Section], data: [Section: [Task]]) -> MainModel.ViewData {
-		var result = [MainModel.ViewData.Section]()
-		for section in sections {
-			let sectionData = MainModel.ViewData.Section(
-				title: section.title,
-				tasks: mapTasksData(tasks: data[section])
+	private func mapViewData(data: MainModel.ResponseDataModel) -> MainModel.ViewModel {
+		var result = [MainModel.ViewModel.Section]()
+		
+		for element in data.sections {
+			let sectionData = MainModel.ViewModel.Section(
+				title: element.section.title,
+				tasks: mapTasksData(tasks: element.tasks)
 			)
-
+			
 			result.append(sectionData)
 		}
 
-		return MainModel.ViewData(tasksBySections: result)
+		return MainModel.ViewModel(tasksBySections: result)
 	}
 
-	private func mapTasksData(tasks: [Task]?) -> [MainModel.ViewData.Task] {
-		guard let tasks = tasks else { return [] }
-
-		return tasks.map { mapTaskData(task: $0) }
+	private func mapTasksData(tasks: [Task]) -> [MainModel.ViewModel.Task] {
+		tasks.map { mapTaskData(task: $0) }
 	}
 
-	private func mapTaskData(task: Task) -> MainModel.ViewData.Task {
+	private func mapTaskData(task: Task) -> MainModel.ViewModel.Task {
 		if let task = task as? ImportantTask {
-			let result = MainModel.ViewData.ImportantTask(
+			let result = MainModel.ViewModel.ImportantTask(
 				title: task.title,
 				taskStatus: task.taskStatus,
 				isOverdue: task.deadLine < Date(),
@@ -63,7 +59,7 @@ final class TaskPresenter: ITaskPresenter {
 
 			return .importantTask(result)
 		} else {
-			let result = MainModel.ViewData.RegularTask(
+			let result = MainModel.ViewModel.RegularTask(
 				title: task.title,
 				taskStatus: task.taskStatus
 			)

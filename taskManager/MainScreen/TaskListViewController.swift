@@ -10,7 +10,7 @@ import UIKit
 final class TaskListViewController: UITableViewController {
 	// MARK: - Parameters
 
-	private var viewData: MainModel.ViewData = .init(tasksBySections: [])
+	private var viewData: MainModel.ViewModel = .init(tasksBySections: [])
 	var interactor: ITaskListBusinessLogic?
 
 	// MARK: - ViewController Lifecycle
@@ -105,11 +105,11 @@ extension TaskListViewController {
 
 protocol ITaskListDisplayLogic: AnyObject {
 	/// Функция для "общения" с view
-	func render(viewData: MainModel.ViewData)
+	func render(viewData: MainModel.ViewModel)
 }
 
 extension TaskListViewController: ITaskListDisplayLogic {
-	func render(viewData: MainModel.ViewData) {
+	func render(viewData: MainModel.ViewModel) {
 		self.viewData = viewData
 		tableView.reloadData()
 	}
