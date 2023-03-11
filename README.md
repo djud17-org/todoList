@@ -22,3 +22,8 @@ The main objective is to create a tiny task manager application for managing tas
 * Move app to MVP architecture
 * Add sortedManager to sort tasks
 * Add sectionManager to work with tableViewSections
+### Fourth version
+* Move app to CleanSwift architecture
+* Add Login screen
+* Add module assemblers
+* Add gitignore
