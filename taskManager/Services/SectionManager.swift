@@ -7,7 +7,7 @@
 
 import Foundation
 
-/// Перечисление с доступными секциями
+/// Перечисление с доступными секциями.
 enum Section {
 	case completed
 	case uncompleted
@@ -23,14 +23,14 @@ enum Section {
 }
 
 protocol ISectionForTaskManagerAdapter {
-	
-	/// Функция позволяет получить доступные секции для таблицы
-	/// - Returns: массив секций
+
+	/// Функция позволяет получить доступные секции для таблицы.
+	/// - Returns: массив секций.
 	func getSections() -> [Section]
-	
-	/// Функция позволяет получить массив данных для конкретной секции
-	/// - Parameter section: индекс секции
-	/// - Returns: массив данных
+
+	/// Функция позволяет получить массив данных для конкретной секции.
+	/// - Parameter section: индекс секции.
+	/// - Returns: массив данных.
 	func getTasksForSection(section: Section) -> [Task]
 }
 

@@ -18,7 +18,7 @@ final class TaskListAssembly: IAssembly {
 
 		return viewController
 	}
-	
+
 	private func configureSectionManager() -> ISectionForTaskManagerAdapter {
 		let taskRepository: ITaskRepository = TaskRepository()
 		let taskManager: ITaskManager = TaskManager()

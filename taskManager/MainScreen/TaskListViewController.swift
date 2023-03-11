@@ -104,7 +104,7 @@ extension TaskListViewController {
 }
 
 protocol ITaskListDisplayLogic: AnyObject {
-	/// Функция для "общения" с view
+	/// Функция для "общения" с view.
 	func render(viewData: MainModel.ViewModel)
 }
 

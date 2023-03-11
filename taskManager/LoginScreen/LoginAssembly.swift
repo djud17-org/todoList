@@ -8,9 +8,9 @@
 import UIKit
 
 protocol IAssembly {
-	
-	/// Функция сборки модуля
-	/// - Returns: Контроллер
+
+	/// Функция сборки модуля.
+	/// - Returns: Контроллер.
 	func assembly() -> UIViewController
 }
 

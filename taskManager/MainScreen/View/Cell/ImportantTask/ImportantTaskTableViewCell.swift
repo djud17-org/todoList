@@ -7,7 +7,7 @@
 
 import UIKit
 
-/// Класс ячейки для важных задач
+/// Класс ячейки для важных задач.
 final class ImportantTaskTableViewCell: UITableViewCell {
 	static let identifier = "ImportantTaskTableViewCell"
 
@@ -101,7 +101,7 @@ final class ImportantTaskTableViewCell: UITableViewCell {
 	}
 }
 
-/// Модель для конфигурации ячейки
+/// Модель для конфигурации ячейки.
 struct ImportantTaskCellModel {
 	let taskStatus: TaskStatus
 	let taskPriority: TaskPriority
