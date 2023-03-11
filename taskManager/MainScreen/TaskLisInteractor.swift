@@ -13,12 +13,12 @@
 import UIKit
 
 protocol ITaskListBusinessLogic {
-	
-	/// Функция сообщает о готовности представления к отображению данных
+
+	/// Функция сообщает о готовности представления к отображению данных.
 	func viewIsReady()
-	
-	/// Функция сообщает о выборе задачи
-	/// - Parameter indexPath: Индекс задачи
+
+	/// Функция сообщает о выборе задачи.
+	/// - Parameter indexPath: Индекс задачи.
 	func didTaskSelected(at indexPath: IndexPath)
 }
 
@@ -51,7 +51,7 @@ final class TaskListInteractor: ITaskListBusinessLogic {
 	private func createDataModel() -> MainModel.ResponseDataModel {
 		let sections = sectionManager.getSections()
 		var result: [MainModel.ResponseDataModel.SectionWithTask] = []
-		
+
 		for section in sections {
 			let tasks = sectionManager.getTasksForSection(section: section)
 			let sectionWithTasks = MainModel.ResponseDataModel.SectionWithTask(
@@ -61,7 +61,7 @@ final class TaskListInteractor: ITaskListBusinessLogic {
 			result.append(sectionWithTasks)
 		}
 		let response: MainModel.ResponseDataModel = .init(sections: result)
-		
+
 		return response
 	}
 }

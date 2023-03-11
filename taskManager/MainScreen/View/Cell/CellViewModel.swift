@@ -10,16 +10,16 @@ import UIKit
 protocol ICellViewAnyModel {
 	static var cellAnyType: UIView.Type { get }
 
-	/// Настройка ячейки
-	/// - Parameter cell: Ячейка таблицы
+	/// Настройка ячейки.
+	/// - Parameter cell: Ячейка таблицы.
 	func setupAny(cell: UIView)
 }
 
 protocol ICellViewModel: ICellViewAnyModel {
 	associatedtype CellType: UIView
 
-	/// Настройка ячейки
-	/// - Parameter cell: Ячейка таблицы
+	/// Настройка ячейки.
+	/// - Parameter cell: Ячейка таблицы.
 	func setup(cell: CellType)
 }
 

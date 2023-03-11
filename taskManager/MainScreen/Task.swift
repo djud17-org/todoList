@@ -12,7 +12,7 @@ enum TaskStatus: String {
 	case completed
 }
 
-/// Базовый класс Задача
+/// Базовый класс Задача.
 class Task {
 	var title: String
 	var taskStatus: TaskStatus = .planned
@@ -22,7 +22,7 @@ class Task {
 	}
 }
 
-/// Обычные задачи
+/// Обычные задачи.
 final class RegularTask: Task {}
 
 enum TaskPriority: Int {
@@ -31,7 +31,7 @@ enum TaskPriority: Int {
 	case low = 3
 }
 
-/// Важные задачи с дедлайном и приоритетом
+/// Важные задачи с дедлайном и приоритетом.
 final class ImportantTask: Task {
 	var deadLine: Date {
 		let value = taskPriority.rawValue

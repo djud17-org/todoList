@@ -15,7 +15,7 @@ extension Date {
 		return dateFormatter
 	}
 
-	/// Строковое представление даты в формате "dd.MM.yyyy"
+	/// Строковое представление даты в формате "dd.MM.yyyy".
 	var description: String {
 		dateFormatter.string(from: self)
 	}

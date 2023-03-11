@@ -40,7 +40,7 @@ enum MainModel {
 			let section: Section
 			let tasks: [Task]
 		}
-		
+
 		let sections: [SectionWithTask]
 	}
 }

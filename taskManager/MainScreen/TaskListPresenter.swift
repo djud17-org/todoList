@@ -10,8 +10,8 @@ import Foundation
 protocol ITaskPresenter: AnyObject {
 	var viewController: ITaskListDisplayLogic? { get set }
 
-	/// Функция для отображения данных на экране
-	/// - Parameter data: Данные для отображения
+	/// Функция для отображения данных на экране.
+	/// - Parameter data: Данные для отображения.
 	func displayData(data: MainModel.ResponseDataModel)
 }
 
@@ -30,13 +30,13 @@ final class TaskPresenter: ITaskPresenter {
 
 	private func mapViewData(data: MainModel.ResponseDataModel) -> MainModel.ViewModel {
 		var result = [MainModel.ViewModel.Section]()
-		
+
 		for element in data.sections {
 			let sectionData = MainModel.ViewModel.Section(
 				title: element.section.title,
 				tasks: mapTasksData(tasks: element.tasks)
 			)
-			
+
 			result.append(sectionData)
 		}
 
