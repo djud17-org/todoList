@@ -10,23 +10,12 @@ import XCTest
 
 final class RegularTaskModelTests: XCTestCase {
 
-	func test_taskHasTitle() {
+	func test_taskStatus_initialPlannedStatus() {
 		let sut = makeSut()
-		XCTAssertEqual(sut.title, "Task")
+		XCTAssertTrue(sut.taskStatus == .planned)
 	}
 
-	func test_taskHasDefaultTaskStatus() {
-		let sut = makeSut()
-		XCTAssertEqual(sut.taskStatus, .planned)
-	}
-
-	func test_change_taskStatus() {
-		let sut = makeSut()
-		sut.taskStatus = .completed
-		XCTAssertEqual(sut.taskStatus, .completed)
-	}
-
-	private func makeSut() -> RegularTask {
-		RegularTask(title: "Task")
+	private func makeSut() -> Task {
+		Task(title: "Task")
 	}
 }
