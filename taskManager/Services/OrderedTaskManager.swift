@@ -16,10 +16,6 @@ final class OrderedTaskManager: ITaskManager {
 	}
 
 	func addTask(task: Task) {
-		if Bool.random() {
-			task.taskStatus = .completed
-		}
-
 		taskManager.addTask(task: task)
 	}
 
