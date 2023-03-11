@@ -13,24 +13,24 @@
 import UIKit
 
 protocol ILoginDisplayLogic: AnyObject {
-	
-	
-	/// Функция рендерит вью по модели
-	/// - Parameter viewModel: модель для отображения
+
+	/// Функция рендерит вью по модели.
+	/// - Parameter viewModel: модель для отображения.
 	func renderData(with viewModel: LoginModel.ViewModel)
 }
 
 final class LoginViewController: UIViewController {
-	
+
 	// MARK: - Outlets
-	
+
 	@IBOutlet
-	weak var loginTextField: UITextField!
+	private weak var loginTextField: UITextField!
+
 	@IBOutlet
-	weak var passwordTextField: UITextField!
+	private weak var passwordTextField: UITextField!
 
 	// MARK: - Parameters
-	
+
 	var interactor: ILoginBusinessLogic?
 	var router: ILoginRoutingLogic?
 

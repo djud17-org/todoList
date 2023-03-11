@@ -13,9 +13,9 @@
 import UIKit
 
 protocol ILoginPresentationLogic {
-	
-	///  Функция сообщает презентеру, что нужно отобразить
-	/// - Parameter response: Ответ интерактора от которого зависит отображение
+
+	/// Функция сообщает презентеру, что нужно отобразить.
+	/// - Parameter response: Ответ интерактора от которого зависит отображение.
 	func presentSomething(response: LoginModel.Response)
 }
 
