@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum MainModel {
+enum TaskListModel {
 	struct ViewModel {
 		struct RegularTask {
 			let title: String
