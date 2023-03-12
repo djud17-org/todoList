@@ -11,18 +11,18 @@ import XCTest
 final class OrderedTaskManagerTests: XCTestCase {
 	var orderedTaskManager: OrderedTaskManager!
 	var taskManager: TaskManager!
-
-    override func setUp() {
-        taskManager = TaskManager()
+	
+	override func setUp() {
+		taskManager = TaskManager()
 		orderedTaskManager = OrderedTaskManager(taskManager: taskManager)
-    }
-
-    override func tearDown() {
+	}
+	
+	override func tearDown() {
 		taskManager = nil
 		orderedTaskManager = nil
 	}
-
-    func test_singleTaskAddition() {
+	
+	func test_singleTaskAddition() {
 		// Arrange
 		let tasksCountAfterAdding = taskManager.allTasks().count + 1
 		
@@ -32,7 +32,7 @@ final class OrderedTaskManagerTests: XCTestCase {
 		
 		// Assert
 		XCTAssertEqual(tasksCountAfterAdding, taskManager.allTasks().count, "Задание не было добавлено в список")
-    }
+	}
 	
 	func test_singleTaskRemoval() {
 		// Arrange
@@ -40,11 +40,11 @@ final class OrderedTaskManagerTests: XCTestCase {
 		
 		var tasks = taskManager.allTasks()
 		let tasksCountAfterRemoval = taskManager.allTasks().count - 1
-
+		
 		// Act
 		orderedTaskManager.removeTask(task: tasks.removeLast())
-
-		 // Assert
+		
+		// Assert
 		XCTAssertEqual(tasksCountAfterRemoval, taskManager.allTasks().count, "Задание не было удалено из списка")
 	}
 	
@@ -56,13 +56,12 @@ final class OrderedTaskManagerTests: XCTestCase {
 		_ = orderedTaskManager.allTasks()
 		
 		// Assert
-//		XCTAssertEqual(task1.title < task2.title, task2.title > task1.title, "Задания не отсортированы")
 		XCTAssertEqual(
 			orderedTaskManager.allTasks()[0].title < orderedTaskManager.allTasks()[1].title,
 			orderedTaskManager.allTasks()[1].title > orderedTaskManager.allTasks()[0].title,
 			"Задания не отсортированы")
 	}
-
+	
 	func test_ifSorted_byCompletion() {
 		// Arrange
 		initialSetup()
@@ -101,5 +100,5 @@ final class OrderedTaskManagerTests: XCTestCase {
 		orderedTaskManager.addTask(task: task1)
 		orderedTaskManager.addTask(task: task2)
 	}
-
+	
 }
