@@ -39,6 +39,7 @@
 		6044056429BCBD79007B5B99 /* TaskModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6044056329BCBD79007B5B99 /* TaskModelTests.swift */; };
 		6083E86929BCCC290048E61E /* ImportantTaskModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6083E86829BCCC290048E61E /* ImportantTaskModelTests.swift */; };
 		6083E86B29BCCC440048E61E /* RegularTaskModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6083E86A29BCCC440048E61E /* RegularTaskModelTests.swift */; };
+		ABEA35A229BD28E300A6BE03 /* OrderedTaskManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEA35A129BD28E300A6BE03 /* OrderedTaskManagerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,7 @@
 		6044056329BCBD79007B5B99 /* TaskModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModelTests.swift; sourceTree = "<group>"; };
 		6083E86829BCCC290048E61E /* ImportantTaskModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportantTaskModelTests.swift; sourceTree = "<group>"; };
 		6083E86A29BCCC440048E61E /* RegularTaskModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegularTaskModelTests.swift; sourceTree = "<group>"; };
+		ABEA35A129BD28E300A6BE03 /* OrderedTaskManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderedTaskManagerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 		2582B5BC29BC6AFA00304895 /* taskManagerTests */ = {
 			isa = PBXGroup;
 			children = (
+				ABEA35A129BD28E300A6BE03 /* OrderedTaskManagerTests.swift */,
 				2582B5BD29BC6AFA00304895 /* taskManagerTests.swift */,
 			);
 			path = taskManagerTests;
@@ -421,6 +424,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABEA35A229BD28E300A6BE03 /* OrderedTaskManagerTests.swift in Sources */,
 				2582B5BE29BC6AFA00304895 /* taskManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
