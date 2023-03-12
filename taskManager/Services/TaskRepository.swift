@@ -8,12 +8,12 @@
 import Foundation
 
 protocol ITaskRepository {
-	/// Метод загрузки данных.
-	/// - Returns: Массив задач.
+	/// Метод загрузки данных
+	/// - Returns: Массив задач
 	func loadTasks() -> [Task]
 }
 
-/// Репозиторий для получения данных.
+/// Репозиторий для получения данных
 final class TaskRepository: ITaskRepository {
 	func loadTasks() -> [Task] {
 		[
@@ -29,7 +29,7 @@ final class TaskRepository: ITaskRepository {
 			ImportantTask(title: "Встретить маму", taskPriority: .high),
 			ImportantTask(title: "Купить продукты на ужин", taskPriority: .high),
 			RegularTask(title: "Выбросить мусор"),
-			RegularTask(title: "Убраться")
+			RegularTask(title: "Убраться"),
 		]
 	}
 }
