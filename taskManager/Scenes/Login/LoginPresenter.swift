@@ -26,8 +26,8 @@ final class LoginPresenter: ILoginPresentationLogic {
 
 	func presentSomething(response: LoginModel.Response) {
 		let viewModel: LoginModel.ViewModel = response.isLoginSuccessed
-		? .success
-		: .failure("Неправильный логин или пароль!")
+			? .success
+			: .failure("Неправильный логин или пароль!")
 		viewController?.renderData(with: viewModel)
 	}
 }

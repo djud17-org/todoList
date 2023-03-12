@@ -45,8 +45,19 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6044056029BCBD79007B5B99"
-               BuildableName = "taskModelsTests.xctest"
-               BlueprintName = "taskModelsTests"
+               BuildableName = "TaskModelsTests.xctest"
+               BlueprintName = "TaskModelsTests"
+               ReferencedContainer = "container:taskManager.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "8AC27F0F29BE512F003CB794"
+               BuildableName = "TaskManagerTests.xctest"
+               BlueprintName = "TaskManagerTests"
                ReferencedContainer = "container:taskManager.xcodeproj">
             </BuildableReference>
          </TestableReference>

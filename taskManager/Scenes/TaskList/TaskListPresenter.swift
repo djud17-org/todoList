@@ -12,7 +12,7 @@ protocol ITaskPresenter: AnyObject {
 
 	/// Функция для отображения данных на экране.
 	/// - Parameter data: Данные для отображения.
-	func displayData(data: MainModel.ResponseDataModel)
+	func displayData(data: TaskListModel.ResponseDataModel)
 }
 
 final class TaskPresenter: ITaskPresenter {
@@ -22,17 +22,17 @@ final class TaskPresenter: ITaskPresenter {
 
 	// MARK: - Funcs
 
-	func displayData(data: MainModel.ResponseDataModel) {
+	func displayData(data: TaskListModel.ResponseDataModel) {
 		let viewData = mapViewData(data: data)
 
 		viewController?.render(viewData: viewData)
 	}
 
-	private func mapViewData(data: MainModel.ResponseDataModel) -> MainModel.ViewModel {
-		var result = [MainModel.ViewModel.Section]()
+	private func mapViewData(data: TaskListModel.ResponseDataModel) -> TaskListModel.ViewModel {
+		var result = [TaskListModel.ViewModel.Section]()
 
 		for element in data.sections {
-			let sectionData = MainModel.ViewModel.Section(
+			let sectionData = TaskListModel.ViewModel.Section(
 				title: element.section.title,
 				tasks: mapTasksData(tasks: element.tasks)
 			)
@@ -40,16 +40,16 @@ final class TaskPresenter: ITaskPresenter {
 			result.append(sectionData)
 		}
 
-		return MainModel.ViewModel(tasksBySections: result)
+		return TaskListModel.ViewModel(tasksBySections: result)
 	}
 
-	private func mapTasksData(tasks: [Task]) -> [MainModel.ViewModel.Task] {
+	private func mapTasksData(tasks: [Task]) -> [TaskListModel.ViewModel.Task] {
 		tasks.map { mapTaskData(task: $0) }
 	}
 
-	private func mapTaskData(task: Task) -> MainModel.ViewModel.Task {
+	private func mapTaskData(task: Task) -> TaskListModel.ViewModel.Task {
 		if let task = task as? ImportantTask {
-			let result = MainModel.ViewModel.ImportantTask(
+			let result = TaskListModel.ViewModel.ImportantTask(
 				title: task.title,
 				taskStatus: task.taskStatus,
 				isOverdue: task.deadLine < Date(),
@@ -59,7 +59,7 @@ final class TaskPresenter: ITaskPresenter {
 
 			return .importantTask(result)
 		} else {
-			let result = MainModel.ViewModel.RegularTask(
+			let result = TaskListModel.ViewModel.RegularTask(
 				title: task.title,
 				taskStatus: task.taskStatus
 			)

@@ -19,4 +19,3 @@ final class TaskModelTests: XCTestCase {
 		Task(title: "Task")
 	}
 }
-
