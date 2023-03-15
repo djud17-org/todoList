@@ -27,22 +27,40 @@ final class SectionManagerTests: XCTestCase {
 	func test_getSections() {
 		let sections = sectionManager.getSections()
 
-		XCTAssertFalse(sections.isEmpty)
-		XCTAssertTrue(sections.count == 2)
-		XCTAssertTrue(sections[0] == .uncompleted)
-		XCTAssertTrue(sections[1] == .completed)
+		XCTAssertFalse(
+			sections.isEmpty,
+			"Список секций пуст"
+		)
+		XCTAssertTrue(
+			sections.count == 2,
+			"Некорректное кол-во секций"
+		)
+		XCTAssertTrue(
+			sections[0] == .uncompleted,
+			"Неправильный порядок у элементов (0)"
+		)
+		XCTAssertTrue(
+			sections[1] == .completed,
+			"Неправильный порядок у элементов (1)"
+		)
 	}
 
 	func test_getTasksForSection_uncompleted() {
 		_ = sectionManager.getTasksForSection(section: .uncompleted)
 
-		XCTAssertTrue(taskManager.uncompletedTaskCalled)
+		XCTAssertTrue(
+			taskManager.uncompletedTaskCalled,
+			"Не вызвана функция uncompletedTasks"
+		)
 	}
 
 	func test_getTasksForSection_completed() {
 		_ = sectionManager.getTasksForSection(section: .completed)
 
-		XCTAssertTrue(taskManager.completedTaskCalled)
+		XCTAssertTrue(
+			taskManager.completedTaskCalled,
+			"Не вызвана функция completedTasks"
+		)
 	}
 
 	private final class TaskManagerMock: ITaskManager {
