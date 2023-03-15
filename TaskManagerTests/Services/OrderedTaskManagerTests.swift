@@ -15,6 +15,14 @@ final class OrderedTaskManagerTests: XCTestCase {
 	override func setUp() {
 		taskManager = TaskManager()
 		orderedTaskManager = OrderedTaskManager(taskManager: taskManager)
+		
+		let task1 = Task(title: "Сделать сальтуху")
+		let task2 = Task(title: "Зашить карманы")
+		
+		task2.taskStatus = .completed
+		
+		orderedTaskManager.addTask(task: task1)
+		orderedTaskManager.addTask(task: task2)
 	}
 	
 	override func tearDown() {
@@ -42,7 +50,7 @@ final class OrderedTaskManagerTests: XCTestCase {
 	func test_singleTaskRemoval() {
 		
 		// Arrange
-		initialSetup()
+//		// Everething arranged in setUp method
 		
 		var tasks = taskManager.allTasks()
 		let tasksCountAfterRemoval = taskManager.allTasks().count - 1
@@ -61,7 +69,7 @@ final class OrderedTaskManagerTests: XCTestCase {
 	func test_allTasksSorted() {
 		
 		// Arrange
-		initialSetup()
+//		// Everething arranged in setUp method
 		
 		// Act
 		_ = orderedTaskManager.allTasks()
@@ -77,7 +85,7 @@ final class OrderedTaskManagerTests: XCTestCase {
 	func test_ifSorted_byCompletion() {
 		
 		// Arrange
-		initialSetup()
+		// Everething arranged in setUp method
 		
 		// Act
 		_ = orderedTaskManager.completedTasks()
@@ -93,7 +101,7 @@ final class OrderedTaskManagerTests: XCTestCase {
 	func test_ifSorted_byTasksInProgress() {
 		
 		// Arrange
-		initialSetup()
+//		// Everething arranged in setUp method
 		
 		// Act
 		_ = orderedTaskManager.uncompletedTasks()
@@ -104,21 +112,5 @@ final class OrderedTaskManagerTests: XCTestCase {
 			orderedTaskManager.allTasks()[1].taskStatus == .completed,
 			"Список не отсортирован по заданиям в процессе выполнения"
 		)
-	}
-}
-	
-	//MARK: - Private
-	
-	private extension OrderedTaskManagerTests {
-	
-	/// Метод производит  настройку первичных данных для их использовния в тестах.
-	private func initialSetup() {
-		let task1 = Task(title: "Сделать сальтуху")
-		let task2 = Task(title: "Зашить карманы")
-		
-		task2.taskStatus = .completed
-		
-		orderedTaskManager.addTask(task: task1)
-		orderedTaskManager.addTask(task: task2)
 	}
 }
