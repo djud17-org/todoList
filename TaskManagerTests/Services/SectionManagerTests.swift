@@ -52,7 +52,7 @@ final class SectionManagerTests: XCTestCase {
 		_ = sectionManager.getTasksForSection(section: .uncompleted)
 
 		XCTAssertTrue(
-			taskManager.uncompletedTaskCalled,
+			taskManager.isUncompletedTaskCalled,
 			"Не вызвана функция uncompletedTasks"
 		)
 	}
@@ -61,27 +61,27 @@ final class SectionManagerTests: XCTestCase {
 		_ = sectionManager.getTasksForSection(section: .completed)
 
 		XCTAssertTrue(
-			taskManager.completedTaskCalled,
+			taskManager.isCompletedTaskCalled,
 			"Не вызвана функция completedTasks"
 		)
 	}
 
 	private final class TaskManagerMock: ITaskManager {
-		var completedTaskCalled = false
-		var uncompletedTaskCalled = false
+		var isCompletedTaskCalled = false
+		var isUncompletedTaskCalled = false
 
-		func addTask(task: taskManager.Task) {}
-		func removeTask(task: taskManager.Task) {}
+		func addTask(task: Task) {}
+		func removeTask(task: Task) {}
 
-		func allTasks() -> [taskManager.Task] { [] }
+		func allTasks() -> [Task] { [] }
 
-		func completedTasks() -> [taskManager.Task] {
-			completedTaskCalled = true
+		func completedTasks() -> [Task] {
+			isCompletedTaskCalled = true
 			return []
 		}
 
-		func uncompletedTasks() -> [taskManager.Task] {
-			uncompletedTaskCalled = true
+		func uncompletedTasks() -> [Task] {
+			isUncompletedTaskCalled = true
 			return []
 		}
 	}
