@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import TaskManagerPackage
 
 final class TaskListAssembly: IAssembly {
 	func assembly() -> UIViewController {
