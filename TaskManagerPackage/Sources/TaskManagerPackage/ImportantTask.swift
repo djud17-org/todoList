@@ -1,7 +1,7 @@
 import Foundation
 
 /// Приорите задачи.
-enum TaskPriority: Int {
+public enum TaskPriority: Int {
 
 	/// Высокий
 	case high = 1
@@ -14,9 +14,9 @@ enum TaskPriority: Int {
 }
 
 /// Модель важной задачи.
-final class ImportantTask: Task {
+public final class ImportantTask: Task {
 	/// Дедлайн задачи.
-	var deadLine: Date {
+	public var deadLine: Date {
 		let value = taskPriority.rawValue
 
 		return Calendar.current.date(
@@ -27,9 +27,9 @@ final class ImportantTask: Task {
 	}
 
 	/// Приоритет задачи.
-	var taskPriority: TaskPriority
+	public var taskPriority: TaskPriority
 
-	init(title: String, taskPriority: TaskPriority) {
+	public init(title: String, taskPriority: TaskPriority) {
 		self.taskPriority = taskPriority
 		super.init(title: title)
 	}

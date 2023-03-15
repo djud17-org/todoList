@@ -8,30 +8,30 @@
 import Foundation
 
 /// Предоставляет список задач, отсортированные по статусу.
-final class OrderedTaskManager: ITaskManager {
+public final class OrderedTaskManager: ITaskManager {
 	private let taskManager: ITaskManager
 
-	init(taskManager: ITaskManager) {
+	public init(taskManager: ITaskManager) {
 		self.taskManager = taskManager
 	}
 
-	func addTask(task: Task) {
+	public func addTask(task: Task) {
 		taskManager.addTask(task: task)
 	}
 
-	func removeTask(task: Task) {
+	public func removeTask(task: Task) {
 		taskManager.removeTask(task: task)
 	}
 
-	func allTasks() -> [Task] {
+	public func allTasks() -> [Task] {
 		sortedTask(arrayToSort: taskManager.allTasks())
 	}
 
-	func completedTasks() -> [Task] {
+	public func completedTasks() -> [Task] {
 		sortedTask(arrayToSort: taskManager.completedTasks())
 	}
 
-	func uncompletedTasks() -> [Task] {
+	public func uncompletedTasks() -> [Task] {
 		sortedTask(arrayToSort: taskManager.uncompletedTasks())
 	}
 

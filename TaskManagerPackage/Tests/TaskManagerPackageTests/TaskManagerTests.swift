@@ -1,5 +1,5 @@
 import XCTest
-@testable import taskManager
+@testable import TaskManagerPackage
 
 class TaskManagerTests: XCTestCase {
 	var taskManager: TaskManager!

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import TaskManagerPackage
 
 /// Класс ячейки для обычных задач
 final class RegularTaskTableViewCell: UITableViewCell {

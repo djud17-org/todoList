@@ -6,7 +6,9 @@
 //
 
 import XCTest
-@testable import taskManager
+@testable import TaskManagerPackage
+
+@available(macOS 12.0, *)
 
 final class ImportantTaskModelTests: XCTestCase {
 

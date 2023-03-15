@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import taskManager
+@testable import TaskManagerPackage
 
 final class OrderedTaskManagerTests: XCTestCase {
 	var orderedTaskManager: OrderedTaskManager!

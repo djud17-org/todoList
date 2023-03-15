@@ -8,7 +8,7 @@
 import Foundation
 
 /// Статус задачи.
-enum TaskStatus: String {
+public enum TaskStatus: String {
 	/// Запланирована.
 	case planned
 
@@ -17,11 +17,11 @@ enum TaskStatus: String {
 }
 
 /// Модель задачи.
-class Task {
-	var title: String
-	var taskStatus: TaskStatus = .planned
+public class Task {
+	public var title: String
+	public var taskStatus: TaskStatus = .planned
 
-	init(title: String) {
+	public init(title: String) {
 		self.title = title
 	}
 }

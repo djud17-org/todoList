@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import TaskManagerPackage
 
 protocol ITaskPresenter: AnyObject {
 	var viewController: ITaskListDisplayLogic? { get set }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol ITaskManager {
+public protocol ITaskManager {
 	/// Добавляет задачу в список задач менеджера.
 	/// - Parameter task: задача, которую нужно добавить.
 	func addTask(task: Task)
@@ -30,26 +30,30 @@ protocol ITaskManager {
 }
 
 /// Предоставляет список задач, отсортированные по статусу.
-final class TaskManager: ITaskManager {
+public final class TaskManager: ITaskManager {
 	private var taskList = [Task]()
 
-	func addTask(task: Task) {
+	public init(taskList: [Task] = [Task]()) {
+		self.taskList = taskList
+	}
+
+	public func addTask(task: Task) {
 		taskList.append(task)
 	}
 
-	func removeTask(task: Task) {
+	public func removeTask(task: Task) {
 		taskList.removeAll(where: { $0 === task })
 	}
 
-	func allTasks() -> [Task] {
+	public func allTasks() -> [Task] {
 		taskList
 	}
 
-	func completedTasks() -> [Task] {
+	public func completedTasks() -> [Task] {
 		taskList.filter { $0.taskStatus == .completed }
 	}
 
-	func uncompletedTasks() -> [Task] {
+	public func uncompletedTasks() -> [Task] {
 		taskList.filter { $0.taskStatus == .planned }
 	}
 }
