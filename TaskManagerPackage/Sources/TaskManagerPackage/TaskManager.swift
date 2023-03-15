@@ -33,6 +33,10 @@ public protocol ITaskManager {
 public final class TaskManager: ITaskManager {
 	private var taskList = [Task]()
 
+	public init(taskList: [Task] = [Task]()) {
+		self.taskList = taskList
+	}
+
 	public func addTask(task: Task) {
 		taskList.append(task)
 	}
