@@ -10,10 +10,10 @@ import XCTest
 
 final class OrderedTaskManagerTests: XCTestCase {
 	private var orderedTaskManager: OrderedTaskManager!
-	private var taskManager: TaskManager!
+	private var taskManager: TaskManagerMock!
 	
 	override func setUp() {
-		taskManager = TaskManager()
+		taskManager = TaskManagerMock()
 		orderedTaskManager = OrderedTaskManager(taskManager: taskManager)
 		
 		let task1 = Task(title: "Сделать сальтуху")
@@ -49,16 +49,11 @@ final class OrderedTaskManagerTests: XCTestCase {
 	
 	func test_singleTaskRemoval() {
 		
-		// Arrange
-//		// Everething arranged in setUp method
-		
 		var tasks = taskManager.allTasks()
 		let tasksCountAfterRemoval = taskManager.allTasks().count - 1
 		
-		// Act
 		orderedTaskManager.removeTask(task: tasks.removeLast())
 		
-		// Assert
 		XCTAssertEqual(
 			tasksCountAfterRemoval,
 			taskManager.allTasks().count,
@@ -68,13 +63,8 @@ final class OrderedTaskManagerTests: XCTestCase {
 	
 	func test_allTasksSorted() {
 		
-		// Arrange
-//		// Everething arranged in setUp method
-		
-		// Act
 		_ = orderedTaskManager.allTasks()
 		
-		// Assert
 		XCTAssertEqual(
 			orderedTaskManager.allTasks()[0].title < orderedTaskManager.allTasks()[1].title,
 			orderedTaskManager.allTasks()[1].title > orderedTaskManager.allTasks()[0].title,
@@ -84,13 +74,8 @@ final class OrderedTaskManagerTests: XCTestCase {
 	
 	func test_ifSorted_byCompletion() {
 		
-		// Arrange
-		// Everething arranged in setUp method
-		
-		// Act
 		_ = orderedTaskManager.completedTasks()
 		
-		// Assert
 		XCTAssertEqual(
 			orderedTaskManager.allTasks()[0].taskStatus == .completed,
 			orderedTaskManager.allTasks()[1].taskStatus == .planned,
@@ -100,17 +85,36 @@ final class OrderedTaskManagerTests: XCTestCase {
 	
 	func test_ifSorted_byTasksInProgress() {
 		
-		// Arrange
-//		// Everething arranged in setUp method
-		
-		// Act
 		_ = orderedTaskManager.uncompletedTasks()
 		
-		// Assert
 		XCTAssertEqual(
 			orderedTaskManager.allTasks()[0].taskStatus == .planned,
 			orderedTaskManager.allTasks()[1].taskStatus == .completed,
 			"Список не отсортирован по заданиям в процессе выполнения"
 		)
+	}
+	
+	private final class TaskManagerMock: ITaskManager {
+		private var tasks = [Task]()
+		
+		func addTask(task: Task) {
+			tasks.append(task)
+		}
+		
+		func removeTask(task: Task) {
+			tasks.removeLast()
+		}
+
+		func allTasks() -> [Task] {
+			tasks
+		}
+
+		func completedTasks() -> [Task] {
+			return []
+		}
+
+		func uncompletedTasks() -> [Task] {
+			return []
+		}
 	}
 }
