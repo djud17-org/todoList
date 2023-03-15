@@ -42,6 +42,7 @@
 		8AC27F2E29BE5606003CB794 /* TaskManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC27F2D29BE5606003CB794 /* TaskManagerTests.swift */; };
 		8AC27F3729BE58B1003CB794 /* ImportantTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC27F3629BE58B1003CB794 /* ImportantTask.swift */; };
 		8AC27F3929BE5969003CB794 /* RegularTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC27F3829BE5969003CB794 /* RegularTask.swift */; };
+		ABF2F44229C1D4E4009BE549 /* TaskRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF2F44129C1D4E4009BE549 /* TaskRepositoryTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,7 @@
 		8AC27F3629BE58B1003CB794 /* ImportantTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportantTask.swift; sourceTree = "<group>"; };
 		8AC27F3829BE5969003CB794 /* RegularTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegularTask.swift; sourceTree = "<group>"; };
 		ABEA35A129BD28E300A6BE03 /* OrderedTaskManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderedTaskManagerTests.swift; sourceTree = "<group>"; };
+		ABF2F44129C1D4E4009BE549 /* TaskRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TaskRepositoryTests.swift; path = TaskManagerTests/Models/TaskRepositoryTests.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +211,7 @@
 		8AC27F2B29BE54EE003CB794 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				ABF2F44129C1D4E4009BE549 /* TaskRepositoryTests.swift */,
 				6044056329BCBD79007B5B99 /* TaskModelTests.swift */,
 				6083E86A29BCCC440048E61E /* RegularTaskModelTests.swift */,
 				6083E86829BCCC290048E61E /* ImportantTaskModelTests.swift */,
@@ -466,6 +469,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABF2F44229C1D4E4009BE549 /* TaskRepositoryTests.swift in Sources */,
 				8AC27F2729BE54E6003CB794 /* RegularTaskModelTests.swift in Sources */,
 				8AC27F2E29BE5606003CB794 /* TaskManagerTests.swift in Sources */,
 				8AC27F2629BE54E2003CB794 /* OrderedTaskManagerTests.swift in Sources */,

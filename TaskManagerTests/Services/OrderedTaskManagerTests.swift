@@ -9,8 +9,8 @@ import XCTest
 @testable import taskManager
 
 final class OrderedTaskManagerTests: XCTestCase {
-	var orderedTaskManager: OrderedTaskManager!
-	var taskManager: TaskManager!
+	private var orderedTaskManager: OrderedTaskManager!
+	private var taskManager: TaskManager!
 	
 	override func setUp() {
 		taskManager = TaskManager()
@@ -109,7 +109,7 @@ final class OrderedTaskManagerTests: XCTestCase {
 	
 	//MARK: - Private
 	
-	private extension OrderedTaskManager {
+	private extension OrderedTaskManagerTests {
 	
 	/// Метод производит  настройку первичных данных для их использовния в тестах.
 	private func initialSetup() {
