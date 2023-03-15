@@ -5,31 +5,63 @@
 //  Created by Давид Тоноян  on 15.03.2023.
 //
 
+@testable import taskManager
 import XCTest
 
 final class SectionManagerTests: XCTestCase {
+	private var taskManager: TaskManagerMock!
+	private var sectionManager: SectionForTaskManagerAdapter!
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
+	override func setUp() {
+		taskManager = TaskManagerMock()
+		sectionManager = SectionForTaskManagerAdapter(
+			taskManager: taskManager
+		)
+	}
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
+	override func tearDown() {
+		taskManager = nil
+		sectionManager = nil
+	}
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
+	func test_getSections() {
+		let sections = sectionManager.getSections()
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
+		XCTAssertFalse(sections.isEmpty)
+		XCTAssertTrue(sections.count == 2)
+		XCTAssertTrue(sections[0] == .uncompleted)
+		XCTAssertTrue(sections[1] == .completed)
+	}
 
+	func test_getTasksForSection_uncompleted() {
+		_ = sectionManager.getTasksForSection(section: .uncompleted)
+
+		XCTAssertTrue(taskManager.uncompletedTaskCalled)
+	}
+
+	func test_getTasksForSection_completed() {
+		_ = sectionManager.getTasksForSection(section: .completed)
+
+		XCTAssertTrue(taskManager.completedTaskCalled)
+	}
+
+	private final class TaskManagerMock: ITaskManager {
+		var completedTaskCalled = false
+		var uncompletedTaskCalled = false
+
+		func addTask(task: taskManager.Task) {}
+		func removeTask(task: taskManager.Task) {}
+
+		func allTasks() -> [taskManager.Task] { [] }
+
+		func completedTasks() -> [taskManager.Task] {
+			completedTaskCalled = true
+			return []
+		}
+
+		func uncompletedTasks() -> [taskManager.Task] {
+			uncompletedTaskCalled = true
+			return []
+		}
+	}
 }
