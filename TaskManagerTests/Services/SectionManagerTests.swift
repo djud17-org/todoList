@@ -31,16 +31,19 @@ final class SectionManagerTests: XCTestCase {
 			sections.isEmpty,
 			"Список секций пуст"
 		)
-		XCTAssertTrue(
-			sections.count == 2,
+		XCTAssertEqual(
+			sections.count,
+			2,
 			"Некорректное кол-во секций"
 		)
-		XCTAssertTrue(
-			sections[0] == .uncompleted,
+		XCTAssertEqual(
+			sections[0],
+			.uncompleted,
 			"Неправильный порядок у элементов (0)"
 		)
-		XCTAssertTrue(
-			sections[1] == .completed,
+		XCTAssertEqual(
+			sections[1],
+			.completed,
 			"Неправильный порядок у элементов (1)"
 		)
 	}
