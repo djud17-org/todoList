@@ -22,6 +22,7 @@
 		25B6BFFC2999621F00C3A43F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B6BFFB2999621F00C3A43F /* Constants.swift */; };
 		25B6BFFF2999634600C3A43F /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B6BFFE2999634600C3A43F /* UITableView.swift */; };
 		25B6C00129996C9D00C3A43F /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B6C00029996C9D00C3A43F /* Date.swift */; };
+		25B99EEB29C3584600761501 /* SectionManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B99EEA29C3584500761501 /* SectionManagerTests.swift */; };
 		25CF686029A63B7C00E758E7 /* TaskListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CF685F29A63B7C00E758E7 /* TaskListModel.swift */; };
 		25CF686729A64B4B00E758E7 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CF686129A64B4A00E758E7 /* LoginPresenter.swift */; };
 		25CF686829A64B4B00E758E7 /* LoginWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CF686229A64B4A00E758E7 /* LoginWorker.swift */; };
@@ -34,6 +35,16 @@
 		601D8D7329C22E8B00C25C4F /* TaskRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601D8D7229C22E8B00C25C4F /* TaskRepository.swift */; };
 		60993BD729C22C1900D4B908 /* TaskManagerPackage in Frameworks */ = {isa = PBXBuildFile; productRef = 60993BD629C22C1900D4B908 /* TaskManagerPackage */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		25B99EE529C3580900761501 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 25B6BFBF2999161800C3A43F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 25B6BFC62999161800C3A43F;
+			remoteInfo = taskManager;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		2569096C29A24A9F00A0129C /* TaskListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListPresenter.swift; sourceTree = "<group>"; };
@@ -53,6 +64,8 @@
 		25B6BFFB2999621F00C3A43F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		25B6BFFE2999634600C3A43F /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
 		25B6C00029996C9D00C3A43F /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		25B99EE129C3580900761501 /* taskManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = taskManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		25B99EEA29C3584500761501 /* SectionManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionManagerTests.swift; sourceTree = "<group>"; };
 		25CF685F29A63B7C00E758E7 /* TaskListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListModel.swift; sourceTree = "<group>"; };
 		25CF686129A64B4A00E758E7 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginPresenter.swift; path = taskManager/Scenes/Login/LoginPresenter.swift; sourceTree = SOURCE_ROOT; };
 		25CF686229A64B4A00E758E7 /* LoginWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginWorker.swift; path = taskManager/Scenes/Login/LoginWorker.swift; sourceTree = SOURCE_ROOT; };
@@ -75,6 +88,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		25B99EDE29C3580900761501 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -83,6 +103,7 @@
 			children = (
 				60CBB0C029C22B4700A07575 /* Packages */,
 				25B6BFC92999161800C3A43F /* taskManager */,
+				25B99EE229C3580900761501 /* taskManagerTests */,
 				25B6BFC82999161800C3A43F /* Products */,
 				60993BD529C22C1900D4B908 /* Frameworks */,
 			);
@@ -92,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				25B6BFC72999161800C3A43F /* taskManager.app */,
+				25B99EE129C3580900761501 /* taskManagerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -157,6 +179,22 @@
 				25B6C00029996C9D00C3A43F /* Date.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		25B99EE229C3580900761501 /* taskManagerTests */ = {
+			isa = PBXGroup;
+			children = (
+				25B99EEC29C3590400761501 /* Services */,
+			);
+			path = taskManagerTests;
+			sourceTree = "<group>";
+		};
+		25B99EEC29C3590400761501 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				25B99EEA29C3584500761501 /* SectionManagerTests.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		60993BD529C22C1900D4B908 /* Frameworks */ = {
@@ -264,6 +302,24 @@
 			productReference = 25B6BFC72999161800C3A43F /* taskManager.app */;
 			productType = "com.apple.product-type.application";
 		};
+		25B99EE029C3580900761501 /* taskManagerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 25B99EE729C3580900761501 /* Build configuration list for PBXNativeTarget "taskManagerTests" */;
+			buildPhases = (
+				25B99EDD29C3580900761501 /* Sources */,
+				25B99EDE29C3580900761501 /* Frameworks */,
+				25B99EDF29C3580900761501 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				25B99EE629C3580900761501 /* PBXTargetDependency */,
+			);
+			name = taskManagerTests;
+			productName = taskManagerTests;
+			productReference = 25B99EE129C3580900761501 /* taskManagerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -271,11 +327,15 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1420;
+				LastSwiftUpdateCheck = 1410;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
 					25B6BFC62999161800C3A43F = {
 						CreatedOnToolsVersion = 14.1;
+					};
+					25B99EE029C3580900761501 = {
+						CreatedOnToolsVersion = 14.1;
+						TestTargetID = 25B6BFC62999161800C3A43F;
 					};
 				};
 			};
@@ -293,6 +353,7 @@
 			projectRoot = "";
 			targets = (
 				25B6BFC62999161800C3A43F /* taskManager */,
+				25B99EE029C3580900761501 /* taskManagerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -305,6 +366,13 @@
 				25CF686F29A64BAB00E758E7 /* LoginStoryboard.storyboard in Resources */,
 				25B6BFD72999161900C3A43F /* LaunchScreen.storyboard in Resources */,
 				25B6BFD42999161900C3A43F /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		25B99EDF29C3580900761501 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,7 +429,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		25B99EDD29C3580900761501 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				25B99EEB29C3584600761501 /* SectionManagerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		25B99EE629C3580900761501 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 25B6BFC62999161800C3A43F /* taskManager */;
+			targetProxy = 25B99EE529C3580900761501 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		25B6BFD52999161900C3A43F /* LaunchScreen.storyboard */ = {
@@ -553,6 +637,50 @@
 			};
 			name = Release;
 		};
+		25B99EE829C3580900761501 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = F5BJS4MMJH;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = davidtonoyan.taskManagerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/taskManager.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/taskManager";
+			};
+			name = Debug;
+		};
+		25B99EE929C3580900761501 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = F5BJS4MMJH;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = davidtonoyan.taskManagerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/taskManager.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/taskManager";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -570,6 +698,15 @@
 			buildConfigurations = (
 				25B6BFDC2999161900C3A43F /* Debug */,
 				25B6BFDD2999161900C3A43F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		25B99EE729C3580900761501 /* Build configuration list for PBXNativeTarget "taskManagerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				25B99EE829C3580900761501 /* Debug */,
+				25B99EE929C3580900761501 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
