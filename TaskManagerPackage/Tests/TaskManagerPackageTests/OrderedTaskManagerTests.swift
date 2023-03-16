@@ -62,7 +62,7 @@ final class OrderedTaskManagerTests: XCTestCase {
 		
 		let tasks = orderedTaskManager.allTasks()
 		
-		XCTAssertTrue(tasks[0].title < tasks[1].title, "Задания не отсортированы")
+		XCTAssert(tasks[1].title < tasks[0].title, "Задания не отсортированы")
 	}
 	
 	func test_ifSorted_byCompletion() {
