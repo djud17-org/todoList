@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		250F98AE29C3B5B600862615 /* WorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250F98AD29C3B5B600862615 /* WorkerTests.swift */; };
 		2569096D29A24A9F00A0129C /* TaskListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2569096C29A24A9F00A0129C /* TaskListPresenter.swift */; };
 		2580E4CB29B9BE9D00C54457 /* LoginAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2580E4CA29B9BE9D00C54457 /* LoginAssembly.swift */; };
 		2580E4CD29B9BFC400C54457 /* TaskListAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2580E4CC29B9BFC400C54457 /* TaskListAssembly.swift */; };
@@ -47,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		250F98AD29C3B5B600862615 /* WorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkerTests.swift; sourceTree = "<group>"; };
 		2569096C29A24A9F00A0129C /* TaskListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListPresenter.swift; sourceTree = "<group>"; };
 		2580E4CA29B9BE9D00C54457 /* LoginAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAssembly.swift; sourceTree = "<group>"; };
 		2580E4CC29B9BFC400C54457 /* TaskListAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListAssembly.swift; sourceTree = "<group>"; };
@@ -98,6 +100,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		250F98AF29C3B5C200862615 /* LoginScene */ = {
+			isa = PBXGroup;
+			children = (
+				250F98AD29C3B5B600862615 /* WorkerTests.swift */,
+			);
+			path = LoginScene;
+			sourceTree = "<group>";
+		};
 		25B6BFBE2999161800C3A43F = {
 			isa = PBXGroup;
 			children = (
@@ -184,6 +194,7 @@
 		25B99EE229C3580900761501 /* taskManagerTests */ = {
 			isa = PBXGroup;
 			children = (
+				250F98AF29C3B5C200862615 /* LoginScene */,
 				25B99EEC29C3590400761501 /* Services */,
 			);
 			path = taskManagerTests;
@@ -434,6 +445,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				25B99EEB29C3584600761501 /* SectionManagerTests.swift in Sources */,
+				250F98AE29C3B5B600862615 /* WorkerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
