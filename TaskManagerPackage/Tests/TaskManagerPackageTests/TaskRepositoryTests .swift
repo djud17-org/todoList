@@ -20,6 +20,6 @@ final class TaskRepositoryTests: XCTestCase {
 		let tasks = taskRepository.loadTasks()
 		
 		// Assert
-		XCTAssertFalse(tasks.isEmpty, "Задания не были добавлены в список")
+		XCTAssertTrue(tasks.count == 13, "Задания не были добавлены в список")
 	}
 }
