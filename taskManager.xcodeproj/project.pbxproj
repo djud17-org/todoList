@@ -35,6 +35,7 @@
 		25CF688329A6721B00E758E7 /* TaskLisInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CF687D29A6721B00E758E7 /* TaskLisInteractor.swift */; };
 		601D8D7329C22E8B00C25C4F /* TaskRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601D8D7229C22E8B00C25C4F /* TaskRepository.swift */; };
 		60993BD729C22C1900D4B908 /* TaskManagerPackage in Frameworks */ = {isa = PBXBuildFile; productRef = 60993BD629C22C1900D4B908 /* TaskManagerPackage */; };
+		AB7FAC3629C3B19F00A6A8BE /* TaskRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7FAC3529C3B19F00A6A8BE /* TaskRepositoryTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		25CF687D29A6721B00E758E7 /* TaskLisInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskLisInteractor.swift; sourceTree = "<group>"; };
 		601D8D7229C22E8B00C25C4F /* TaskRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskRepository.swift; sourceTree = "<group>"; };
 		60CBB0C129C22B4700A07575 /* TaskManagerPackage */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = TaskManagerPackage; sourceTree = "<group>"; };
+		AB7FAC3529C3B19F00A6A8BE /* TaskRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRepositoryTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				25B99EEA29C3584500761501 /* SectionManagerTests.swift */,
+				AB7FAC3529C3B19F00A6A8BE /* TaskRepositoryTests.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -444,6 +447,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB7FAC3629C3B19F00A6A8BE /* TaskRepositoryTests.swift in Sources */,
 				25B99EEB29C3584600761501 /* SectionManagerTests.swift in Sources */,
 				250F98AE29C3B5B600862615 /* WorkerTests.swift in Sources */,
 			);
