@@ -8,8 +8,6 @@
 import XCTest
 @testable import TaskManagerPackage
 
-@available(macOS 12.0, *)
-
 final class ImportantTaskModelTests: XCTestCase {
 
 	func test_deadline_withTaskLowPriority() {

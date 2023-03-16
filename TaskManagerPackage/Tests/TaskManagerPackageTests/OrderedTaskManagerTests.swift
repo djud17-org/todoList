@@ -105,19 +105,13 @@ final class OrderedTaskManagerTests: XCTestCase {
 			"Список не отсортирован по заданиям в процессе выполнения"
 		)
 	}
-}
-	
-	//MARK: - Private
-	
-	private extension OrderedTaskManager {
-	
-	/// Метод производит  настройку первичных данных для их использовния в тестах.
+
 	private func initialSetup() {
 		let task1 = Task(title: "Сделать сальтуху")
 		let task2 = Task(title: "Зашить карманы")
-		
+
 		task2.taskStatus = .completed
-		
+
 		orderedTaskManager.addTask(task: task1)
 		orderedTaskManager.addTask(task: task2)
 	}
