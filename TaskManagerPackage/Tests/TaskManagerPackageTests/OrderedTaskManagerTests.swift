@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import taskManager
+@testable import TaskManagerPackage
 
 final class OrderedTaskManagerTests: XCTestCase {
 	private var orderedTaskManager: OrderedTaskManager!
@@ -62,25 +62,21 @@ final class OrderedTaskManagerTests: XCTestCase {
 		
 		let tasks = orderedTaskManager.allTasks()
 		
-		XCTAssertEqual(
-			tasks[0].title < tasks[1].title,
-			tasks[1].title > tasks[0].title,
-			"Задания не отсортированы"
-		)
+		XCTAssertTrue(tasks[0].title < tasks[1].title, "Задания не отсортированы")
 	}
 	
 	func test_ifSorted_byCompletion() {
 		
-		let completedTasks = orderedTaskManager.completedTasks()
+		let tasks = orderedTaskManager.allTasks()
 		
-		XCTAssert(completedTasks[0].taskStatus == .completed)
+		XCTAssert(tasks[0].taskStatus == .completed)
 	}
 	
 	func test_ifSorted_byTasksInProgress() {
 		
-		let uncompletedTasks = orderedTaskManager.uncompletedTasks()
+		let tasks = orderedTaskManager.uncompletedTasks()
 		
-		XCTAssert(uncompletedTasks[0].taskStatus == .planned)
+		XCTAssert(tasks[0].taskStatus == .planned)
 	}
 	
 	private final class TaskManagerMock: ITaskManager {
