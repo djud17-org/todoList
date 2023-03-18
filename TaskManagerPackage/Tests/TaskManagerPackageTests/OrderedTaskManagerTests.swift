@@ -37,9 +37,11 @@ final class OrderedTaskManagerTests: XCTestCase {
 		let task = RegularTask(title: "Сделать сальтуху")
 		orderedTaskManager.addTask(task: task)
 		
+		let taskCountResult = taskManager.allTasks().count
+		
 		XCTAssertEqual(
 			tasksCountAfterAdding,
-			taskManager.allTasks().count,
+			taskCountResult,
 			"Задание не было добавлено в список"
 		)
 	}
@@ -51,9 +53,11 @@ final class OrderedTaskManagerTests: XCTestCase {
 		
 		orderedTaskManager.removeTask(task: tasks.removeLast())
 		
+		let taskCountResult = taskManager.allTasks().count
+		
 		XCTAssertEqual(
 			tasksCountAfterRemoval,
-			taskManager.allTasks().count,
+			taskCountResult,
 			"Задание не было удалено из списка"
 		)
 	}
@@ -67,16 +71,18 @@ final class OrderedTaskManagerTests: XCTestCase {
 	
 	func test_ifSorted_byCompletion() {
 		
-		let tasks = orderedTaskManager.allTasks()
+		let tasks = orderedTaskManager.completedTasks()
 		
-		XCTAssert(tasks[0].taskStatus == .completed)
+		XCTAssertEqual(tasks.count, 1)
+		XCTAssertEqual(tasks[0].taskStatus, .completed)
 	}
 	
 	func test_ifSorted_byTasksInProgress() {
 		
 		let tasks = orderedTaskManager.uncompletedTasks()
 		
-		XCTAssert(tasks[0].taskStatus == .planned)
+		XCTAssertEqual(tasks.count, 1)
+		XCTAssertEqual(tasks[0].taskStatus, .planned)
 	}
 	
 	private final class TaskManagerMock: ITaskManager {
