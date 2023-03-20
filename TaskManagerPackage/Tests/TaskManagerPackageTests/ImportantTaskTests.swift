@@ -14,30 +14,30 @@ final class ImportantTaskTests: XCTestCase {
 		let sut = ImportantTask(title: "Test Task", taskPriority: .medium)
 
 		XCTAssertEqual(sut.title, "Test Task")
-		XCTAssertTrue(sut.taskStatus == .planned, "Неверно создается класс")
+		XCTAssertTrue(sut.taskStatus == .planned, "Здача должна быть со статусом planned по умлочанию")
 	}
 
 	func test_deadline_setTaskLowPriority_deadlineShouldBeThreeDays() {
 		let sut = ImportantTask(title: "Task", taskPriority: .low)
 
-		let differenceDays = Calendar.current.dateComponents([.day], from: Date(), to: sut.deadLine).day!
+		let deadline = Calendar.current.dateComponents([.day], from: Date(), to: sut.deadLine).day!
 
-		XCTAssertEqual(differenceDays, 3, "Неверно создается класс с low приоритетом")
+		XCTAssertEqual(deadline, 3, "Deadline для задачи с low приоритетом должен быть 3 дня")
 	}
 
 	func test_deadline_setTaskLowPriority_deadlineShouldBeTwoDays() {
 		let sut = ImportantTask(title: "Task", taskPriority: .medium)
 
-		let differenceDays = Calendar.current.dateComponents([.day], from: Date(), to: sut.deadLine).day!
+		let deadline = Calendar.current.dateComponents([.day], from: Date(), to: sut.deadLine).day!
 
-		XCTAssertEqual(differenceDays, 2, "Неверно создается класс с medium приоритетом")
+		XCTAssertEqual(deadline, 2, "Deadline для задачи с low приоритетом должен быть 2 дня")
 	}
 
 	func test_deadline_setTaskLowPriority_deadlineShouldBeOneDay() {
 		let sut = ImportantTask(title: "Task", taskPriority: .high)
 
-		let differenceDays = Calendar.current.dateComponents([.day], from: Date(), to: sut.deadLine).day!
+		let deadline = Calendar.current.dateComponents([.day], from: Date(), to: sut.deadLine).day!
 
-		XCTAssertEqual(differenceDays, 1, "Неверно создается класс с high приоритетом")
+		XCTAssertEqual(deadline, 1, "Deadline для задачи с low приоритетом должен быть 1 день")
 	}
 }
