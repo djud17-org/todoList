@@ -11,7 +11,7 @@ import XCTest
 final class TaskManagerTests: XCTestCase {
 	private let taskManager = TaskManager()
 
-	func test_taskManager_addTask_shouldBeSuccesed() {
+	func test_addTask_taskShouldBeAdded() {
 		let task = Task(title: "Test Task")
 
 		taskManager.addTask(task: task)
@@ -21,7 +21,7 @@ final class TaskManagerTests: XCTestCase {
 		XCTAssertEqual(tasks.count, 1, "Добавлено некорректное кол-во задач - \(tasks.count)")
 	}
 
-	func test_taskManager_removeTask_shouldBeSuccesed() {
+	func test_removeTask_taskShouldBeRemoved() {
 		let task = Task(title: "Test Task")
 		taskManager.addTask(task: task)
 
@@ -31,7 +31,7 @@ final class TaskManagerTests: XCTestCase {
 		XCTAssertTrue(tasks.isEmpty, "Задача не была удалена, список задач не пустой")
 	}
 
-	func test_taskManager_allTasks_shouldBeSuccesed() {
+	func test_allTasks_shouldReturnAllTasks() {
 		let task1 = Task(title: "Test Task 1")
 		let task2 = Task(title: "Test Task 2")
 
@@ -44,7 +44,7 @@ final class TaskManagerTests: XCTestCase {
 		XCTAssertEqual(tasks.count, 2, "Вернулось некорректное кол-во задач - \(tasks.count)")
 	}
 
-	func test_taskManager_completedTasks_shouldBeSuccesed() {
+	func test_completedTasks_shouldReturnCompletedTasks() {
 		let task1 = Task(title: "Test Task 1")
 		let task2 = Task(title: "Test Task 2")
 		let task3 = Task(title: "Test Task 3")
@@ -62,7 +62,7 @@ final class TaskManagerTests: XCTestCase {
 		XCTAssertEqual(completedTasks[1].taskStatus, .completed, "Задача (1) с некорректным статусом")
 	}
 
-	func test_taskManager_uncompletedTasks_shouldBeSuccesed() {
+	func test_uncompletedTasks_shouldReturnUncompletedTasks() {
 		let task1 = Task(title: "Test Task 1")
 		let task2 = Task(title: "Test Task 2")
 		let task3 = Task(title: "Test Task 3")
