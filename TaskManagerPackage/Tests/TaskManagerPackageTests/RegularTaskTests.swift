@@ -14,7 +14,7 @@ final class RegularTaskTests: XCTestCase {
 		let sut = makeSut()
 
 		XCTAssertEqual(sut.title, "Test Task")
-		XCTAssertTrue(sut.taskStatus == .planned, "Неверно создается класс")
+		XCTAssertTrue(sut.taskStatus == .planned, "Здача должна быть со статусом planned по умлочанию")
 	}
 
 	func test_taskStatus_setCompleted_propertyTaskStatusShouldBeCompleted() {
@@ -22,7 +22,7 @@ final class RegularTaskTests: XCTestCase {
 
 		sut.taskStatus = .completed
 
-		XCTAssertTrue(sut.taskStatus == .completed, "Невозможно изменить статус задачи")
+		XCTAssertTrue(sut.taskStatus == .completed, "Статус задачи не изменился")
 	}
 
 	private func makeSut() -> Task {
