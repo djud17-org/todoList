@@ -71,7 +71,7 @@ final class OrderedTaskManagerTests: XCTestCase {
 		XCTAssertTrue(tasks[1].taskStatus == .planned)
 	}
 	
-	func test_ifSorted_byCompletion() {
+	func test_completedTasks_shouldReturnCompletedTasks() {
 		
 		let tasks = orderedTaskManager.completedTasks()
 		
@@ -79,7 +79,7 @@ final class OrderedTaskManagerTests: XCTestCase {
 		XCTAssertEqual(tasks[0].taskStatus, .completed)
 	}
 	
-	func test_ifSorted_byTasksInProgress() {
+	func test_uncompletedTasks_shouldReturnUncompletedTasks() {
 		
 		let tasks = orderedTaskManager.uncompletedTasks()
 		
@@ -97,15 +97,15 @@ final class OrderedTaskManagerTests: XCTestCase {
 		func removeTask(task: Task) {
 			tasks.removeLast()
 		}
-
+		
 		func allTasks() -> [Task] {
 			tasks
 		}
-
+		
 		func completedTasks() -> [Task] {
 			tasks.filter { $0.taskStatus == .completed }
 		}
-
+		
 		func uncompletedTasks() -> [Task] {
 			tasks.filter { $0.taskStatus == .planned }}
 	}
