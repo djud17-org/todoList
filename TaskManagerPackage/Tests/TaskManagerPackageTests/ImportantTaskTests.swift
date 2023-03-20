@@ -30,7 +30,7 @@ final class ImportantTaskTests: XCTestCase {
 
 		let deadline = Calendar.current.dateComponents([.day], from: Date(), to: sut.deadLine).day!
 
-		XCTAssertEqual(deadline, 2, "Deadline для задачи с low приоритетом должен быть 2 дня")
+		XCTAssertEqual(deadline, 2, "Deadline для задачи с medium приоритетом должен быть 2 дня")
 	}
 
 	func test_deadline_setTaskLowPriority_deadlineShouldBeOneDay() {
@@ -38,6 +38,6 @@ final class ImportantTaskTests: XCTestCase {
 
 		let deadline = Calendar.current.dateComponents([.day], from: Date(), to: sut.deadLine).day!
 
-		XCTAssertEqual(deadline, 1, "Deadline для задачи с low приоритетом должен быть 1 день")
+		XCTAssertEqual(deadline, 1, "Deadline для задачи с high приоритетом должен быть 1 день")
 	}
 }
