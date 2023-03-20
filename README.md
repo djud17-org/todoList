@@ -27,5 +27,16 @@ The main objective is to create a tiny task manager application for managing tas
 * Add Login screen
 * Add module assemblers
 * Add gitignore
-
+### Fifth version
+* Configure SwiftLint settings
+* Add project description in README file
+* Add tests for Section Manager
+* Add tests for models: Task, Important Task, Regular Task
+* Add tests for OrderedTaskManager
+* Add tests for TaskManager
+* Add tests for repository
+* Add tests for Workers
+* Improve tests for business logic
+* Create SPM Package
+* Transfer business logic
 ##
