@@ -63,8 +63,8 @@ final class OrderedTaskManagerTests: XCTestCase {
 		
 		// assert
 		XCTAssertEqual(tasks.count, 2, "Количество задание не соответствует исходному значению")
-		XCTAssertTrue(tasks[0].taskStatus == .completed, "Задания не отсоритрованы по завершенным")
-		XCTAssertTrue(tasks[1].taskStatus == .planned, "Задания должны быть отсортированы по завершенным")
+		XCTAssertEqual(tasks[0].taskStatus, .completed, "Задания не отсоритрованы по завершенным")
+		XCTAssertEqual(tasks[1].taskStatus, .planned, "Задания должны быть отсортированы по завершенным")
 	}
 	
 	func test_completedTasks_shouldReturnCompletedTasks() {
