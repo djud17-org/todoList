@@ -12,33 +12,19 @@ final class OrderedTaskManagerTests: XCTestCase {
 	private var orderedTaskManager: OrderedTaskManager!
 	private var taskManager: TaskManagerMock!
 	
-	override func setUp() {
-		taskManager = TaskManagerMock()
-		orderedTaskManager = OrderedTaskManager(taskManager: taskManager)
+	func test_addTasks_shouldSucceed() {
 		
-		let task1 = Task(title: "Сделать сальтуху")
-		let task2 = Task(title: "Зашить карманы")
-		
-		task1.taskStatus = .completed
-		
-		orderedTaskManager.addTask(task: task1)
-		orderedTaskManager.addTask(task: task2)
-	}
-	
-	override func tearDown() {
-		taskManager = nil
-		orderedTaskManager = nil
-	}
-	
-	func test_singleTaskAddition() {
+		// arrange
+		let sut = makeSut()
 		
 		let tasksCountAfterAdding = taskManager.allTasks().count + 1
 		
-		let task = RegularTask(title: "Сделать сальтуху")
-		orderedTaskManager.addTask(task: task)
+		// act
+		sut.addTask(task: Task(title: "Вернуться домой"))
 		
 		let taskCountResult = taskManager.allTasks().count
 		
+		// assert
 		XCTAssertEqual(
 			tasksCountAfterAdding,
 			taskCountResult,
@@ -46,15 +32,20 @@ final class OrderedTaskManagerTests: XCTestCase {
 		)
 	}
 	
-	func test_singleTaskRemoval() {
+	func test_removeTask_shouldSucceed() {
+		
+		// arrange
+		let sut = makeSut()
 		
 		var tasks = taskManager.allTasks()
 		let tasksCountAfterRemoval = taskManager.allTasks().count - 1
 		
-		orderedTaskManager.removeTask(task: tasks.removeLast())
+		// act
+		sut.removeTask(task: tasks.removeLast())
 		
 		let taskCountResult = taskManager.allTasks().count
 		
+		// assert
 		XCTAssertEqual(
 			tasksCountAfterRemoval,
 			taskCountResult,
@@ -62,29 +53,48 @@ final class OrderedTaskManagerTests: XCTestCase {
 		)
 	}
 	
-	func test_allTasksSorted() {
+	func test_allTasks_shouldBeSortedByTaskStatus() {
 		
-		let tasks = orderedTaskManager.allTasks()
+		// arrange
+		let sut = makeSut()
 		
-		XCTAssert(tasks[1].title < tasks[0].title, "Задания не отсортированы")
+		// act
+		let tasks = sut.allTasks()
+		
+		// assert
+		XCTAssertEqual(tasks.count, 2, "Количество задание не соответствует исходному значению")
+		XCTAssertEqual(tasks[0].taskStatus, .completed, "Задания не отсоритрованы по завершенным")
+		XCTAssertEqual(tasks[1].taskStatus, .planned, "Задания должны быть отсортированы по завершенным")
 	}
 	
-	func test_ifSorted_byCompletion() {
+	func test_completedTasks_shouldReturnCompletedTasks() {
 		
-		let tasks = orderedTaskManager.completedTasks()
+		// arrange
+		let sut = makeSut()
 		
-		XCTAssertEqual(tasks.count, 1)
-		XCTAssertEqual(tasks[0].taskStatus, .completed)
+		// act
+		let tasks = sut.completedTasks()
+		
+		// assert
+		XCTAssertEqual(tasks.count, 1, "Тестируемая функция должна возвращать только завершенные задания")
+		XCTAssertEqual(tasks[0].taskStatus, .completed, "Тестируемая функция возвращает запланированные задания, вместо завершенных")
 	}
 	
-	func test_ifSorted_byTasksInProgress() {
+	func test_uncompletedTasks_shouldReturnUncompletedTasks() {
 		
-		let tasks = orderedTaskManager.uncompletedTasks()
+		// arrange
+		let sut = makeSut()
 		
-		XCTAssertEqual(tasks.count, 1)
-		XCTAssertEqual(tasks[0].taskStatus, .planned)
+		// act
+		let tasks = sut.uncompletedTasks()
+		
+		// assert
+		XCTAssertEqual(tasks.count, 1, "Тестируемая функция должна возвращать только запланированные задания")
+		XCTAssertEqual(tasks[0].taskStatus, .planned, "Тестируемая функция возвращает завершенные задания, вместо запланированных")
 	}
 	
+	
+	/// Макет класса TaskManager
 	private final class TaskManagerMock: ITaskManager {
 		private var tasks = [Task]()
 		
@@ -95,16 +105,39 @@ final class OrderedTaskManagerTests: XCTestCase {
 		func removeTask(task: Task) {
 			tasks.removeLast()
 		}
-
+		
 		func allTasks() -> [Task] {
 			tasks
 		}
-
+		
 		func completedTasks() -> [Task] {
 			tasks.filter { $0.taskStatus == .completed }
 		}
-
+		
 		func uncompletedTasks() -> [Task] {
 			tasks.filter { $0.taskStatus == .planned }}
 	}
 }
+
+//MARK: - Private
+private extension OrderedTaskManagerTests {
+	
+	/// Функция производит настройку данных, необходиых для тестирования.
+	/// - Returns: Экземлпяр класса OrderedTaskManager.
+	private func makeSut() -> OrderedTaskManager {
+		taskManager = TaskManagerMock()
+		orderedTaskManager = OrderedTaskManager(taskManager: taskManager)
+		
+		let task1 = Task(title: "Сделать сальтуху")
+		let task2 = Task(title: "Зашить карманы")
+		
+		task1.taskStatus = .completed
+		
+		orderedTaskManager.addTask(task: task1)
+		orderedTaskManager.addTask(task: task2)
+		
+		return orderedTaskManager
+	}
+}
+
+
