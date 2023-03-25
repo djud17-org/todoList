@@ -1,10 +1,27 @@
+# todoList is a task scheduler app, written in Swift.
+
+# Features
+* Authorization screen
+* Two sets of tasks: completed and uncomplited
+* Tasks can be marked as completed and moved to the list of completed tasks
+
+# Installation
+* Project can be opened with GitHub Deskotop or Xcode
+* Or downloaded in ZIP format.
+
+# Latest changes:
+* updated TaskManager tests
+* updated OrderedTaskManager tests
+* updated tests for models: Task, Regular, important
+* updated SfiftLint settings 
+
 # taskManager
 
 The main objective is to create a tiny task manager application for managing tasks on iOS devices.
 
 ## Stack
 - Swift
-- MVP
+- CleanSwift
 - UIKit
 
 ## Setup
