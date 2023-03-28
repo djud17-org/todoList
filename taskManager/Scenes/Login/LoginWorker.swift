@@ -28,13 +28,17 @@ struct Password {
 	}
 }
 
-final class LoginWorker {
+protocol ILoginWorker {
 
 	/// Функция валидирует логин и пароль.
 	/// - Parameters:
 	///   - login: Логин.
 	///   - password: Пароль.
 	/// - Returns: Результат валидации.
+	func login(login: Login, password: Password) -> Bool
+}
+
+final class LoginWorker: ILoginWorker {
 	func login(login: Login, password: Password) -> Bool {
 		return login.rawValue == "Admin" && password.rawValue == "pa$$32!"
 	}
