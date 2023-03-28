@@ -7,7 +7,7 @@
 
 @testable import taskManager
 
-class LoginWorkerSpy: ILoginWorker {
+final class LoginWorkerSpy: ILoginWorker {
 	// MARK: - Internal Properties
 
 	private(set) var isCalledLogin = false

@@ -7,7 +7,7 @@
 
 @testable import taskManager
 
-class LoginInteractorSpy: ILoginBusinessLogic {
+final class LoginInteractorSpy: ILoginBusinessLogic {
 	// MARK: - Internal Properties
 
 	private(set) var isCalledLogin = false

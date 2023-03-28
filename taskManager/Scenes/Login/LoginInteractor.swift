@@ -20,12 +20,12 @@ protocol ILoginBusinessLogic {
 }
 
 final class LoginInteractor: ILoginBusinessLogic {
-	private let presenter: ILoginPresentationLogic
+	private let presenter: ILoginPresentationLogic?
 	private let worker: ILoginWorker
 
-	init(presenter: ILoginPresentationLogic, worker: ILoginWorker) {
-		self.presenter = presenter
+	init(worker: ILoginWorker, presenter: ILoginPresentationLogic) {
 		self.worker = worker
+		self.presenter = presenter
 	}
 
 	// MARK: Do something
@@ -35,6 +35,6 @@ final class LoginInteractor: ILoginBusinessLogic {
 		let pass = Password(rawValue: request.password)
 		let result = worker.login(login: login, password: pass)
 		let response = LoginModel.Response(isLoginSuccessed: result)
-		presenter.presentSomething(response: response)
+		presenter?.presentSomething(response: response)
 	}
 }

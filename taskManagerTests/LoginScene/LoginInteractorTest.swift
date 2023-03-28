@@ -9,6 +9,7 @@ import XCTest
 @testable import taskManager
 
 final class LoginInteractorTests: XCTestCase {
+	
 	private let presenter = LoginPresenterSpy()
 	private let worker = LoginWorkerSpy()
 

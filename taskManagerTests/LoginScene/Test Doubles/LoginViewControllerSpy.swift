@@ -7,7 +7,7 @@
 
 @testable import taskManager
 
-class LoginViewControllerSpy: ILoginDisplayLogic {
+final class LoginViewControllerSpy: ILoginDisplayLogic {
 	// MARK: - Internal Properties
 
 	private(set) var isCalledRender = false
