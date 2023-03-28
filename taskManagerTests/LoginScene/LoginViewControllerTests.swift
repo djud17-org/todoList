@@ -41,6 +41,7 @@ final class LoginViewControllerTests: XCTestCase {
 	func test_render_withValidRequest_shouldLoggedIn() {
 		sut.loginText = "validEmail"
 		sut.passText = "validPass"
+		sut.login()
 
 		XCTAssertTrue(interactor.isCalledLogin, "Не вызван interactor.login(:)")
 	}

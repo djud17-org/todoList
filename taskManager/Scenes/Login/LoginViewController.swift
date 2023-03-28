@@ -58,11 +58,10 @@ final class LoginViewController: UIViewController {
 	// MARK: - Actions
 
 	@IBAction
-	private func loginButtonTapped(_ sender: UIButton) {
-		let request = LoginModel.Request(
-			login: loginText,
-			password: passText
-		)
+	private func loginButtonTapped(_ sender: Any) { login() }
+
+	func login() {
+		let request = LoginModel.Request(login: loginText, password: passText)
 		interactor?.login(request: request)
 	}
 }
