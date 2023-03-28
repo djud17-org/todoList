@@ -29,6 +29,10 @@ struct Password {
 }
 
 protocol ILoginWorker {
+	func login(login: Login, password: Password) -> Bool
+}
+
+final class LoginWorker: ILoginWorker {
 
 	/// Функция валидирует логин и пароль.
 	/// - Parameters:

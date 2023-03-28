@@ -23,12 +23,10 @@ final class LoginAssembly: IAssembly {
 			fatalError("Нет на LoginStoryboard LoginViewController")
 		}
 
+		let presenter = LoginPresenter(viewController: viewController)
 		let worker = LoginWorker()
-		let presenter = LoginPresenter()
-		let interactor = LoginInteractor(presenter: presenter, worker: worker)
-
+		let interactor = LoginInteractor(worker: worker, presenter: presenter)
 		viewController.interactor = interactor
-		presenter.viewController = viewController
 
 		return viewController
 	}
