@@ -259,7 +259,7 @@
 			isa = PBXGroup;
 			children = (
 				250F98AF29C3B5C200862615 /* LoginScene */,
-				25526A8929D593E500485A20 /* TaskListScene */,
+				AB0DC66229D3465800A2856C /* TaskListScene */,
 				25B99EEC29C3590400761501 /* Services */,
 			);
 			path = taskManagerTests;
