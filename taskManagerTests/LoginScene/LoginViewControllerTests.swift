@@ -38,7 +38,7 @@ final class LoginViewControllerTests: XCTestCase {
 
 	// MARK: - Public Methods
 
-	func test_render_withValidRequest_shouldLoggedIn() {
+	func test_login_shouldCalledInteractorLogin() {
 		sut.loginText = "validEmail"
 		sut.passText = "validPass"
 		sut.login()

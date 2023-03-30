@@ -126,10 +126,10 @@
 			isa = PBXGroup;
 			children = (
 				6001583E29D325900013D3A8 /* Test Doubles */,
-				250F98AD29C3B5B600862615 /* WorkerTests.swift */,
 				6001584729D329BB0013D3A8 /* LoginInteractorTest.swift */,
 				6001584929D329D60013D3A8 /* LoginViewControllerTests.swift */,
 				6001584B29D329EF0013D3A8 /* LoginPresenterTests.swift */,
+				250F98AD29C3B5B600862615 /* WorkerTests.swift */,
 			);
 			path = LoginScene;
 			sourceTree = "<group>";

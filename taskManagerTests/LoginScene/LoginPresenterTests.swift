@@ -10,7 +10,7 @@ import XCTest
 
 final class LoginPresenterTests: XCTestCase {
 
-	private let viewController = LoginViewControllerSpy()
+	private var viewController: LoginViewControllerSpy!
 
 	func test_present_withValidRequest_shouldBeRenderSuccess() {
 		let sut = makeSut()
@@ -35,6 +35,8 @@ final class LoginPresenterTests: XCTestCase {
 
 private extension LoginPresenterTests {
 	func makeSut() -> LoginPresenter {
-		LoginPresenter(viewController: viewController)
+		viewController = LoginViewControllerSpy()
+
+		return LoginPresenter(viewController: viewController)
 	}
 }

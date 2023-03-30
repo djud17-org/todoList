@@ -10,8 +10,8 @@ import XCTest
 
 final class LoginInteractorTests: XCTestCase {
 	
-	private let presenter = LoginPresenterSpy()
-	private let worker = LoginWorkerSpy()
+	private var presenter: LoginPresenterSpy! // swiftlint:disable:this implicitly_unwrapped_optional
+	private var worker: LoginWorkerSpy! // swiftlint:disable:this implicitly_unwrapped_optional
 
 	func test_login_withValidRequest_shouldLoggedIn() {
 		let sut = makeSut()
@@ -26,6 +26,9 @@ final class LoginInteractorTests: XCTestCase {
 
 private extension LoginInteractorTests {
 	func makeSut() -> LoginInteractor {
-		LoginInteractor(worker: worker, presenter: presenter)
+		worker = LoginWorkerSpy()
+		presenter = LoginPresenterSpy()
+
+		return LoginInteractor(worker: worker, presenter: presenter)
 	}
 }
