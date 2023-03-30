@@ -34,20 +34,34 @@ final class LoginViewController: UIViewController {
 	var interactor: ILoginBusinessLogic?
 	var router: ILoginRoutingLogic?
 
+	// MARK: - TextFields
+	var loginText: String {
+		get {
+			loginTextField.text ?? ""
+		}
+
+		set {
+			loginTextField.text = newValue
+		}
+	}
+
+	var passText: String {
+		get {
+			passwordTextField.text ?? ""
+		}
+
+		set {
+			passwordTextField.text = newValue
+		}
+	}
+
 	// MARK: - Actions
 
 	@IBAction
-	private func loginButtonTapped(_ sender: UIButton) {
-		guard let loginText = loginTextField.text,
-		      let passwordText = passwordTextField.text
-		else {
-			return
-		}
+	private func loginButtonTapped(_ sender: Any) { login() }
 
-		let request = LoginModel.Request(
-			login: loginText,
-			password: passwordText
-		)
+	func login() {
+		let request = LoginModel.Request(login: loginText, password: passText)
 		interactor?.login(request: request)
 	}
 }

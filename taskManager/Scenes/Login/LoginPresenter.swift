@@ -22,6 +22,10 @@ protocol ILoginPresentationLogic {
 final class LoginPresenter: ILoginPresentationLogic {
 	weak var viewController: ILoginDisplayLogic?
 
+	init(viewController: ILoginDisplayLogic?) {
+		self.viewController = viewController
+	}
+
 	// MARK: Do something
 
 	func presentSomething(response: LoginModel.Response) {
