@@ -11,10 +11,9 @@ import TaskManagerPackage
 final class TaskListAssembly: IAssembly {
 	func assembly() -> UIViewController {
 		let viewController = TaskListViewController()
-		let interactor = TaskListInteractor(sectionManager: configureSectionManager())
 		let presenter = TaskPresenter()
+		let interactor = TaskListInteractor(sectionManager: configureSectionManager(), presenter: presenter)
 		viewController.interactor = interactor
-		interactor.presenter = presenter
 		presenter.viewController = viewController
 
 		return viewController

@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		250F98AE29C3B5B600862615 /* WorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250F98AD29C3B5B600862615 /* WorkerTests.swift */; };
+		25526A8B29D5940500485A20 /* TaskListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25526A8A29D5940500485A20 /* TaskListInteractorTests.swift */; };
+		25526A8E29D59B0300485A20 /* SectionManagerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25526A8D29D59B0300485A20 /* SectionManagerSpy.swift */; };
+		25526A9029D59B3C00485A20 /* TaskListPresenterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25526A8F29D59B3C00485A20 /* TaskListPresenterSpy.swift */; };
 		2569096D29A24A9F00A0129C /* TaskListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2569096C29A24A9F00A0129C /* TaskListPresenter.swift */; };
 		2580E4CB29B9BE9D00C54457 /* LoginAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2580E4CA29B9BE9D00C54457 /* LoginAssembly.swift */; };
 		2580E4CD29B9BFC400C54457 /* TaskListAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2580E4CC29B9BFC400C54457 /* TaskListAssembly.swift */; };
@@ -53,6 +56,9 @@
 
 /* Begin PBXFileReference section */
 		250F98AD29C3B5B600862615 /* WorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkerTests.swift; sourceTree = "<group>"; };
+		25526A8A29D5940500485A20 /* TaskListInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListInteractorTests.swift; sourceTree = "<group>"; };
+		25526A8D29D59B0300485A20 /* SectionManagerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionManagerSpy.swift; sourceTree = "<group>"; };
+		25526A8F29D59B3C00485A20 /* TaskListPresenterSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListPresenterSpy.swift; sourceTree = "<group>"; };
 		2569096C29A24A9F00A0129C /* TaskListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListPresenter.swift; sourceTree = "<group>"; };
 		2580E4CA29B9BE9D00C54457 /* LoginAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAssembly.swift; sourceTree = "<group>"; };
 		2580E4CC29B9BFC400C54457 /* TaskListAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListAssembly.swift; sourceTree = "<group>"; };
@@ -115,6 +121,24 @@
 				250F98AD29C3B5B600862615 /* WorkerTests.swift */,
 			);
 			path = LoginScene;
+			sourceTree = "<group>";
+		};
+		25526A8929D593E500485A20 /* TaskListScene */ = {
+			isa = PBXGroup;
+			children = (
+				25526A8C29D5955600485A20 /* TaskListInteractor */,
+			);
+			path = TaskListScene;
+			sourceTree = "<group>";
+		};
+		25526A8C29D5955600485A20 /* TaskListInteractor */ = {
+			isa = PBXGroup;
+			children = (
+				25526A8A29D5940500485A20 /* TaskListInteractorTests.swift */,
+				25526A8D29D59B0300485A20 /* SectionManagerSpy.swift */,
+				25526A8F29D59B3C00485A20 /* TaskListPresenterSpy.swift */,
+			);
+			path = TaskListInteractor;
 			sourceTree = "<group>";
 		};
 		259C478F29D35FC60060A1A5 /* LoginInteractor */ = {
@@ -214,6 +238,7 @@
 			isa = PBXGroup;
 			children = (
 				250F98AF29C3B5C200862615 /* LoginScene */,
+				25526A8929D593E500485A20 /* TaskListScene */,
 				25B99EEC29C3590400761501 /* Services */,
 			);
 			path = taskManagerTests;
@@ -467,9 +492,12 @@
 			files = (
 				259C478C29D35E0F0060A1A5 /* LoginInteractorTests.swift in Sources */,
 				259C478E29D35EC70060A1A5 /* LoginPresenterSpy.swift in Sources */,
+				25526A8B29D5940500485A20 /* TaskListInteractorTests.swift in Sources */,
 				259C479129D35FD80060A1A5 /* LoginWorkerSpy.swift in Sources */,
 				AB7FAC3629C3B19F00A6A8BE /* TaskRepositoryTests.swift in Sources */,
 				25B99EEB29C3584600761501 /* SectionManagerTests.swift in Sources */,
+				25526A9029D59B3C00485A20 /* TaskListPresenterSpy.swift in Sources */,
+				25526A8E29D59B0300485A20 /* SectionManagerSpy.swift in Sources */,
 				250F98AE29C3B5B600862615 /* WorkerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
