@@ -36,7 +36,9 @@ final class LoginPresenterTests: XCTestCase {
 private extension LoginPresenterTests {
 	func makeSut() -> LoginPresenter {
 		viewController = LoginViewControllerSpy()
+		let loginPresenter = LoginPresenter()
+		loginPresenter.viewController = viewController
 
-		return LoginPresenter(viewController: viewController)
+		return loginPresenter
 	}
 }
