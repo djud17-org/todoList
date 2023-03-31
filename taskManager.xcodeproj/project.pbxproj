@@ -8,16 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		250F98AE29C3B5B600862615 /* WorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250F98AD29C3B5B600862615 /* WorkerTests.swift */; };
-		25526A8B29D5940500485A20 /* TaskListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25526A8A29D5940500485A20 /* TaskListInteractorTests.swift */; };
-		25526A8E29D59B0300485A20 /* SectionManagerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25526A8D29D59B0300485A20 /* SectionManagerSpy.swift */; };
-		25526A9029D59B3C00485A20 /* TaskListPresenterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25526A8F29D59B3C00485A20 /* TaskListPresenterSpy.swift */; };
+		253E43A429D719EC00986D08 /* TaskListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253E43A129D719EC00986D08 /* TaskListInteractorTests.swift */; };
+		253E43A529D719EC00986D08 /* SectionManagerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253E43A229D719EC00986D08 /* SectionManagerSpy.swift */; };
+		253E43A629D719EC00986D08 /* TaskListPresenterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253E43A329D719EC00986D08 /* TaskListPresenterSpy.swift */; };
 		2569096D29A24A9F00A0129C /* TaskListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2569096C29A24A9F00A0129C /* TaskListPresenter.swift */; };
 		2580E4CB29B9BE9D00C54457 /* LoginAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2580E4CA29B9BE9D00C54457 /* LoginAssembly.swift */; };
 		2580E4CD29B9BFC400C54457 /* TaskListAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2580E4CC29B9BFC400C54457 /* TaskListAssembly.swift */; };
 		258DB09D29A0E9D300C03B47 /* SectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 258DB09C29A0E9D300C03B47 /* SectionManager.swift */; };
-		259C478C29D35E0F0060A1A5 /* LoginInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259C478B29D35E0F0060A1A5 /* LoginInteractorTests.swift */; };
-		259C478E29D35EC70060A1A5 /* LoginPresenterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259C478D29D35EC70060A1A5 /* LoginPresenterSpy.swift */; };
-		259C479129D35FD80060A1A5 /* LoginWorkerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259C479029D35FD80060A1A5 /* LoginWorkerSpy.swift */; };
 		25B6BFCB2999161800C3A43F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B6BFCA2999161800C3A43F /* AppDelegate.swift */; };
 		25B6BFCD2999161800C3A43F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B6BFCC2999161800C3A43F /* SceneDelegate.swift */; };
 		25B6BFCF2999161800C3A43F /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B6BFCE2999161800C3A43F /* TaskListViewController.swift */; };
@@ -65,16 +62,13 @@
 
 /* Begin PBXFileReference section */
 		250F98AD29C3B5B600862615 /* WorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkerTests.swift; sourceTree = "<group>"; };
-		25526A8A29D5940500485A20 /* TaskListInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListInteractorTests.swift; sourceTree = "<group>"; };
-		25526A8D29D59B0300485A20 /* SectionManagerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionManagerSpy.swift; sourceTree = "<group>"; };
-		25526A8F29D59B3C00485A20 /* TaskListPresenterSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListPresenterSpy.swift; sourceTree = "<group>"; };
+		253E43A129D719EC00986D08 /* TaskListInteractorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListInteractorTests.swift; sourceTree = "<group>"; };
+		253E43A229D719EC00986D08 /* SectionManagerSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionManagerSpy.swift; sourceTree = "<group>"; };
+		253E43A329D719EC00986D08 /* TaskListPresenterSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListPresenterSpy.swift; sourceTree = "<group>"; };
 		2569096C29A24A9F00A0129C /* TaskListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListPresenter.swift; sourceTree = "<group>"; };
 		2580E4CA29B9BE9D00C54457 /* LoginAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAssembly.swift; sourceTree = "<group>"; };
 		2580E4CC29B9BFC400C54457 /* TaskListAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListAssembly.swift; sourceTree = "<group>"; };
 		258DB09C29A0E9D300C03B47 /* SectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionManager.swift; sourceTree = "<group>"; };
-		259C478B29D35E0F0060A1A5 /* LoginInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractorTests.swift; sourceTree = "<group>"; };
-		259C478D29D35EC70060A1A5 /* LoginPresenterSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenterSpy.swift; sourceTree = "<group>"; };
-		259C479029D35FD80060A1A5 /* LoginWorkerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWorkerSpy.swift; sourceTree = "<group>"; };
 		25B6BFC72999161800C3A43F /* taskManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = taskManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25B6BFCA2999161800C3A43F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		25B6BFCC2999161800C3A43F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -144,32 +138,14 @@
 			path = LoginScene;
 			sourceTree = "<group>";
 		};
-		25526A8929D593E500485A20 /* TaskListScene */ = {
+		253E43A729D719F100986D08 /* TaskInteractor */ = {
 			isa = PBXGroup;
 			children = (
-				25526A8C29D5955600485A20 /* TaskListInteractor */,
+				253E43A229D719EC00986D08 /* SectionManagerSpy.swift */,
+				253E43A129D719EC00986D08 /* TaskListInteractorTests.swift */,
+				253E43A329D719EC00986D08 /* TaskListPresenterSpy.swift */,
 			);
-			path = TaskListScene;
-			sourceTree = "<group>";
-		};
-		25526A8C29D5955600485A20 /* TaskListInteractor */ = {
-			isa = PBXGroup;
-			children = (
-				25526A8A29D5940500485A20 /* TaskListInteractorTests.swift */,
-				25526A8D29D59B0300485A20 /* SectionManagerSpy.swift */,
-				25526A8F29D59B3C00485A20 /* TaskListPresenterSpy.swift */,
-			);
-			path = TaskListInteractor;
-			sourceTree = "<group>";
-		};
-		259C478F29D35FC60060A1A5 /* LoginInteractor */ = {
-			isa = PBXGroup;
-			children = (
-				259C478B29D35E0F0060A1A5 /* LoginInteractorTests.swift */,
-				259C478D29D35EC70060A1A5 /* LoginPresenterSpy.swift */,
-				259C479029D35FD80060A1A5 /* LoginWorkerSpy.swift */,
-			);
-			path = LoginInteractor;
+			path = TaskInteractor;
 			sourceTree = "<group>";
 		};
 		25B6BFBE2999161800C3A43F = {
@@ -369,6 +345,7 @@
 		AB0DC66229D3465800A2856C /* TaskListScene */ = {
 			isa = PBXGroup;
 			children = (
+				253E43A729D719F100986D08 /* TaskInteractor */,
 				AB0DC66529D3875300A2856C /* Test Doubles */,
 				AB0DC66329D346B900A2856C /* TaskPresenterTests.swift */,
 			);
@@ -542,11 +519,14 @@
 				6001584A29D329D60013D3A8 /* LoginViewControllerTests.swift in Sources */,
 				6001584829D329BB0013D3A8 /* LoginInteractorTest.swift in Sources */,
 				AB7FAC3629C3B19F00A6A8BE /* TaskRepositoryTests.swift in Sources */,
+				253E43A629D719EC00986D08 /* TaskListPresenterSpy.swift in Sources */,
 				AB0DC66429D346B900A2856C /* TaskPresenterTests.swift in Sources */,
+				253E43A529D719EC00986D08 /* SectionManagerSpy.swift in Sources */,
 				AB0DC66729D3878500A2856C /* TaskListViewControllerSpy.swift in Sources */,
 				25B99EEB29C3584600761501 /* SectionManagerTests.swift in Sources */,
 				6001584C29D329EF0013D3A8 /* LoginPresenterTests.swift in Sources */,
 				6001584229D326760013D3A8 /* LoginWorkerSpy.swift in Sources */,
+				253E43A429D719EC00986D08 /* TaskListInteractorTests.swift in Sources */,
 				6001584429D327870013D3A8 /* LoginInteractorSpy.swift in Sources */,
 				250F98AE29C3B5B600862615 /* WorkerTests.swift in Sources */,
 				6001584029D325BB0013D3A8 /* LoginPresenterSpy.swift in Sources */,
