@@ -8,7 +8,7 @@ The main objective is to create a tiny task manager application for managing tas
 - UIKit
 - XCTest
 	- The App is fully test covered
-- ООП/ПОП
+- OOP/POP
 - Swift Package Manager
 	- All business logic is carried away in the separate package - TaskManagerPackage
 - SwiftLint
