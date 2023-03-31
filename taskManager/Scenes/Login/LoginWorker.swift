@@ -39,10 +39,6 @@ final class LoginWorker: ILoginWorker {
 	///   - login: Логин.
 	///   - password: Пароль.
 	/// - Returns: Результат валидации.
-	func login(login: Login, password: Password) -> Bool
-}
-
-final class LoginWorker: ILoginWorker {
 	func login(login: Login, password: Password) -> Bool {
 		return login.rawValue == "Admin" && password.rawValue == "pa$$32!"
 	}
