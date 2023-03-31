@@ -14,11 +14,6 @@ The main objective is to create a tiny task manager application for managing tas
 - SwiftLint
 - PinLayout
 
-## Setup
-* Clone
-* Open .xcodeproj file
-* Run simulator
-
 ## Features. First  Module
 ### First version
 * Create taskManager, which manage tasks in app
@@ -50,7 +45,7 @@ The main objective is to create a tiny task manager application for managing tas
 - [ ] Enable PinLayout usage via SPM
 - [ ] Layout both scenes using PinLayout concise syntax
 
-
-
-
-
+## Setup
+* Clone
+* Open .xcodeproj file
+* Run simulator
