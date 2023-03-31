@@ -24,17 +24,18 @@ protocol ITaskListBusinessLogic {
 
 final class TaskListInteractor: ITaskListBusinessLogic {
 	private let sectionManager: ISectionForTaskManagerAdapter
-	var presenter: ITaskPresenter?
+	private let presenter: ITaskPresenter
 
-	init(sectionManager: ISectionForTaskManagerAdapter) {
+	init(sectionManager: ISectionForTaskManagerAdapter, presenter: ITaskPresenter) {
 		self.sectionManager = sectionManager
+		self.presenter = presenter
 	}
 
 	// MARK: Do something
 
 	func viewIsReady() {
 		let datamodel = createDataModel()
-		presenter?.displayData(data: datamodel)
+		presenter.displayData(data: datamodel)
 	}
 
 	func didTaskSelected(at indexPath: IndexPath) {
@@ -45,7 +46,7 @@ final class TaskListInteractor: ITaskListBusinessLogic {
 		task.taskStatus = task.taskStatus == .completed ? .planned : .completed
 
 		let datamodel = createDataModel()
-		presenter?.displayData(data: datamodel)
+		presenter.displayData(data: datamodel)
 	}
 
 	private func createDataModel() -> TaskListModel.ResponseDataModel {
