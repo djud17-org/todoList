@@ -345,7 +345,6 @@
 		AB0DC66229D3465800A2856C /* TaskListScene */ = {
 			isa = PBXGroup;
 			children = (
-				253E43A729D719F100986D08 /* TaskInteractor */,
 				AB0DC66529D3875300A2856C /* Test Doubles */,
 				AB0DC66329D346B900A2856C /* TaskPresenterTests.swift */,
 			);
