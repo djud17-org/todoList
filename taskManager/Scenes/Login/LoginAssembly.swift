@@ -16,18 +16,12 @@ protocol IAssembly {
 
 final class LoginAssembly: IAssembly {
 	func assembly() -> UIViewController {
-		let storyboard = UIStoryboard(name: "LoginStoryboard", bundle: nil)
-		guard let viewController = storyboard
-			.instantiateViewController(withIdentifier: "loginVC") as? LoginViewController
-		else {
-			fatalError("Нет на LoginStoryboard LoginViewController")
-		}
-
-		let presenter = LoginPresenter(viewController: viewController)
+		let presenter = LoginPresenter()
 		let worker = LoginWorker()
 		let interactor = LoginInteractor(worker: worker, presenter: presenter)
-		viewController.interactor = interactor
+		let loginController = LoginViewController(interactor: interactor)
+		presenter.viewController = loginController
 
-		return viewController
+		return loginController
 	}
 }

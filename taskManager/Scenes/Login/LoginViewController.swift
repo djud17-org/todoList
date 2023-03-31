@@ -23,18 +23,41 @@ final class LoginViewController: UIViewController {
 
 	// MARK: - Outlets
 
-	@IBOutlet
-	private weak var loginTextField: UITextField!
+	private let loginTextField: UITextField = {
+		let textField = UITextField()
+		textField.placeholder = "Введите логин"
+		textField.borderStyle = .roundedRect
+		textField.translatesAutoresizingMaskIntoConstraints = false
 
-	@IBOutlet
-	private weak var passwordTextField: UITextField!
+		return textField
+	}()
+
+	private let passwordTextField: UITextField = {
+		let textField = UITextField()
+		textField.placeholder = "Введите пароль"
+		textField.borderStyle = .roundedRect
+		textField.translatesAutoresizingMaskIntoConstraints = false
+
+		return textField
+	}()
+
+	private let loginButton: UIButton = {
+		let button = UIButton()
+		button.setTitle("Login", for: .normal)
+		button.layer.cornerRadius = 10
+		button.backgroundColor = Constants.Color.lightBlue
+		button.setTitleColor(.white, for: .normal)
+		button.setTitleColor(.white.withAlphaComponent(0.5), for: .highlighted)
+		button.translatesAutoresizingMaskIntoConstraints = false
+
+		return button
+	}()
 
 	// MARK: - Parameters
 
-	var interactor: ILoginBusinessLogic?
+	private let interactor: ILoginBusinessLogic
 	var router: ILoginRoutingLogic?
 
-	// MARK: - TextFields
 	var loginText: String {
 		get {
 			loginTextField.text ?? ""
@@ -55,14 +78,65 @@ final class LoginViewController: UIViewController {
 		}
 	}
 
+	// MARK: - Inits
+
+	init(interactor: ILoginBusinessLogic) {
+		self.interactor = interactor
+
+		super.init(nibName: nil, bundle: nil)
+	}
+
+	required init?(coder: NSCoder) {
+		fatalError("init(coder:) has not been implemented")
+	}
+
+	// MARK: - ViewController Lifecycle
+
+	override func viewDidLoad() {
+		super.viewDidLoad()
+
+		setupLayout()
+	}
+
+	// MARK: - Private funcs
+
+	private func setupView() {
+		view.addSubview(loginTextField)
+		view.addSubview(passwordTextField)
+		view.addSubview(loginButton)
+
+		view.backgroundColor = Constants.Color.white
+
+		loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
+	}
+
+	private func setupLayout() {
+		let largeOffset = Constants.Offset.largeOffset
+		let smallOffset = Constants.Offset.smallOffset
+		let fieldHeight = Constants.Size.fieldHeight
+		NSLayoutConstraint.activate([
+			loginTextField.topAnchor.constraint(equalTo: view.topAnchor, constant: 200),
+			loginTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: largeOffset),
+			loginTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -largeOffset),
+			loginTextField.heightAnchor.constraint(equalToConstant: fieldHeight),
+
+			passwordTextField.topAnchor.constraint(equalTo: loginTextField.bottomAnchor, constant: smallOffset),
+			passwordTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: largeOffset),
+			passwordTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -largeOffset),
+			passwordTextField.heightAnchor.constraint(equalToConstant: fieldHeight),
+
+			loginButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: largeOffset),
+			loginButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: largeOffset),
+			loginButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -largeOffset),
+			loginButton.heightAnchor.constraint(equalToConstant: fieldHeight)
+		])
+	}
+
 	// MARK: - Actions
 
-	@IBAction
-	private func loginButtonTapped(_ sender: Any) { login() }
-
-	func login() {
+	@objc private func loginButtonTapped() {
 		let request = LoginModel.Request(login: loginText, password: passText)
-		interactor?.login(request: request)
+		interactor.login(request: request)
 	}
 }
 
