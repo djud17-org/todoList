@@ -95,6 +95,7 @@ final class LoginViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
+		setupView()
 		setupLayout()
 	}
 
@@ -115,7 +116,7 @@ final class LoginViewController: UIViewController {
 		let smallOffset = Constants.Offset.smallOffset
 		let fieldHeight = Constants.Size.fieldHeight
 		NSLayoutConstraint.activate([
-			loginTextField.topAnchor.constraint(equalTo: view.topAnchor, constant: 200),
+			loginTextField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 200),
 			loginTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: largeOffset),
 			loginTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -largeOffset),
 			loginTextField.heightAnchor.constraint(equalToConstant: fieldHeight),
@@ -134,7 +135,9 @@ final class LoginViewController: UIViewController {
 
 	// MARK: - Actions
 
-	@objc private func loginButtonTapped() {
+	@objc private func loginButtonTapped() { login() }
+
+	func login() {
 		let request = LoginModel.Request(login: loginText, password: passText)
 		interactor.login(request: request)
 	}
