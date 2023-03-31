@@ -4,15 +4,22 @@ The main objective is to create a tiny task manager application for managing tas
 
 ## Stack
 - Swift
-- MVP
+- CleanSwift
 - UIKit
+- XCTest
+	- The App is fully test covered
+- ООП/ПОП
+- Swift Package Manager
+	- All business logic is carried away in the separate package - TaskManagerPackage
+- SwiftLint
+- PinLayout
 
 ## Setup
 * Clone
 * Open .xcodeproj file
 * Run simulator
 
-## Features
+## Features. First  Module
 ### First version
 * Create taskManager, which manage tasks in app
 ### Second version
@@ -28,4 +35,22 @@ The main objective is to create a tiny task manager application for managing tas
 * Add module assemblers
 * Add gitignore
 
-##
+## Features. Second  Module (Team Work)
+### First version
+- [x] Integrate SwiftLint into the project
+- [x] Cover the following classes with tests: TaskManager, Task, RegularTask, ImportantTask
+### Second version
+- [x] Create SPM package and move all the business logic into it
+- [x] Write tests for TaskRepository and SectionManager
+### Third version
+- [x] Cover the authorization VIP cycle with tests
+- [x] Cover the task list VIP cycle with tests
+### Forth version
+- [ ] Get rid of the storyboard
+- [ ] Enable PinLayout usage via SPM
+- [ ] Layout both scenes using PinLayout concise syntax
+
+
+
+
+
