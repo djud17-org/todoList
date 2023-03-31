@@ -11,11 +11,13 @@
 final class SectionForTaskManagerAdapterSpy: ISectionForTaskManagerAdapter {
 	private(set) var isGetSectionsCalled = false
 	private(set) var isGetTasksForSection = false
+
+	private let testTask: Task = .init(title: "Test task")
 	var taskStatus: TaskStatus {
 		testTask.taskStatus
 	}
 
-	private let testTask: Task = .init(title: "Test task")
+
 
 	func getSections() -> [Section] {
 		isGetSectionsCalled = true

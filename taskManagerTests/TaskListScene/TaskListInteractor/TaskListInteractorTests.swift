@@ -54,7 +54,7 @@ final class TaskListInteractorTests: XCTestCase {
 }
 
 private extension TaskListInteractorTests {
-	func makeSut() -> ITaskListBusinessLogic {
+	func makeSut() -> TaskListInteractor {
 		sectionManager = SectionForTaskManagerAdapterSpy()
 		presenter = TaskPresenterSpy()
 		let interactor = TaskListInteractor(sectionManager: sectionManager, presenter: presenter)
