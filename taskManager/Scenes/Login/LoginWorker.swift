@@ -41,7 +41,6 @@ protocol ILoginWorker {
 }
 
 final class LoginWorker: ILoginWorker {
-
 	func login(login: Login, password: Password) -> Bool {
 		return login.rawValue == "Admin" && password.rawValue == "pa$$32!"
 	}

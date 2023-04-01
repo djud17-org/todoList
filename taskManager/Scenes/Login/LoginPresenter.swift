@@ -22,8 +22,6 @@ protocol ILoginPresentationLogic {
 final class LoginPresenter: ILoginPresentationLogic {
 	weak var viewController: ILoginDisplayLogic?
 
-	// MARK: Do something
-
 	func presentSomething(response: LoginModel.Response) {
 		let viewModel: LoginModel.ViewModel = response.isLoginSuccessed
 			? .success

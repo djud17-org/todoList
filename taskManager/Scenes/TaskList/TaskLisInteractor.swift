@@ -31,7 +31,7 @@ final class TaskListInteractor: ITaskListBusinessLogic {
 		self.presenter = presenter
 	}
 
-	// MARK: Do something
+	// MARK: Funcs
 
 	func viewIsReady() {
 		let datamodel = createDataModel()

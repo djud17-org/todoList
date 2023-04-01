@@ -19,9 +19,9 @@ final class LoginAssembly: IAssembly {
 		let presenter = LoginPresenter()
 		let worker = LoginWorker()
 		let interactor = LoginInteractor(worker: worker, presenter: presenter)
-		let loginController = LoginViewController(interactor: interactor)
-		presenter.viewController = loginController
+		let loginViewController = LoginViewController(interactor: interactor)
+		presenter.viewController = loginViewController
 
-		return loginController
+		return loginViewController
 	}
 }

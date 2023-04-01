@@ -28,8 +28,6 @@ final class LoginInteractor: ILoginBusinessLogic {
 		self.presenter = presenter
 	}
 
-	// MARK: Do something
-
 	func login(request: LoginModel.Request) {
 		let login = Login(rawValue: request.login)
 		let pass = Password(rawValue: request.password)

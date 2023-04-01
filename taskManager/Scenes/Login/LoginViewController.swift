@@ -21,7 +21,7 @@ protocol ILoginDisplayLogic: AnyObject {
 
 final class LoginViewController: UIViewController {
 
-	// MARK: - Outlets
+	// MARK: - UI Elements
 
 	private let loginTextField: UITextField = {
 		let textField = UITextField()
