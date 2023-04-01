@@ -7,6 +7,7 @@
 
 import UIKit
 import TaskManagerPackage
+import PinLayout
 
 /// Класс ячейки для обычных задач
 final class RegularTaskTableViewCell: UITableViewCell {
@@ -32,18 +33,11 @@ final class RegularTaskTableViewCell: UITableViewCell {
 		return view
 	}()
 
-	// MARK: - Inits
-
-	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-		super.init(style: style, reuseIdentifier: reuseIdentifier)
+	override func layoutSubviews() {
+		super.layoutSubviews()
 
 		setupHierarchy()
 		setupLayout()
-	}
-
-	@available(*, unavailable)
-	required init?(coder: NSCoder) {
-		fatalError("init(coder:) has not been implemented")
 	}
 
 	// MARK: - Setups
@@ -58,17 +52,17 @@ final class RegularTaskTableViewCell: UITableViewCell {
 		let smallOffset = Constants.Offset.smallOffset
 		let mediumOffset = Constants.Offset.mediumOffset
 
-		NSLayoutConstraint.activate([
-			backView.topAnchor.constraint(equalTo: topAnchor, constant: smallOffset),
-			backView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: mediumOffset),
-			backView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -mediumOffset),
-			backView.bottomAnchor.constraint(equalTo: bottomAnchor),
+		backView.pin
+			.top(smallOffset)
+			.left(mediumOffset)
+			.right(mediumOffset)
+			.bottom(smallOffset)
 
-			taskNameLabel.leadingAnchor.constraint(equalTo: backView.leadingAnchor, constant: mediumOffset),
-			taskNameLabel.topAnchor.constraint(equalTo: backView.topAnchor, constant: smallOffset),
-			taskNameLabel.bottomAnchor.constraint(equalTo: backView.bottomAnchor, constant: -mediumOffset),
-			taskNameLabel.trailingAnchor.constraint(equalTo: backView.trailingAnchor, constant: -mediumOffset)
-		])
+		taskNameLabel.pin
+			.left(mediumOffset)
+			.top(smallOffset)
+			.right(mediumOffset)
+			.bottom(mediumOffset)
 	}
 }
 
