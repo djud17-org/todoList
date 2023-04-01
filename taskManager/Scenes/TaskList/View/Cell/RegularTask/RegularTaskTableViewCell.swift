@@ -22,7 +22,7 @@ final class RegularTaskTableViewCell: UITableViewCell {
 		return label
 	}()
 
-	lazy var backView: UIView = {
+	private lazy var backView: UIView = {
 		let view = UIView()
 		view.backgroundColor = Constants.Color.white
 		view.layer.cornerRadius = 10

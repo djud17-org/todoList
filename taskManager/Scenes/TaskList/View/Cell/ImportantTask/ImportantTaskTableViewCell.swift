@@ -18,7 +18,6 @@ final class ImportantTaskTableViewCell: UITableViewCell {
 	lazy var taskNameLabel: UILabel = {
 		let label = UILabel()
 		label.font = .boldSystemFont(ofSize: 15)
-		label.setContentHuggingPriority(.init(250), for: .horizontal)
 
 		return label
 	}()
@@ -32,7 +31,7 @@ final class ImportantTaskTableViewCell: UITableViewCell {
 
 	lazy var taskImportanceView = UIImageView()
 
-	lazy var backView: UIView = {
+	private lazy var backView: UIView = {
 		let view = UIView()
 		view.backgroundColor = Constants.Color.white
 		view.layer.cornerRadius = 10
@@ -73,7 +72,7 @@ final class ImportantTaskTableViewCell: UITableViewCell {
 		taskImportanceView.pin
 			.top(mediumOffset)
 			.left(mediumOffset)
-			.width(20)
+			.width(Constants.Size.taskImportanceViewWidth)
 			.bottom(mediumOffset)
 
 		taskNameLabel.pin
@@ -81,7 +80,7 @@ final class ImportantTaskTableViewCell: UITableViewCell {
 			.marginLeft(mediumOffset)
 			.top(smallOffset)
 			.right()
-			.height(20)
+			.height(Constants.Size.labelHeight)
 
 		taskDeadlineLabel.pin
 			.left(to: taskImportanceView.edge.right)
