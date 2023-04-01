@@ -26,7 +26,7 @@ enum Constants {
 	}
 
 	enum Size {
-		static let tableViewRowHeight: CGFloat = 50
+		static let tableViewRowHeight: CGFloat = 55
 		static let fieldHeight: CGFloat = 40
 	}
 }

@@ -66,7 +66,7 @@ final class ImportantTaskTableViewCell: UITableViewCell {
 			.top(smallOffset)
 			.left(mediumOffset)
 			.right(mediumOffset)
-			.bottom()
+			.bottom(smallOffset)
 
 		taskImportanceView.pin
 			.top(mediumOffset)
