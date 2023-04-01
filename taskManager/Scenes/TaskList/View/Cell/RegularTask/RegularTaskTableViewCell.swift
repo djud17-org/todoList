@@ -33,6 +33,8 @@ final class RegularTaskTableViewCell: UITableViewCell {
 		return view
 	}()
 
+	// MARK: - Lifecycle
+
 	override func layoutSubviews() {
 		super.layoutSubviews()
 
