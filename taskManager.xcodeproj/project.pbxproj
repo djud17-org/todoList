@@ -41,6 +41,7 @@
 		6001584C29D329EF0013D3A8 /* LoginPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6001584B29D329EF0013D3A8 /* LoginPresenterTests.swift */; };
 		601D8D7329C22E8B00C25C4F /* TaskRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601D8D7229C22E8B00C25C4F /* TaskRepository.swift */; };
 		60993BD729C22C1900D4B908 /* TaskManagerPackage in Frameworks */ = {isa = PBXBuildFile; productRef = 60993BD629C22C1900D4B908 /* TaskManagerPackage */; };
+		60EC171F29D82FE1004894CC /* PinLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 60EC171E29D82FE1004894CC /* PinLayout */; };
 		8A12969629D7504A0004651C /* SectionManagerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B2819729D71F6500FA3644 /* SectionManagerSpy.swift */; };
 		8A12969729D7504A0004651C /* TaskListPresenterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B2819629D71F6500FA3644 /* TaskListPresenterSpy.swift */; };
 		8A12969829D7506C0004651C /* TaskListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B2819529D71F6500FA3644 /* TaskListInteractorTests.swift */; };
@@ -114,6 +115,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60EC171F29D82FE1004894CC /* PinLayout in Frameworks */,
 				60993BD729C22C1900D4B908 /* TaskManagerPackage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -374,6 +376,7 @@
 			name = taskManager;
 			packageProductDependencies = (
 				60993BD629C22C1900D4B908 /* TaskManagerPackage */,
+				60EC171E29D82FE1004894CC /* PinLayout */,
 			);
 			productName = taskManager;
 			productReference = 25B6BFC72999161800C3A43F /* taskManager.app */;
@@ -425,6 +428,9 @@
 				Base,
 			);
 			mainGroup = 25B6BFBE2999161800C3A43F;
+			packageReferences = (
+				60EC171D29D82FE1004894CC /* XCRemoteSwiftPackageReference "PinLayout" */,
+			);
 			productRefGroup = 25B6BFC82999161800C3A43F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -812,10 +818,26 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		60EC171D29D82FE1004894CC /* XCRemoteSwiftPackageReference "PinLayout" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/layoutBox/PinLayout";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
 		60993BD629C22C1900D4B908 /* TaskManagerPackage */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = TaskManagerPackage;
+		};
+		60EC171E29D82FE1004894CC /* PinLayout */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 60EC171D29D82FE1004894CC /* XCRemoteSwiftPackageReference "PinLayout" */;
+			productName = PinLayout;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
