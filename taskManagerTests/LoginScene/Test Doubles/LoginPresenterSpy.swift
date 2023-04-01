@@ -14,7 +14,7 @@ final class LoginPresenterSpy: ILoginPresentationLogic {
 
 	// MARK: - Internal Methods
 
-	func presentSomething(response: taskManager.LoginModel.Response) {
+	func present(response: taskManager.LoginModel.Response) {
 		isCalledPresent = true
 	}
 }

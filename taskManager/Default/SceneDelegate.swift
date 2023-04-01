@@ -25,18 +25,18 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 	}
 
 	private func assembly() -> UIViewController {
-		let loginController = LoginAssembly().assembly()
+		let loginViewController = LoginAssembly().assembly()
 		let mainScreen = TaskListAssembly().assembly()
 
 		let router = LoginRouter(
-			viewController: loginController,
+			viewController: loginViewController,
 			mainScreen: mainScreen
 		)
 
-		if let loginController = loginController as? LoginViewController {
-			loginController.router = router
+		if let loginViewController = loginViewController as? LoginViewController {
+			loginViewController.router = router
 		}
 
-		return loginController
+		return loginViewController
 	}
 }

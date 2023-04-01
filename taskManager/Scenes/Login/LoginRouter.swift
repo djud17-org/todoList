@@ -32,8 +32,6 @@ final class LoginRouter: NSObject, ILoginRoutingLogic {
 		self.mainScreen = mainScreen
 	}
 
-	// MARK: - Navigation
-
 	func showError(errorMessage: String) {
 		let alertController = UIAlertController(
 			title: "Ошибка",

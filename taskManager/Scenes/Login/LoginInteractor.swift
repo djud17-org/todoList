@@ -28,13 +28,11 @@ final class LoginInteractor: ILoginBusinessLogic {
 		self.presenter = presenter
 	}
 
-	// MARK: Do something
-
 	func login(request: LoginModel.Request) {
 		let login = Login(rawValue: request.login)
 		let pass = Password(rawValue: request.password)
 		let result = worker.login(login: login, password: pass)
 		let response = LoginModel.Response(isLoginSuccessed: result)
-		presenter?.presentSomething(response: response)
+		presenter?.present(response: response)
 	}
 }

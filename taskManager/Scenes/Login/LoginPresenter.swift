@@ -16,19 +16,13 @@ protocol ILoginPresentationLogic {
 
 	/// Функция сообщает презентеру, что нужно отобразить.
 	/// - Parameter response: Ответ интерактора от которого зависит отображение.
-	func presentSomething(response: LoginModel.Response)
+	func present(response: LoginModel.Response)
 }
 
 final class LoginPresenter: ILoginPresentationLogic {
 	weak var viewController: ILoginDisplayLogic?
 
-	init(viewController: ILoginDisplayLogic?) {
-		self.viewController = viewController
-	}
-
-	// MARK: Do something
-
-	func presentSomething(response: LoginModel.Response) {
+	func present(response: LoginModel.Response) {
 		let viewModel: LoginModel.ViewModel = response.isLoginSuccessed
 			? .success
 			: .failure("Неправильный логин или пароль!")

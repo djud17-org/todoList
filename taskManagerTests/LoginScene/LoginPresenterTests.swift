@@ -16,7 +16,7 @@ final class LoginPresenterTests: XCTestCase {
 		let sut = makeSut()
 		let response = LoginModel.Response(isLoginSuccessed: true)
 
-		sut.presentSomething(response: response)
+		sut.present(response: response)
 
 		XCTAssertTrue(viewController.isCalledRender, "Не вызван viewController.render(:)")
 		XCTAssertTrue(viewController.viewModel, "Ошибка в модели данных")
@@ -26,7 +26,7 @@ final class LoginPresenterTests: XCTestCase {
 		let sut = makeSut()
 		let response = LoginModel.Response(isLoginSuccessed: false)
 
-		sut.presentSomething(response: response)
+		sut.present(response: response)
 
 		XCTAssertTrue(viewController.isCalledRender, "Не вызван viewController.render(:)")
 		XCTAssertFalse(viewController.viewModel, "Ошибка в модели данных")
@@ -36,7 +36,9 @@ final class LoginPresenterTests: XCTestCase {
 private extension LoginPresenterTests {
 	func makeSut() -> LoginPresenter {
 		viewController = LoginViewControllerSpy()
+		let loginPresenter = LoginPresenter()
+		loginPresenter.viewController = viewController
 
-		return LoginPresenter(viewController: viewController)
+		return loginPresenter
 	}
 }
