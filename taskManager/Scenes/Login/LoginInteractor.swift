@@ -33,6 +33,6 @@ final class LoginInteractor: ILoginBusinessLogic {
 		let pass = Password(rawValue: request.password)
 		let result = worker.login(login: login, password: pass)
 		let response = LoginModel.Response(isLoginSuccessed: result)
-		presenter?.presentSomething(response: response)
+		presenter?.present(response: response)
 	}
 }
