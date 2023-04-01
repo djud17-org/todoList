@@ -18,7 +18,6 @@ final class RegularTaskTableViewCell: UITableViewCell {
 	lazy var taskNameLabel: UILabel = {
 		let label = UILabel()
 		label.font = .boldSystemFont(ofSize: 15)
-		label.translatesAutoresizingMaskIntoConstraints = false
 
 		return label
 	}()
@@ -27,8 +26,6 @@ final class RegularTaskTableViewCell: UITableViewCell {
 		let view = UIView()
 		view.backgroundColor = Constants.Color.white
 		view.layer.cornerRadius = 10
-
-		view.translatesAutoresizingMaskIntoConstraints = false
 
 		return view
 	}()
