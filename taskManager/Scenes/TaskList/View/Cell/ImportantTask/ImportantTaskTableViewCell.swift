@@ -7,6 +7,7 @@
 
 import UIKit
 import TaskManagerPackage
+import PinLayout
 
 /// Класс ячейки для важных задач.
 final class ImportantTaskTableViewCell: UITableViewCell {
@@ -17,8 +18,6 @@ final class ImportantTaskTableViewCell: UITableViewCell {
 	lazy var taskNameLabel: UILabel = {
 		let label = UILabel()
 		label.font = .boldSystemFont(ofSize: 15)
-		label.translatesAutoresizingMaskIntoConstraints = false
-		label.setContentHuggingPriority(.init(250), for: .horizontal)
 
 		return label
 	}()
@@ -26,40 +25,27 @@ final class ImportantTaskTableViewCell: UITableViewCell {
 	lazy var taskDeadlineLabel: UILabel = {
 		let label = UILabel()
 		label.font = .systemFont(ofSize: 14)
-		label.translatesAutoresizingMaskIntoConstraints = false
 
 		return label
 	}()
 
-	lazy var taskImportanceView: UIImageView = {
-		let imageView = UIImageView()
-		imageView.translatesAutoresizingMaskIntoConstraints = false
+	lazy var taskImportanceView = UIImageView()
 
-		return imageView
-	}()
-
-	lazy var backView: UIView = {
+	private lazy var backView: UIView = {
 		let view = UIView()
 		view.backgroundColor = Constants.Color.white
 		view.layer.cornerRadius = 10
 
-		view.translatesAutoresizingMaskIntoConstraints = false
-
 		return view
 	}()
 
-	// MARK: - Inits
+	// MARK: - Lifecycle
 
-	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-		super.init(style: style, reuseIdentifier: reuseIdentifier)
+	override func layoutSubviews() {
+		super.layoutSubviews()
 
 		setupHierarchy()
 		setupLayout()
-	}
-
-	@available(*, unavailable)
-	required init?(coder: NSCoder) {
-		fatalError("init(coder:) has not been implemented")
 	}
 
 	// MARK: - Setups
@@ -77,28 +63,31 @@ final class ImportantTaskTableViewCell: UITableViewCell {
 		let mediumOffset = Constants.Offset.mediumOffset
 		let largeOffset = Constants.Offset.largeOffset
 
-		NSLayoutConstraint.activate([
-			backView.topAnchor.constraint(equalTo: topAnchor, constant: smallOffset),
-			backView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: mediumOffset),
-			backView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -mediumOffset),
-			backView.bottomAnchor.constraint(equalTo: bottomAnchor),
+		backView.pin
+			.top(smallOffset)
+			.left(mediumOffset)
+			.right(mediumOffset)
+			.bottom(smallOffset)
 
-			taskImportanceView.leadingAnchor.constraint(equalTo: backView.leadingAnchor, constant: mediumOffset),
-			taskImportanceView.topAnchor.constraint(equalTo: backView.topAnchor, constant: mediumOffset),
-			taskImportanceView.bottomAnchor.constraint(equalTo: backView.bottomAnchor, constant: -mediumOffset),
-			taskImportanceView.widthAnchor.constraint(equalToConstant: 20),
+		taskImportanceView.pin
+			.vCenter()
+			.left(mediumOffset)
+			.width(Constants.Size.taskImportanceViewWidth)
+			.height(Constants.Size.taskImportanceViewHeight)
 
-			taskNameLabel.leadingAnchor.constraint(equalTo: taskImportanceView.trailingAnchor, constant: mediumOffset),
-			taskNameLabel.topAnchor.constraint(equalTo: backView.topAnchor, constant: smallOffset),
+		taskNameLabel.pin
+			.left(to: taskImportanceView.edge.right)
+			.marginLeft(mediumOffset)
+			.top(smallOffset)
+			.right()
+			.height(Constants.Size.labelHeight)
 
-			taskDeadlineLabel.leadingAnchor.constraint(
-				equalTo: taskImportanceView.trailingAnchor,
-				constant: largeOffset
-			),
-			taskDeadlineLabel.topAnchor.constraint(equalTo: taskNameLabel.bottomAnchor),
-			taskDeadlineLabel.bottomAnchor.constraint(equalTo: backView.bottomAnchor),
-			taskDeadlineLabel.trailingAnchor.constraint(equalTo: backView.trailingAnchor)
-		])
+		taskDeadlineLabel.pin
+			.left(to: taskImportanceView.edge.right)
+			.marginLeft(largeOffset)
+			.top(to: taskNameLabel.edge.bottom)
+			.bottom()
+			.right()
 	}
 }
 
