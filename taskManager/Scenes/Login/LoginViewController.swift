@@ -11,6 +11,8 @@
 //
 
 import UIKit
+import PinLayout
+import SwiftUI
 
 protocol ILoginDisplayLogic: AnyObject {
 
@@ -23,35 +25,9 @@ final class LoginViewController: UIViewController {
 
 	// MARK: - UI Elements
 
-	private let loginTextField: UITextField = {
-		let textField = UITextField()
-		textField.placeholder = "Введите логин"
-		textField.borderStyle = .roundedRect
-		textField.translatesAutoresizingMaskIntoConstraints = false
-
-		return textField
-	}()
-
-	private let passwordTextField: UITextField = {
-		let textField = UITextField()
-		textField.placeholder = "Введите пароль"
-		textField.borderStyle = .roundedRect
-		textField.translatesAutoresizingMaskIntoConstraints = false
-
-		return textField
-	}()
-
-	private let loginButton: UIButton = {
-		let button = UIButton()
-		button.setTitle("Login", for: .normal)
-		button.layer.cornerRadius = 10
-		button.backgroundColor = Constants.Color.lightBlue
-		button.setTitleColor(.white, for: .normal)
-		button.setTitleColor(.white.withAlphaComponent(0.5), for: .highlighted)
-		button.translatesAutoresizingMaskIntoConstraints = false
-
-		return button
-	}()
+	private lazy var loginTextField: UITextField = createLoginTextField()
+	private lazy var passwordTextField: UITextField = createPasswordTextField()
+	private lazy var loginButton: UIButton = createLoginButton()
 
 	// MARK: - Parameters
 
@@ -62,7 +38,6 @@ final class LoginViewController: UIViewController {
 		get {
 			loginTextField.text ?? ""
 		}
-
 		set {
 			loginTextField.text = newValue
 		}
@@ -72,7 +47,6 @@ final class LoginViewController: UIViewController {
 		get {
 			passwordTextField.text ?? ""
 		}
-
 		set {
 			passwordTextField.text = newValue
 		}
@@ -99,7 +73,7 @@ final class LoginViewController: UIViewController {
 		setupLayout()
 	}
 
-	// MARK: - Private funcs
+	// MARK: - Private Methods
 
 	private func setupView() {
 		view.addSubview(loginTextField)
@@ -115,22 +89,54 @@ final class LoginViewController: UIViewController {
 		let largeOffset = Constants.Offset.largeOffset
 		let smallOffset = Constants.Offset.smallOffset
 		let fieldHeight = Constants.Size.fieldHeight
-		NSLayoutConstraint.activate([
-			loginTextField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 200),
-			loginTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: largeOffset),
-			loginTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -largeOffset),
-			loginTextField.heightAnchor.constraint(equalToConstant: fieldHeight),
 
-			passwordTextField.topAnchor.constraint(equalTo: loginTextField.bottomAnchor, constant: smallOffset),
-			passwordTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: largeOffset),
-			passwordTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -largeOffset),
-			passwordTextField.heightAnchor.constraint(equalToConstant: fieldHeight),
+		loginTextField.pin
+			.top(200)
+			.left(largeOffset)
+			.right(largeOffset)
+			.height(fieldHeight)
 
-			loginButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: largeOffset),
-			loginButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: largeOffset),
-			loginButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -largeOffset),
-			loginButton.heightAnchor.constraint(equalToConstant: fieldHeight)
-		])
+		passwordTextField.pin.below(of: loginTextField)
+			.marginTop(smallOffset)
+			.left(largeOffset)
+			.right(largeOffset)
+			.height(fieldHeight)
+
+		loginButton.pin.below(of: passwordTextField)
+			.marginTop(largeOffset)
+			.left(largeOffset)
+			.right(largeOffset)
+			.height(fieldHeight)
+	}
+
+	private func createLoginTextField() -> UITextField {
+		let textField = UITextField()
+		textField.placeholder = "Введите логин"
+		textField.borderStyle = .roundedRect
+		textField.translatesAutoresizingMaskIntoConstraints = false
+
+		return textField
+	}
+
+	private func createPasswordTextField() -> UITextField {
+		let textField = UITextField()
+		textField.placeholder = "Введите пароль"
+		textField.borderStyle = .roundedRect
+		textField.translatesAutoresizingMaskIntoConstraints = false
+
+		return textField
+	}
+
+	private func createLoginButton() -> UIButton {
+		let button = UIButton()
+		button.setTitle("Login", for: .normal)
+		button.layer.cornerRadius = 10
+		button.backgroundColor = Constants.Color.lightBlue
+		button.setTitleColor(.white, for: .normal)
+		button.setTitleColor(.white.withAlphaComponent(0.5), for: .highlighted)
+		button.translatesAutoresizingMaskIntoConstraints = false
+
+		return button
 	}
 
 	// MARK: - Actions
