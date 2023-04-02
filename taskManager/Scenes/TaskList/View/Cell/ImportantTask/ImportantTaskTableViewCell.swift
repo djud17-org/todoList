@@ -70,10 +70,10 @@ final class ImportantTaskTableViewCell: UITableViewCell {
 			.bottom(smallOffset)
 
 		taskImportanceView.pin
-			.top(mediumOffset)
+			.vCenter()
 			.left(mediumOffset)
 			.width(Constants.Size.taskImportanceViewWidth)
-			.bottom(mediumOffset)
+			.height(Constants.Size.taskImportanceViewHeight)
 
 		taskNameLabel.pin
 			.left(to: taskImportanceView.edge.right)

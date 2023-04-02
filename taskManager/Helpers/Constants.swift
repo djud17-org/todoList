@@ -29,6 +29,7 @@ enum Constants {
 		static let tableViewRowHeight: CGFloat = 55
 		static let fieldHeight: CGFloat = 40
 		static let taskImportanceViewWidth: CGFloat = 20
+		static let taskImportanceViewHeight: CGFloat = 20
 		static let labelHeight: CGFloat = 20
 	}
 }
