@@ -29,4 +29,8 @@ enum Constants {
 		static let tableViewRowHeight: CGFloat = 50
 		static let fieldHeight: CGFloat = 40
 	}
+
+	enum Padding {
+		static let upperPadding: CGFloat = 300
+	}
 }
