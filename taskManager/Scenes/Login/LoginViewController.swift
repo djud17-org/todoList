@@ -12,7 +12,6 @@
 
 import UIKit
 import PinLayout
-import SwiftUI
 
 protocol ILoginDisplayLogic: AnyObject {
 
@@ -89,9 +88,10 @@ final class LoginViewController: UIViewController {
 		let largeOffset = Constants.Offset.largeOffset
 		let smallOffset = Constants.Offset.smallOffset
 		let fieldHeight = Constants.Size.fieldHeight
+		let upperPadding = Constants.Offset.largeOffset * 15
 
 		loginTextField.pin
-			.top(200)
+			.top(upperPadding)
 			.left(largeOffset)
 			.right(largeOffset)
 			.height(fieldHeight)
@@ -113,7 +113,6 @@ final class LoginViewController: UIViewController {
 		let textField = UITextField()
 		textField.placeholder = "Введите логин"
 		textField.borderStyle = .roundedRect
-		textField.translatesAutoresizingMaskIntoConstraints = false
 
 		return textField
 	}
@@ -122,7 +121,6 @@ final class LoginViewController: UIViewController {
 		let textField = UITextField()
 		textField.placeholder = "Введите пароль"
 		textField.borderStyle = .roundedRect
-		textField.translatesAutoresizingMaskIntoConstraints = false
 
 		return textField
 	}
@@ -134,7 +132,6 @@ final class LoginViewController: UIViewController {
 		button.backgroundColor = Constants.Color.lightBlue
 		button.setTitleColor(.white, for: .normal)
 		button.setTitleColor(.white.withAlphaComponent(0.5), for: .highlighted)
-		button.translatesAutoresizingMaskIntoConstraints = false
 
 		return button
 	}
