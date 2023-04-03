@@ -15,9 +15,9 @@ The main objective is to create a tiny task manager application for managing tas
 - PinLayout
 
 ## Dependencies
-# Swift Package Manager:
+### Swift Package Manager:
 - [PinLayout](https://github.com/layoutBox/PinLayout) - used for interface layout
-#Homebrew:
+### Homebrew:
 - [SwiftLint](https://github.com/realm/SwiftLint) - a tool to enforce Swift style and conventions
 
 ## Features. First  Module
