@@ -11,8 +11,14 @@ The main objective is to create a tiny task manager application for managing tas
 - OOP/POP
 - Swift Package Manager
 	- All business logic is carried away in the separate package - TaskManagerPackage
-- SwiftLint (SPM)
+- SwiftLint
 - PinLayout
+
+## Dependencies
+### Swift Package Manager:
+- [PinLayout](https://github.com/layoutBox/PinLayout) - used for interface layout
+### [Homebrew](https://brew.sh/):
+- [SwiftLint](https://github.com/realm/SwiftLint) - a tool to enforce Swift style and conventions
 
 ## Features. First  Module
 ### First version
@@ -43,7 +49,7 @@ The main objective is to create a tiny task manager application for managing tas
 ### Forth version
 - [x] Get rid of the storyboard
 - [x] Enable PinLayout usage via SPM
-- [ ] Layout both scenes using PinLayout concise syntax
+- [x] Layout both scenes using PinLayout concise syntax
 
 ## Setup
 * Clone
