@@ -34,21 +34,13 @@ final class LoginViewController: UIViewController {
 	var router: ILoginRoutingLogic?
 
 	var loginText: String {
-		get {
-			loginTextField.text ?? ""
-		}
-		set {
-			loginTextField.text = newValue
-		}
+		get { loginTextField.text ?? "" }
+		set { loginTextField.text = newValue }
 	}
 
 	var passText: String {
-		get {
-			passwordTextField.text ?? ""
-		}
-		set {
-			passwordTextField.text = newValue
-		}
+		get { passwordTextField.text ?? "" }
+		set { passwordTextField.text = newValue }
 	}
 
 	// MARK: - Inits
@@ -69,6 +61,11 @@ final class LoginViewController: UIViewController {
 		super.viewDidLoad()
 
 		setupView()
+	}
+
+	override func viewDidLayoutSubviews() {
+		super.viewDidLayoutSubviews()
+
 		setupLayout()
 	}
 
@@ -88,7 +85,7 @@ final class LoginViewController: UIViewController {
 		let largeOffset = Constants.Offset.largeOffset
 		let smallOffset = Constants.Offset.smallOffset
 		let fieldHeight = Constants.Size.fieldHeight
-		let upperPadding = Constants.Offset.largeOffset * 15
+		let upperPadding = Constants.Padding.upperPadding
 
 		loginTextField.pin
 			.top(upperPadding)
