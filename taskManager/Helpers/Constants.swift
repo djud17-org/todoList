@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import PinLayout
 
 enum Constants {
 	enum Color {
@@ -31,6 +32,6 @@ enum Constants {
 	}
 
 	enum Padding {
-		static let upperPadding: CGFloat = 300
+		static let upperPadding: Percent = 40%
 	}
 }
