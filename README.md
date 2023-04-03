@@ -12,7 +12,7 @@ The main objective is to create a tiny task manager application for managing tas
 - Swift Package Manager
 	- All business logic is carried away in the separate package - TaskManagerPackage
 - SwiftLint (Installation with [Homebrew](https://brew.sh/): brew install swiftlint)
-- PinLayout (SPM) (https://github.com/layoutBox/PinLayout)
+- [PinLayout](https://github.com/layoutBox/PinLayout) (SPM) 
 
 ## Features. First  Module
 ### First version
