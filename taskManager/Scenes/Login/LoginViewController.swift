@@ -76,7 +76,7 @@ final class LoginViewController: UIViewController {
 		view.addSubview(passwordTextField)
 		view.addSubview(loginButton)
 
-		view.backgroundColor = Constants.Color.white
+		view.backgroundColor = Theme.white
 
 		loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
 	}
@@ -126,7 +126,7 @@ final class LoginViewController: UIViewController {
 		let button = UIButton()
 		button.setTitle("Login", for: .normal)
 		button.layer.cornerRadius = 10
-		button.backgroundColor = Constants.Color.lightBlue
+		button.backgroundColor = Theme.blue
 		button.setTitleColor(.white, for: .normal)
 		button.setTitleColor(.white.withAlphaComponent(0.5), for: .highlighted)
 

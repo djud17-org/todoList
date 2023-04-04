@@ -17,14 +17,14 @@ final class RegularTaskTableViewCell: UITableViewCell {
 
 	lazy var taskNameLabel: UILabel = {
 		let label = UILabel()
-		label.font = .boldSystemFont(ofSize: 15)
+		label.font = .systemFont(ofSize: 15)
 
 		return label
 	}()
 
 	private lazy var backView: UIView = {
 		let view = UIView()
-		view.backgroundColor = Constants.Color.white
+		view.backgroundColor = Theme.white
 		view.layer.cornerRadius = 10
 
 		return view
@@ -76,8 +76,8 @@ extension RegularTaskCellModel: ICellViewModel {
 		cell.accessoryType = taskStatus == .completed ? .checkmark : .none
 
 		cell.taskNameLabel.text = taskName
-		cell.taskNameLabel.textColor = Constants.Color.blue
+		cell.taskNameLabel.textColor = Theme.black
 
-		cell.backgroundColor = Constants.Color.blue
+		cell.backgroundColor = Theme.gray
 	}
 }

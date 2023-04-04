@@ -17,14 +17,14 @@ final class ImportantTaskTableViewCell: UITableViewCell {
 
 	lazy var taskNameLabel: UILabel = {
 		let label = UILabel()
-		label.font = .boldSystemFont(ofSize: 15)
+		label.font = .systemFont(ofSize: 15)
 
 		return label
 	}()
 
 	lazy var taskDeadlineLabel: UILabel = {
 		let label = UILabel()
-		label.font = .systemFont(ofSize: 14)
+		label.font = .systemFont(ofSize: 10)
 
 		return label
 	}()
@@ -33,7 +33,7 @@ final class ImportantTaskTableViewCell: UITableViewCell {
 
 	private lazy var backView: UIView = {
 		let view = UIView()
-		view.backgroundColor = Constants.Color.white
+		view.backgroundColor = Theme.white
 		view.layer.cornerRadius = 10
 
 		return view
@@ -106,29 +106,25 @@ extension ImportantTaskCellModel: ICellViewModel {
 		cell.accessoryType = taskStatus == .completed ? .checkmark : .none
 
 		cell.taskNameLabel.text = taskName
-		cell.taskNameLabel.textColor = Constants.Color.blue
+		cell.taskNameLabel.textColor = Theme.black
 
 		cell.taskImportanceView.image = taskImportanceImage
 		cell.taskImportanceView.tintColor = getImportanceColor(taskPriority: taskPriority)
 
 		cell.taskDeadlineLabel.text = "\(taskDeadline)"
-		cell.taskDeadlineLabel.textColor = Constants.Color.red
+		cell.taskDeadlineLabel.textColor = Theme.red
 
-		if taskIsOverue {
-			cell.backgroundColor = Constants.Color.lightRed
-		} else {
-			cell.backgroundColor = Constants.Color.blue
-		}
+		cell.backgroundColor = Theme.gray
 	}
 
 	private func getImportanceColor(taskPriority: TaskPriority) -> UIColor {
 		switch taskPriority {
 		case .low:
-			return Constants.Color.green
+			return Theme.green
 		case .medium:
-			return Constants.Color.yellow
+			return Theme.yellow
 		case .high:
-			return Constants.Color.red
+			return Theme.red
 		}
 	}
 }

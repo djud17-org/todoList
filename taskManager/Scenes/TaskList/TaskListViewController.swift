@@ -29,11 +29,11 @@ final class TaskListViewController: UITableViewController {
 		navigationItem.title = "Список задач"
 		navigationController?.navigationBar.prefersLargeTitles = true
 		navigationController?.navigationBar.largeTitleTextAttributes = [
-			NSAttributedString.Key.foregroundColor: Constants.Color.white
+			NSAttributedString.Key.foregroundColor: Theme.gray
 		]
-		navigationController?.navigationBar.tintColor = Constants.Color.white
+		navigationController?.navigationBar.tintColor = Theme.white
 
-		view.backgroundColor = Constants.Color.blue
+		view.backgroundColor = Theme.gray
 	}
 
 	private func setupTableView() {
