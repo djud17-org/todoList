@@ -1,0 +1,24 @@
+/*
+  Localizable.strings
+  taskManager
+
+  Created by SERGEY SHLYAKHIN on 05.04.2023.
+  
+*/
+
+"Authorization.title" = "Authorization";
+"Authorization.Button.title" = "Authorization";
+"Authorization.Placeholder.password" = "Password";
+"Authorization.Placeholder.login" = "Login";
+
+"Error" = "Error";
+"Error.Authorization.message" = "Invalid login or password!";
+
+"Alert.OK.title" = "OK";
+
+"TaskList.title" = "Task list";
+
+"Section.CompletedTasks.title" = "Completed tasks";
+"Section.UncompletedTasks.title" = "Uncompleted tasks";
+
+"Date.format" = "MM.dd.yyyy";
