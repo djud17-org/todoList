@@ -16,9 +16,9 @@ enum Section {
 	var title: String {
 		switch self {
 		case .completed:
-			return "Выполненные задачи"
+			return "Section.CompletedTasks.title".localized
 		case .uncompleted:
-			return "Невыполненные задачи"
+			return "Section.UncompletedTasks.title".localized
 		}
 	}
 }

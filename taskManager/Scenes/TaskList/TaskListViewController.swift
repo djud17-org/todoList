@@ -26,7 +26,7 @@ final class TaskListViewController: UITableViewController {
 	// MARK: - Setups
 
 	private func setupView() {
-		navigationItem.title = "Список задач"
+		navigationItem.title = "TaskList.title".localized
 		navigationController?.navigationBar.prefersLargeTitles = true
 		navigationController?.navigationBar.largeTitleTextAttributes = [
 			NSAttributedString.Key.foregroundColor: Constants.Color.white
