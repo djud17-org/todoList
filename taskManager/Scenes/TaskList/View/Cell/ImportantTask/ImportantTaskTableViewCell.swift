@@ -31,31 +31,24 @@ final class ImportantTaskTableViewCell: UITableViewCell {
 
 	lazy var taskImportanceView = UIImageView()
 
-	private lazy var backView: UIView = {
-		let view = UIView()
-		view.backgroundColor = Constants.Color.white
-		view.layer.cornerRadius = 10
-
-		return view
-	}()
-
 	// MARK: - Lifecycle
 
 	override func layoutSubviews() {
 		super.layoutSubviews()
 
-		setupHierarchy()
+		setupContentView()
 		setupLayout()
 	}
 
 	// MARK: - Setups
 
-	private func setupHierarchy() {
-		addSubview(backView)
+	private func setupContentView() {
+		contentView.backgroundColor = Constants.Color.white
+		contentView.layer.cornerRadius = 10
 
-		backView.addSubview(taskNameLabel)
-		backView.addSubview(taskDeadlineLabel)
-		backView.addSubview(taskImportanceView)
+		contentView.addSubview(taskNameLabel)
+		contentView.addSubview(taskDeadlineLabel)
+		contentView.addSubview(taskImportanceView)
 	}
 
 	private func setupLayout() {
@@ -63,7 +56,7 @@ final class ImportantTaskTableViewCell: UITableViewCell {
 		let mediumOffset = Constants.Offset.mediumOffset
 		let largeOffset = Constants.Offset.largeOffset
 
-		backView.pin
+		contentView.pin
 			.top(smallOffset)
 			.left(mediumOffset)
 			.right(mediumOffset)
@@ -79,7 +72,7 @@ final class ImportantTaskTableViewCell: UITableViewCell {
 			.left(to: taskImportanceView.edge.right)
 			.marginLeft(mediumOffset)
 			.top(smallOffset)
-			.right()
+			.right(mediumOffset)
 			.height(Constants.Size.labelHeight)
 
 		taskDeadlineLabel.pin
@@ -87,7 +80,7 @@ final class ImportantTaskTableViewCell: UITableViewCell {
 			.marginLeft(largeOffset)
 			.top(to: taskNameLabel.edge.bottom)
 			.bottom()
-			.right()
+			.right(mediumOffset)
 	}
 }
 
@@ -98,7 +91,7 @@ struct ImportantTaskCellModel {
 	let taskName: String
 	let taskImportanceImage = UIImage(systemName: "exclamationmark.octagon")
 	let taskDeadline: String
-	let taskIsOverue: Bool
+	let taskIsOverdue: Bool
 }
 
 extension ImportantTaskCellModel: ICellViewModel {
@@ -114,7 +107,7 @@ extension ImportantTaskCellModel: ICellViewModel {
 		cell.taskDeadlineLabel.text = "\(taskDeadline)"
 		cell.taskDeadlineLabel.textColor = Constants.Color.red
 
-		if taskIsOverue {
+		if taskIsOverdue {
 			cell.backgroundColor = Constants.Color.lightRed
 		} else {
 			cell.backgroundColor = Constants.Color.blue

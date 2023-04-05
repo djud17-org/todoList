@@ -78,7 +78,7 @@ extension TaskListViewController {
 				taskPriority: task.priority,
 				taskName: task.title,
 				taskDeadline: task.deadLine,
-				taskIsOverue: task.isOverdue
+				taskIsOverdue: task.isOverdue
 			)
 		}
 

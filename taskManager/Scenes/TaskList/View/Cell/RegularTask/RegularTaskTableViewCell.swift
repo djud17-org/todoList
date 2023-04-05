@@ -22,36 +22,29 @@ final class RegularTaskTableViewCell: UITableViewCell {
 		return label
 	}()
 
-	private lazy var backView: UIView = {
-		let view = UIView()
-		view.backgroundColor = Constants.Color.white
-		view.layer.cornerRadius = 10
-
-		return view
-	}()
-
 	// MARK: - Lifecycle
 
 	override func layoutSubviews() {
 		super.layoutSubviews()
 
-		setupHierarchy()
+		setupContentView()
 		setupLayout()
 	}
 
 	// MARK: - Setups
 
-	private func setupHierarchy() {
-		addSubview(backView)
+	private func setupContentView() {
+		contentView.backgroundColor = Constants.Color.white
+		contentView.layer.cornerRadius = 10
 
-		backView.addSubview(taskNameLabel)
+		contentView.addSubview(taskNameLabel)
 	}
 
 	private func setupLayout() {
 		let smallOffset = Constants.Offset.smallOffset
 		let mediumOffset = Constants.Offset.mediumOffset
 
-		backView.pin
+		contentView.pin
 			.top(smallOffset)
 			.left(mediumOffset)
 			.right(mediumOffset)
