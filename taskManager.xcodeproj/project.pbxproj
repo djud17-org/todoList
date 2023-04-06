@@ -43,6 +43,7 @@
 		6001584C29D329EF0013D3A8 /* LoginPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6001584B29D329EF0013D3A8 /* LoginPresenterTests.swift */; };
 		601D8D7329C22E8B00C25C4F /* TaskRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601D8D7229C22E8B00C25C4F /* TaskRepository.swift */; };
 		60993BD729C22C1900D4B908 /* TaskManagerPackage in Frameworks */ = {isa = PBXBuildFile; productRef = 60993BD629C22C1900D4B908 /* TaskManagerPackage */; };
+		60D8DDC529DEFB0A009606E5 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D8DDC429DEFB0A009606E5 /* UIColor+Hex.swift */; };
 		60EC171F29D82FE1004894CC /* PinLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 60EC171E29D82FE1004894CC /* PinLayout */; };
 		8A12969629D7504A0004651C /* SectionManagerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B2819729D71F6500FA3644 /* SectionManagerSpy.swift */; };
 		8A12969729D7504A0004651C /* TaskListPresenterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B2819629D71F6500FA3644 /* TaskListPresenterSpy.swift */; };
@@ -109,6 +110,7 @@
 		6001584B29D329EF0013D3A8 /* LoginPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenterTests.swift; sourceTree = "<group>"; };
 		601D8D7229C22E8B00C25C4F /* TaskRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskRepository.swift; sourceTree = "<group>"; };
 		60CBB0C129C22B4700A07575 /* TaskManagerPackage */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = TaskManagerPackage; sourceTree = "<group>"; };
+		60D8DDC429DEFB0A009606E5 /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		8AAAE69029D60491003AB5A0 /* TaskListInteractorSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListInteractorSpy.swift; sourceTree = "<group>"; };
 		8ABAC5F229D49265003E30E3 /* TaskListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewControllerTests.swift; sourceTree = "<group>"; };
 		AB0DC66329D346B900A2856C /* TaskPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskPresenterTests.swift; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 				5A48065E29DCDAFC0096B7D8 /* String+Localized.swift */,
 				25B6BFFE2999634600C3A43F /* UITableView.swift */,
 				25B6C00029996C9D00C3A43F /* Date.swift */,
+				60D8DDC429DEFB0A009606E5 /* UIColor+Hex.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -506,6 +509,7 @@
 				258DB09D29A0E9D300C03B47 /* SectionManager.swift in Sources */,
 				2580E4CB29B9BE9D00C54457 /* LoginAssembly.swift in Sources */,
 				25CF686829A64B4B00E758E7 /* LoginWorker.swift in Sources */,
+				60D8DDC529DEFB0A009606E5 /* UIColor+Hex.swift in Sources */,
 				25B6BFE829995C6000C3A43F /* CellViewModel.swift in Sources */,
 				2569096D29A24A9F00A0129C /* TaskListPresenter.swift in Sources */,
 				25CF686C29A64B4B00E758E7 /* LoginInteractor.swift in Sources */,
