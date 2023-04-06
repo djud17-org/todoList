@@ -43,7 +43,7 @@ final class ImportantTaskTableViewCell: UITableViewCell {
 	// MARK: - Setups
 
 	private func setupContentView() {
-		contentView.backgroundColor = Constants.Color.white
+		contentView.backgroundColor = Theme.white
 		contentView.layer.cornerRadius = 10
 
 		contentView.addSubview(taskNameLabel)
@@ -99,29 +99,25 @@ extension ImportantTaskCellModel: ICellViewModel {
 		cell.accessoryType = taskStatus == .completed ? .checkmark : .none
 
 		cell.taskNameLabel.text = taskName
-		cell.taskNameLabel.textColor = Constants.Color.blue
+		cell.taskNameLabel.textColor = Theme.black
 
 		cell.taskImportanceView.image = taskImportanceImage
 		cell.taskImportanceView.tintColor = getImportanceColor(taskPriority: taskPriority)
 
 		cell.taskDeadlineLabel.text = "\(taskDeadline)"
-		cell.taskDeadlineLabel.textColor = Constants.Color.red
+		cell.taskDeadlineLabel.textColor = Theme.red
 
-		if taskIsOverdue {
-			cell.backgroundColor = Constants.Color.lightRed
-		} else {
-			cell.backgroundColor = Constants.Color.blue
-		}
+		cell.backgroundColor = Theme.gray
 	}
 
 	private func getImportanceColor(taskPriority: TaskPriority) -> UIColor {
 		switch taskPriority {
 		case .low:
-			return Constants.Color.green
+			return Theme.green
 		case .medium:
-			return Constants.Color.yellow
+			return Theme.yellow
 		case .high:
-			return Constants.Color.red
+			return Theme.red
 		}
 	}
 }

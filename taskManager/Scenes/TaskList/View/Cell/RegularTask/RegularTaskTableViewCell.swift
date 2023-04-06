@@ -34,7 +34,7 @@ final class RegularTaskTableViewCell: UITableViewCell {
 	// MARK: - Setups
 
 	private func setupContentView() {
-		contentView.backgroundColor = Constants.Color.white
+		contentView.backgroundColor = Theme.white
 		contentView.layer.cornerRadius = 10
 
 		contentView.addSubview(taskNameLabel)
@@ -69,8 +69,8 @@ extension RegularTaskCellModel: ICellViewModel {
 		cell.accessoryType = taskStatus == .completed ? .checkmark : .none
 
 		cell.taskNameLabel.text = taskName
-		cell.taskNameLabel.textColor = Constants.Color.blue
+		cell.taskNameLabel.textColor = Theme.black
 
-		cell.backgroundColor = Constants.Color.blue
+		cell.backgroundColor = Theme.gray
 	}
 }
