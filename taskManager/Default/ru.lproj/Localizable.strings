@@ -1,0 +1,24 @@
+/* 
+  Localizable.strings
+  taskManager
+
+  Created by SERGEY SHLYAKHIN on 05.04.2023.
+  
+*/
+
+"Authorization.title" = "Авторизация";
+"Authorization.Button.title" = "Авторизация";
+"Authorization.Placeholder.password" = "Введите пароль";
+"Authorization.Placeholder.login" = "Введите логин";
+
+"Error" = "Ошибка";
+"Error.Authorization.message" = "Неправильный логин или пароль!";
+
+"Alert.OK.title" = "OK";
+
+"TaskList.title" = "Список задач";
+
+"Section.CompletedTasks.title" = "Выполненные задачи";
+"Section.UncompletedTasks.title" = "Выполненные задачи";
+
+"Date.format" = "dd.MM.yyyy";

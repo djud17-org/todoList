@@ -10,12 +10,12 @@ import Foundation
 extension Date {
 	private var dateFormatter: DateFormatter {
 		let dateFormatter = DateFormatter()
-		dateFormatter.dateFormat = "dd.MM.yyyy"
+		dateFormatter.dateFormat = "Date.format".localized
 
 		return dateFormatter
 	}
 
-	/// Строковое представление даты в формате "dd.MM.yyyy".
+	/// Строковое представление даты в локальном формате
 	var description: String {
 		dateFormatter.string(from: self)
 	}
