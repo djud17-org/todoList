@@ -9,17 +9,6 @@ import UIKit
 import PinLayout
 
 enum Constants {
-	enum Color {
-		static let blue = UIColor(red: 0, green: 0.46, blue: 0.9, alpha: 1)
-		static let lightBlue = UIColor(red: 0, green: 0.46, blue: 0.9, alpha: 0.5)
-		static let white: UIColor = .white
-
-		static let red = UIColor(red: 0.97, green: 0, blue: 0, alpha: 1)
-		static let lightRed = UIColor(red: 0.81, green: 0.2, blue: 0, alpha: 0.30)
-		static let yellow = UIColor(red: 0.99, green: 0.66, blue: 0, alpha: 1)
-		static let green = UIColor(red: 0, green: 0.6, blue: 0, alpha: 1)
-	}
-
 	enum Offset {
 		static let smallOffset: CGFloat = 5
 		static let mediumOffset: CGFloat = 10
