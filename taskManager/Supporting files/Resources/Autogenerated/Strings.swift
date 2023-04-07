@@ -10,14 +10,6 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum L10n {
-  /// Error
-  internal static let error = L10n.tr("Localizable", "Error", fallback: "Error")
-  internal enum Alert {
-    internal enum Ok {
-      /// OK
-      internal static let title = L10n.tr("Localizable", "Alert.OK.title", fallback: "OK")
-    }
-  }
   internal enum Authorization {
     /// Localizable.strings
     ///   taskManager
@@ -28,6 +20,10 @@ internal enum L10n {
       /// Authorization
       internal static let title = L10n.tr("Localizable", "Authorization.Button.title", fallback: "Authorization")
     }
+    internal enum Error {
+      /// Invalid login or password!
+      internal static let message = L10n.tr("Localizable", "Authorization.Error.message", fallback: "Invalid login or password!")
+    }
     internal enum Placeholder {
       /// Login
       internal static let login = L10n.tr("Localizable", "Authorization.Placeholder.login", fallback: "Login")
@@ -35,14 +31,18 @@ internal enum L10n {
       internal static let password = L10n.tr("Localizable", "Authorization.Placeholder.password", fallback: "Password")
     }
   }
-  internal enum Date {
+  internal enum Main {
     /// MM.dd.yyyy
-    internal static let format = L10n.tr("Localizable", "Date.format", fallback: "MM.dd.yyyy")
-  }
-  internal enum Error {
-    internal enum Authorization {
-      /// Invalid login or password!
-      internal static let message = L10n.tr("Localizable", "Error.Authorization.message", fallback: "Invalid login or password!")
+    internal static let dateFormat = L10n.tr("Localizable", "Main.dateFormat", fallback: "MM.dd.yyyy")
+    /// Task list
+    internal static let title = L10n.tr("Localizable", "Main.title", fallback: "Task list")
+    internal enum Error {
+      /// Error
+      internal static let title = L10n.tr("Localizable", "Main.Error.title", fallback: "Error")
+    }
+    internal enum OkButton {
+      /// OK
+      internal static let title = L10n.tr("Localizable", "Main.OkButton.title", fallback: "OK")
     }
   }
   internal enum Section {
@@ -54,10 +54,6 @@ internal enum L10n {
       /// Uncompleted tasks
       internal static let title = L10n.tr("Localizable", "Section.UncompletedTasks.title", fallback: "Uncompleted tasks")
     }
-  }
-  internal enum TaskList {
-    /// Task list
-    internal static let title = L10n.tr("Localizable", "TaskList.title", fallback: "Task list")
   }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length

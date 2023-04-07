@@ -6,19 +6,19 @@
   
 */
 
+// authorization
 "Authorization.title" = "Authorization";
 "Authorization.Button.title" = "Authorization";
 "Authorization.Placeholder.password" = "Password";
 "Authorization.Placeholder.login" = "Login";
+"Authorization.Error.message" = "Invalid login or password!";
 
-"Error" = "Error";
-"Error.Authorization.message" = "Invalid login or password!";
+// main
+"Main.OkButton.title" = "OK";
+"Main.Error.title" = "Error";
+"Main.title" = "Task list";
+"Main.dateFormat" = "MM.dd.yyyy";
 
-"Alert.OK.title" = "OK";
-
-"TaskList.title" = "Task list";
-
+// section
 "Section.CompletedTasks.title" = "Completed tasks";
 "Section.UncompletedTasks.title" = "Uncompleted tasks";
-
-"Date.format" = "MM.dd.yyyy";
