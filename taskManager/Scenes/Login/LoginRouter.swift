@@ -34,11 +34,11 @@ final class LoginRouter: NSObject, ILoginRoutingLogic {
 
 	func showError(errorMessage: String) {
 		let alertController = UIAlertController(
-			title: "Error".localized,
+			title: L10n.Main.Error.title,
 			message: errorMessage,
 			preferredStyle: .alert
 		)
-		let okButton = UIAlertAction(title: "Alert.OK.title".localized, style: .default)
+		let okButton = UIAlertAction(title: L10n.Main.OkButton.title, style: .default)
 		alertController.addAction(okButton)
 		viewController?.present(alertController, animated: true)
 	}

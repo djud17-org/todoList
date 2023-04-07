@@ -25,7 +25,7 @@ final class LoginPresenter: ILoginPresentationLogic {
 	func present(response: LoginModel.Response) {
 		let viewModel: LoginModel.ViewModel = response.isLoginSuccessed
 			? .success
-		: .failure("Error.Authorization.message".localized)
+		: .failure(L10n.Authorization.Error.message)
 		viewController?.renderData(with: viewModel)
 	}
 }
