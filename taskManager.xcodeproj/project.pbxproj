@@ -512,7 +512,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftgen > /dev/null; then\n\tswiftgen\nelse\n\techo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\n\texit 1\nfi\n";
+			shellScript = "taskManager/SwiftGen/swiftgen.sh\n";
 		};
 		8A019A0A29BC92F400F5514B /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
