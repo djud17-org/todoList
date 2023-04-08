@@ -108,7 +108,7 @@ final class LoginViewController: UIViewController {
 
 	private func createLoginTextField() -> UITextField {
 		let textField = UITextField()
-		textField.placeholder = "Authorization.Placeholder.login".localized
+		textField.placeholder = L10n.Authorization.Placeholder.login
 		textField.borderStyle = .roundedRect
 
 		return textField
@@ -116,7 +116,7 @@ final class LoginViewController: UIViewController {
 
 	private func createPasswordTextField() -> UITextField {
 		let textField = UITextField()
-		textField.placeholder = "Authorization.Placeholder.password".localized
+		textField.placeholder = L10n.Authorization.Placeholder.password
 		textField.borderStyle = .roundedRect
 
 		return textField
@@ -124,7 +124,7 @@ final class LoginViewController: UIViewController {
 
 	private func createLoginButton() -> UIButton {
 		let button = UIButton()
-		button.setTitle("Authorization.Button.title".localized, for: .normal)
+		button.setTitle(L10n.Authorization.Button.title, for: .normal)
 		button.layer.cornerRadius = 10
 		button.backgroundColor = Theme.blue
 		button.setTitleColor(.white, for: .normal)

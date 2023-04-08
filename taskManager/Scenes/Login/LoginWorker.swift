@@ -30,7 +30,6 @@ struct Password {
 
 /// Интерфейс работы с данными на экране авторизации.
 protocol ILoginWorker {
-
 	/// Функция валидирует логин и пароль.
 	///
 	/// - Parameters:
@@ -42,6 +41,12 @@ protocol ILoginWorker {
 
 final class LoginWorker: ILoginWorker {
 	func login(login: Login, password: Password) -> Bool {
-		return login.rawValue == "Admin" && password.rawValue == "pa$$32!"
+		login.rawValue == ValidCredentials.login.rawValue &&
+			password.rawValue == ValidCredentials.password.rawValue
 	}
+}
+
+private enum ValidCredentials: String {
+	case login = "Admin"
+	case password = "pa$$32!"
 }

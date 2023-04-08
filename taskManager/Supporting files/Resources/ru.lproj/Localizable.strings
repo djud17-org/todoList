@@ -6,19 +6,19 @@
   
 */
 
+// authorization
 "Authorization.title" = "Авторизация";
 "Authorization.Button.title" = "Авторизация";
 "Authorization.Placeholder.password" = "Введите пароль";
 "Authorization.Placeholder.login" = "Введите логин";
+"Authorization.Error.message" = "Неправильный логин или пароль!";
 
-"Error" = "Ошибка";
-"Error.Authorization.message" = "Неправильный логин или пароль!";
+// main
+"Main.OkButton.title" = "OK";
+"Main.Error.title" = "Ошибка";
+"Main.title" = "Список задач";
+"Main.dateFormat" = "dd.MM.yyyy";
 
-"Alert.OK.title" = "OK";
-
-"TaskList.title" = "Список задач";
-
+// section
 "Section.CompletedTasks.title" = "Выполненные задачи";
-"Section.UncompletedTasks.title" = "Выполненные задачи";
-
-"Date.format" = "dd.MM.yyyy";
+"Section.UncompletedTasks.title" = "Невыполненные задачи";
