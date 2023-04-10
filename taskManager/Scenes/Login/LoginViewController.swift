@@ -110,6 +110,7 @@ final class LoginViewController: UIViewController {
 		let textField = UITextField()
 		textField.placeholder = L10n.Authorization.Placeholder.login
 		textField.borderStyle = .roundedRect
+		textField.accessibilityIdentifier = LoginSceneAccessibilityId.loginTextField.rawValue
 
 		return textField
 	}
@@ -118,6 +119,7 @@ final class LoginViewController: UIViewController {
 		let textField = UITextField()
 		textField.placeholder = L10n.Authorization.Placeholder.password
 		textField.borderStyle = .roundedRect
+		textField.accessibilityIdentifier = LoginSceneAccessibilityId.passwordTextField.rawValue
 
 		return textField
 	}
@@ -129,6 +131,7 @@ final class LoginViewController: UIViewController {
 		button.backgroundColor = Theme.blue
 		button.setTitleColor(.white, for: .normal)
 		button.setTitleColor(.white.withAlphaComponent(0.5), for: .highlighted)
+		button.accessibilityIdentifier = LoginSceneAccessibilityId.loginButton.rawValue
 
 		return button
 	}
