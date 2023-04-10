@@ -83,8 +83,9 @@ extension TaskListViewController {
 				taskIsOverdue: task.isOverdue
 			)
 		}
-
-		return tableView.dequeueReusableCell(withModel: model, for: indexPath)
+		let cell = tableView.dequeueReusableCell(withModel: model, for: indexPath)
+		cell.accessibilityIdentifier = "\(TaskListSceneAccessibilityId.tableViewCell.rawValue)_\(indexPath.row)"
+		return cell
 	}
 }
 

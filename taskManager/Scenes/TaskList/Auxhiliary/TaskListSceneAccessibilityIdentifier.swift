@@ -10,4 +10,5 @@ import Foundation
 enum TaskListSceneAccessibilityId: String {
 	case view
 	case tableView
+	case tableViewCell
 }
