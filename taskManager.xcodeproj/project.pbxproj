@@ -54,7 +54,7 @@
 		8A12969829D7506C0004651C /* TaskListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B2819529D71F6500FA3644 /* TaskListInteractorTests.swift */; };
 		8AAAE69129D60491003AB5A0 /* TaskListInteractorSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAAE69029D60491003AB5A0 /* TaskListInteractorSpy.swift */; };
 		8ABAC5F329D49265003E30E3 /* TaskListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABAC5F229D49265003E30E3 /* TaskListViewControllerTests.swift */; };
-		AB0A6C8B29E3F6C7003B2F5E /* AccessibilityIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0A6C8A29E3F6C7003B2F5E /* AccessibilityIdentifier.swift */; };
+		AB0A6C8B29E3F6C7003B2F5E /* LoginSceneAccessibilityIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0A6C8A29E3F6C7003B2F5E /* LoginSceneAccessibilityIdentifier.swift */; };
 		AB0A6C8F29E3FE08003B2F5E /* TaskListSceneAccessibilityIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0A6C8E29E3FE08003B2F5E /* TaskListSceneAccessibilityIdentifier.swift */; };
 		AB0DC66429D346B900A2856C /* TaskPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0DC66329D346B900A2856C /* TaskPresenterTests.swift */; };
 		AB0DC66729D3878500A2856C /* TaskListViewControllerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0DC66629D3878500A2856C /* TaskListViewControllerSpy.swift */; };
@@ -123,7 +123,7 @@
 		60D8DDC829DEFD80009606E5 /* UIColorHexTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorHexTests.swift; sourceTree = "<group>"; };
 		8AAAE69029D60491003AB5A0 /* TaskListInteractorSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListInteractorSpy.swift; sourceTree = "<group>"; };
 		8ABAC5F229D49265003E30E3 /* TaskListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewControllerTests.swift; sourceTree = "<group>"; };
-		AB0A6C8A29E3F6C7003B2F5E /* AccessibilityIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityIdentifier.swift; sourceTree = "<group>"; };
+		AB0A6C8A29E3F6C7003B2F5E /* LoginSceneAccessibilityIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSceneAccessibilityIdentifier.swift; sourceTree = "<group>"; };
 		AB0A6C8E29E3FE08003B2F5E /* TaskListSceneAccessibilityIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListSceneAccessibilityIdentifier.swift; sourceTree = "<group>"; };
 		AB0DC66329D346B900A2856C /* TaskPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskPresenterTests.swift; sourceTree = "<group>"; };
 		AB0DC66629D3878500A2856C /* TaskListViewControllerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewControllerSpy.swift; sourceTree = "<group>"; };
@@ -216,7 +216,6 @@
 			isa = PBXGroup;
 			children = (
 				25B6BFE929995C9E00C3A43F /* Cell */,
-				AB0A6C8E29E3FE08003B2F5E /* TaskListSceneAccessibilityIdentifier.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -321,6 +320,7 @@
 				25CF687D29A6721B00E758E7 /* TaskLisInteractor.swift */,
 				25CF685F29A63B7C00E758E7 /* TaskListModel.swift */,
 				2580E4CC29B9BFC400C54457 /* TaskListAssembly.swift */,
+				AB9AE05029E4307A00EE387F /* Auxhiliary */,
 			);
 			path = TaskList;
 			sourceTree = "<group>";
@@ -335,7 +335,6 @@
 				25CF686529A64B4A00E758E7 /* LoginViewController.swift */,
 				25CF686629A64B4A00E758E7 /* LoginInteractor.swift */,
 				2580E4CA29B9BE9D00C54457 /* LoginAssembly.swift */,
-				AB0A6C8A29E3F6C7003B2F5E /* AccessibilityIdentifier.swift */,
 				AB0A6C8D29E3F757003B2F5E /* Auxhiliary */,
 			);
 			path = Login;
@@ -376,6 +375,7 @@
 		AB0A6C8D29E3F757003B2F5E /* Auxhiliary */ = {
 			isa = PBXGroup;
 			children = (
+				AB0A6C8A29E3F6C7003B2F5E /* LoginSceneAccessibilityIdentifier.swift */,
 			);
 			path = Auxhiliary;
 			sourceTree = "<group>";
@@ -400,6 +400,14 @@
 				AB0DC66629D3878500A2856C /* TaskListViewControllerSpy.swift */,
 			);
 			path = "Test Doubles";
+			sourceTree = "<group>";
+		};
+		AB9AE05029E4307A00EE387F /* Auxhiliary */ = {
+			isa = PBXGroup;
+			children = (
+				AB0A6C8E29E3FE08003B2F5E /* TaskListSceneAccessibilityIdentifier.swift */,
+			);
+			path = Auxhiliary;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -579,7 +587,7 @@
 				5A48065F29DCDAFD0096B7D8 /* String+Localized.swift in Sources */,
 				25B6BFF929995F6E00C3A43F /* ImportantTaskTableViewCell.swift in Sources */,
 				25B6BFFF2999634600C3A43F /* UITableView.swift in Sources */,
-				AB0A6C8B29E3F6C7003B2F5E /* AccessibilityIdentifier.swift in Sources */,
+				AB0A6C8B29E3F6C7003B2F5E /* LoginSceneAccessibilityIdentifier.swift in Sources */,
 				25CF686929A64B4B00E758E7 /* LoginRouter.swift in Sources */,
 				25B6C00129996C9D00C3A43F /* Date.swift in Sources */,
 				25B6BFCD2999161800C3A43F /* SceneDelegate.swift in Sources */,
