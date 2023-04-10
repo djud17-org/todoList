@@ -13,12 +13,6 @@
 import UIKit
 import PinLayout
 
-enum AccessibilityIdentifier: String {
-	case loginTextField
-	case passwordTextField
-	case loginButton
-}
-
 protocol ILoginDisplayLogic: AnyObject {
 
 	/// Функция рендерит вью по модели.
@@ -116,7 +110,7 @@ final class LoginViewController: UIViewController {
 		let textField = UITextField()
 		textField.placeholder = "Введите логин"
 		textField.borderStyle = .roundedRect
-		textField.accessibilityIdentifier = AccessibilityIdentifier.loginTextField.rawValue
+		textField.accessibilityIdentifier = LoginSceneAccessibilityId.loginTextField.rawValue
 
 		return textField
 	}
@@ -125,7 +119,7 @@ final class LoginViewController: UIViewController {
 		let textField = UITextField()
 		textField.placeholder = "Введите пароль"
 		textField.borderStyle = .roundedRect
-		textField.accessibilityIdentifier = AccessibilityIdentifier.passwordTextField.rawValue
+		textField.accessibilityIdentifier = LoginSceneAccessibilityId.passwordTextField.rawValue
 
 		return textField
 	}
@@ -137,7 +131,7 @@ final class LoginViewController: UIViewController {
 		button.backgroundColor = Constants.Color.lightBlue
 		button.setTitleColor(.white, for: .normal)
 		button.setTitleColor(.white.withAlphaComponent(0.5), for: .highlighted)
-		button.accessibilityIdentifier = AccessibilityIdentifier.loginButton.rawValue
+		button.accessibilityIdentifier = LoginSceneAccessibilityId.loginButton.rawValue
 
 		return button
 	}

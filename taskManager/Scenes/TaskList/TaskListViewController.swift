@@ -34,10 +34,12 @@ final class TaskListViewController: UITableViewController {
 		navigationController?.navigationBar.tintColor = Constants.Color.white
 
 		view.backgroundColor = Constants.Color.blue
+		view.accessibilityIdentifier = TaskListSceneAccessibilityId.view.rawValue
 	}
 
 	private func setupTableView() {
 		tableView.separatorStyle = .none
+		tableView.accessibilityIdentifier = TaskListSceneAccessibilityId.tableView.rawValue
 
 		tableView.register(
 			ImportantTaskTableViewCell.self,
