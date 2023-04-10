@@ -34,6 +34,7 @@ final class TaskListViewController: UITableViewController {
 		navigationController?.navigationBar.tintColor = Theme.white
 
 		view.backgroundColor = Theme.gray
+		view.accessibilityIdentifier = TaskListSceneAccessibilityId.view.rawValue
 	}
 
 	private func setupTableView() {
