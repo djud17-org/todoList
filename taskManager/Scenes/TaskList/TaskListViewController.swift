@@ -38,6 +38,7 @@ final class TaskListViewController: UITableViewController {
 
 	private func setupTableView() {
 		tableView.separatorStyle = .none
+		tableView.accessibilityIdentifier = TaskListSceneAccessibilityId.tableView.rawValue
 
 		tableView.register(
 			ImportantTaskTableViewCell.self,
