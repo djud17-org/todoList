@@ -44,6 +44,11 @@
 		6001584A29D329D60013D3A8 /* LoginViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6001584929D329D60013D3A8 /* LoginViewControllerTests.swift */; };
 		6001584C29D329EF0013D3A8 /* LoginPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6001584B29D329EF0013D3A8 /* LoginPresenterTests.swift */; };
 		601D8D7329C22E8B00C25C4F /* TaskRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601D8D7229C22E8B00C25C4F /* TaskRepository.swift */; };
+		6044F92529E4700C00D4BC6E /* Predicates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6044F92429E4700C00D4BC6E /* Predicates.swift */; };
+		6044F92729E4702E00D4BC6E /* BaseScreenObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6044F92629E4702E00D4BC6E /* BaseScreenObject.swift */; };
+		6044F92929E471F000D4BC6E /* LoginScreenObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6044F92829E471F000D4BC6E /* LoginScreenObject.swift */; };
+		6044F92A29E474BE00D4BC6E /* LoginSceneAccessibilityIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0A6C8A29E3F6C7003B2F5E /* LoginSceneAccessibilityIdentifier.swift */; };
+		6044F92B29E474C600D4BC6E /* TaskListSceneAccessibilityIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0A6C8E29E3FE08003B2F5E /* TaskListSceneAccessibilityIdentifier.swift */; };
 		60993BD729C22C1900D4B908 /* TaskManagerPackage in Frameworks */ = {isa = PBXBuildFile; productRef = 60993BD629C22C1900D4B908 /* TaskManagerPackage */; };
 		60D8DDC529DEFB0A009606E5 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D8DDC429DEFB0A009606E5 /* UIColor+Hex.swift */; };
 		60D8DDC729DEFBD5009606E5 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D8DDC629DEFBD5009606E5 /* Theme.swift */; };
@@ -117,6 +122,9 @@
 		6001584929D329D60013D3A8 /* LoginViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerTests.swift; sourceTree = "<group>"; };
 		6001584B29D329EF0013D3A8 /* LoginPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenterTests.swift; sourceTree = "<group>"; };
 		601D8D7229C22E8B00C25C4F /* TaskRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskRepository.swift; sourceTree = "<group>"; };
+		6044F92429E4700C00D4BC6E /* Predicates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Predicates.swift; sourceTree = "<group>"; };
+		6044F92629E4702E00D4BC6E /* BaseScreenObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseScreenObject.swift; sourceTree = "<group>"; };
+		6044F92829E471F000D4BC6E /* LoginScreenObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenObject.swift; sourceTree = "<group>"; };
 		60CBB0C129C22B4700A07575 /* TaskManagerPackage */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = TaskManagerPackage; sourceTree = "<group>"; };
 		60D8DDC429DEFB0A009606E5 /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		60D8DDC629DEFBD5009606E5 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
@@ -162,6 +170,7 @@
 		250F98AF29C3B5C200862615 /* LoginScene */ = {
 			isa = PBXGroup;
 			children = (
+				6044F92829E471F000D4BC6E /* LoginScreenObject.swift */,
 				6001583E29D325900013D3A8 /* Test Doubles */,
 				6001584729D329BB0013D3A8 /* LoginInteractorTest.swift */,
 				6001584929D329D60013D3A8 /* LoginViewControllerTests.swift */,
@@ -259,6 +268,7 @@
 		25B99EE229C3580900761501 /* taskManagerTests */ = {
 			isa = PBXGroup;
 			children = (
+				6044F92329E46FF000D4BC6E /* Common */,
 				60D8DDC829DEFD80009606E5 /* UIColorHexTests.swift */,
 				250F98AF29C3B5C200862615 /* LoginScene */,
 				AB0DC66229D3465800A2856C /* TaskListScene */,
@@ -285,6 +295,15 @@
 				6001584529D329010013D3A8 /* LoginViewControllerSpy.swift */,
 			);
 			path = "Test Doubles";
+			sourceTree = "<group>";
+		};
+		6044F92329E46FF000D4BC6E /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				6044F92429E4700C00D4BC6E /* Predicates.swift */,
+				6044F92629E4702E00D4BC6E /* BaseScreenObject.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		60993BD529C22C1900D4B908 /* Frameworks */ = {
@@ -600,6 +619,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6044F92529E4700C00D4BC6E /* Predicates.swift in Sources */,
 				8AAAE69129D60491003AB5A0 /* TaskListInteractorSpy.swift in Sources */,
 				8A12969829D7506C0004651C /* TaskListInteractorTests.swift in Sources */,
 				6001584A29D329D60013D3A8 /* LoginViewControllerTests.swift in Sources */,
@@ -609,15 +629,19 @@
 				AB0DC66729D3878500A2856C /* TaskListViewControllerSpy.swift in Sources */,
 				25B99EEB29C3584600761501 /* SectionManagerTests.swift in Sources */,
 				6001584C29D329EF0013D3A8 /* LoginPresenterTests.swift in Sources */,
+				6044F92B29E474C600D4BC6E /* TaskListSceneAccessibilityIdentifier.swift in Sources */,
+				6044F92A29E474BE00D4BC6E /* LoginSceneAccessibilityIdentifier.swift in Sources */,
 				60D8DDC929DEFD80009606E5 /* UIColorHexTests.swift in Sources */,
 				8A12969729D7504A0004651C /* TaskListPresenterSpy.swift in Sources */,
 				6001584229D326760013D3A8 /* LoginWorkerSpy.swift in Sources */,
 				6001584429D327870013D3A8 /* LoginInteractorSpy.swift in Sources */,
 				250F98AE29C3B5B600862615 /* WorkerTests.swift in Sources */,
+				6044F92929E471F000D4BC6E /* LoginScreenObject.swift in Sources */,
 				8A12969629D7504A0004651C /* SectionManagerSpy.swift in Sources */,
 				8ABAC5F329D49265003E30E3 /* TaskListViewControllerTests.swift in Sources */,
 				6001584029D325BB0013D3A8 /* LoginPresenterSpy.swift in Sources */,
 				6001584629D329010013D3A8 /* LoginViewControllerSpy.swift in Sources */,
+				6044F92729E4702E00D4BC6E /* BaseScreenObject.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
