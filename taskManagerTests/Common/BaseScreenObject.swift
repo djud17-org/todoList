@@ -33,7 +33,7 @@ class BaseScreenObject {
 	}
 
 	// MARK: - ScreenObject Methods
-
+	/// Функция для проверки UI элемента на сцене
 	@discardableResult
 	func assert(_ element: XCUIElement, _ predicates: [Predicate], timeout: TimeInterval = defaultTimeout) -> Self {
 		let expectation = XCTNSPredicateExpectation(
@@ -47,16 +47,15 @@ class BaseScreenObject {
 		}
 		return self
 	}
-
+	/// Функция для нажатия кнопки
 	@discardableResult
-
 	func tap(_ element: XCUIElement, timeout: TimeInterval = BaseScreenObject.defaultTimeout) -> Self {
 		assert(element, [.isHittable], timeout: timeout)
 		element.tap()
 
 		return self
 	}
-
+	/// Функция для возвращения на предыдущий экран
 	@discardableResult
 	func back(timeout: TimeInterval = BaseScreenObject.defaultTimeout) -> Self {
 		tap(navigationBarButton, timeout: timeout)
