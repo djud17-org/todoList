@@ -18,12 +18,12 @@ final class LoginScreenObject: BaseScreenObject {
 		assert(loginButton, [.exists])
 	}
 	/// Функция для установки логина
-	func set(login: String) {
+	func setInLoginTextField(login: String) {
 		loginTextField.tap()
 		loginTextField.typeText(login)
 	}
 	/// Функция для установки пароля
-	func set(password: String) {
+	func setInPassTextField(password: String) {
 		passTextField.tap()
 		passTextField.typeText(password)
 	}
