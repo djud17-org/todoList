@@ -9,7 +9,7 @@ import XCTest
 @testable import taskManager
 
 final class LoginUITests: XCTestCase {
-	func test_login_withValidCred_mustBeSuccessed() {
+	func test_login_withValidCredentials_shouldBeSuccessed() {
 		let loginScreen = makeSut()
 
 		loginScreen
@@ -19,7 +19,7 @@ final class LoginUITests: XCTestCase {
 			.tapLoginButton()
 	}
 
-	func test_login_withInValidCred_mustBeSuccessed() {
+	func test_login_withInValidCredentials_shouldBeSuccessed() {
 		let loginScreen = makeSut()
 
 		loginScreen
