@@ -10,10 +10,7 @@ import XCTest
 
 final class LoginUITests: XCTestCase {
 	func test_login_withValidCred_mustBeSuccessed() {
-		let app = XCUIApplication()
-		let loginScreen = LoginScreenObject(app: app)
-
-		app.launch()
+		let loginScreen = makeSut()
 
 		loginScreen
 			.checkIsLoginScene()
@@ -23,10 +20,7 @@ final class LoginUITests: XCTestCase {
 	}
 
 	func test_login_withInValidCred_mustBeSuccessed() {
-		let app = XCUIApplication()
-		let loginScreen = LoginScreenObject(app: app)
-
-		app.launch()
+		let loginScreen = makeSut()
 
 		loginScreen
 			.checkIsLoginScene()
@@ -35,6 +29,17 @@ final class LoginUITests: XCTestCase {
 			.tapLoginButton()
 			.checkIsErrorAlertShowed()
 			.dismissErrorAlert()
+	}
+}
+
+private extension LoginUITests {
+	func makeSut() -> LoginScreenObject {
+		let app = XCUIApplication()
+		let loginScreen = LoginScreenObject(app: app)
+
+		app.launch()
+
+		return loginScreen
 	}
 }
 
