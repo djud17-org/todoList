@@ -6,12 +6,17 @@
 //
 
 final class LoginScreenObject: BaseScreenObject {
-	lazy var loginTextField = app.textFields[LoginSceneAccessibilityId.loginTextField.rawValue]
-	lazy var passTextField = app.textFields[LoginSceneAccessibilityId.passwordTextField.rawValue]
-	lazy var loginButton = app.buttons[LoginSceneAccessibilityId.loginButton.rawValue]
 
-	lazy var errorAlert = app.alerts.firstMatch
-	lazy var alertOkButton = errorAlert.buttons.firstMatch
+	// MARK: - UI Elements
+
+	private lazy var loginTextField = app.textFields[LoginSceneAccessibilityId.loginTextField.rawValue]
+	private lazy var passTextField = app.textFields[LoginSceneAccessibilityId.passwordTextField.rawValue]
+	private lazy var loginButton = app.buttons[LoginSceneAccessibilityId.loginButton.rawValue]
+
+	private lazy var errorAlert = app.alerts.firstMatch
+	private lazy var alertOkButton = errorAlert.buttons.firstMatch
+
+	// MARK: - Check funcs
 
 	///  Функция для проверки логин сцены
 	@discardableResult
