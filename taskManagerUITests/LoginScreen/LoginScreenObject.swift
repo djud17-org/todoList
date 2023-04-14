@@ -19,6 +19,8 @@ final class LoginScreenObject: BaseScreenObject {
 		assertElement(loginTextField, [.exists])
 		assertElement(passTextField, [.exists])
 		assertElement(loginButton, [.exists])
+
+		return self
 	}
 
 	/// Функция для установки логина
@@ -26,6 +28,8 @@ final class LoginScreenObject: BaseScreenObject {
 	func setInLoginTextField(login: String) -> Self {
 		loginTextField.tap()
 		loginTextField.typeText(login)
+
+		return self
 	}
 
 	/// Функция для установки пароля
@@ -33,27 +37,33 @@ final class LoginScreenObject: BaseScreenObject {
 	func setInPassTextField(password: String) -> Self {
 		passTextField.tap()
 		passTextField.typeText(password)
+
+		return self
 	}
 
 	/// Функция для нажатия кнопки login на логин сцене
 	@discardableResult
 	func tapLoginButton() -> Self {
 		loginButton.tap()
+
+		return self
 	}
 
 	/// Функция для проверки появлении сообщения об ошибке при ошибке авторизации
 	@discardableResult
 	func checkIsErrorAlertShowed() -> Self {
 		assertElement(errorAlert, [.exists])
+
+		return self
 	}
 
 	/// Функция для проверки исчезновения сообщения об ошибке авторизации
 	@discardableResult
 	func dismissErrorAlert() -> Self {
 		assertElement(errorAlert, [.exists])
-
 		alertOkButton.tap()
-
 		assertElement(errorAlert, [.doesNotExist])
+
+		return self
 	}
 }
