@@ -34,7 +34,6 @@ final class TaskListViewController: UITableViewController {
 		navigationController?.navigationBar.tintColor = Theme.white
 
 		view.backgroundColor = Theme.gray
-		view.accessibilityIdentifier = TaskListSceneAccessibilityId.view.rawValue
 	}
 
 	private func setupTableView() {
@@ -83,9 +82,8 @@ extension TaskListViewController {
 				taskIsOverdue: task.isOverdue
 			)
 		}
-		let cell = tableView.dequeueReusableCell(withModel: model, for: indexPath)
-		cell.accessibilityIdentifier = "\(TaskListSceneAccessibilityId.tableViewCell.rawValue)_\(indexPath.row)"
-		return cell
+
+		return tableView.dequeueReusableCell(withModel: model, for: indexPath)
 	}
 }
 

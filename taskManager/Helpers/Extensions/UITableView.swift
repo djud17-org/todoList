@@ -17,6 +17,7 @@ extension UITableView {
 		let identifier = String(describing: type(of: model).cellAnyType)
 		let cell = dequeueReusableCell(withIdentifier: identifier, for: indexPath)
 		model.setupAny(cell: cell)
+		(cell as? ICellAccessibility)?.setupAccessibilityIds(at: indexPath)
 
 		return cell
 	}

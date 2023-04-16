@@ -5,9 +5,8 @@
 //  Created by Давид Тоноян  on 12.02.2023.
 //
 
-import UIKit
-import TaskManagerPackage
 import PinLayout
+import UIKit
 
 /// Класс ячейки для важных задач.
 final class ImportantTaskTableViewCell: UITableViewCell {
@@ -84,40 +83,22 @@ final class ImportantTaskTableViewCell: UITableViewCell {
 	}
 }
 
-/// Модель для конфигурации ячейки.
-struct ImportantTaskCellModel {
-	let taskStatus: TaskStatus
-	let taskPriority: TaskPriority
-	let taskName: String
-	let taskImportanceImage = UIImage(systemName: "exclamationmark.octagon")
-	let taskDeadline: String
-	let taskIsOverdue: Bool
-}
+extension ImportantTaskTableViewCell: ICellAccessibility {
+	func setupAccessibilityIds(at indexPath: IndexPath) {
+		let indexCellMark = "\(indexPath.section)_\(indexPath.row)"
+		let typeCellMark = TaskListSceneAccessibilityId.importantCell
+		accessibilityIdentifier = "\(typeCellMark)_\(indexCellMark)"
 
-extension ImportantTaskCellModel: ICellViewModel {
-	func setup(cell: ImportantTaskTableViewCell) {
-		cell.accessoryType = taskStatus == .completed ? .checkmark : .none
+		taskNameLabel.accessibilityIdentifier =
+			"\(typeCellMark)_\(TaskListSceneAccessibilityId.taskNameLabel)_\(indexCellMark)"
 
-		cell.taskNameLabel.text = taskName
-		cell.taskNameLabel.textColor = Theme.black
+		taskDeadlineLabel.accessibilityIdentifier =
+			"\(typeCellMark)_\(TaskListSceneAccessibilityId.taskDeadlineLabel)_\(indexCellMark)"
 
-		cell.taskImportanceView.image = taskImportanceImage
-		cell.taskImportanceView.tintColor = getImportanceColor(taskPriority: taskPriority)
+		taskImportanceView.accessibilityIdentifier =
+			"\(typeCellMark)_\(TaskListSceneAccessibilityId.taskImportanceView)_\(indexCellMark)"
 
-		cell.taskDeadlineLabel.text = "\(taskDeadline)"
-		cell.taskDeadlineLabel.textColor = Theme.red
-
-		cell.backgroundColor = Theme.gray
-	}
-
-	private func getImportanceColor(taskPriority: TaskPriority) -> UIColor {
-		switch taskPriority {
-		case .low:
-			return Theme.green
-		case .medium:
-			return Theme.yellow
-		case .high:
-			return Theme.red
-		}
+		accessoryView?.accessibilityIdentifier =
+			"\(typeCellMark)_\(TaskListSceneAccessibilityId.checkMark)_\(indexCellMark)"
 	}
 }

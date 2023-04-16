@@ -11,6 +11,9 @@
 		2507319429E017F0009CE65C /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2507319229E017F0009CE65C /* Strings.swift */; };
 		250F98AE29C3B5B600862615 /* WorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250F98AD29C3B5B600862615 /* WorkerTests.swift */; };
 		2513D8FA29E9DE3B0049E3AD /* LoginSceneAccessibilityIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0A6C8A29E3F6C7003B2F5E /* LoginSceneAccessibilityIdentifier.swift */; };
+		2521C2BD29EC61510005465D /* ImportantTaskCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2521C2BC29EC61510005465D /* ImportantTaskCellModel.swift */; };
+		2521C2BF29EC61670005465D /* RegularTaskCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2521C2BE29EC61670005465D /* RegularTaskCellModel.swift */; };
+		2521C2C129EC61DA0005465D /* ICellAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2521C2C029EC61DA0005465D /* ICellAccessibility.swift */; };
 		2569096D29A24A9F00A0129C /* TaskListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2569096C29A24A9F00A0129C /* TaskListPresenter.swift */; };
 		2580E4CB29B9BE9D00C54457 /* LoginAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2580E4CA29B9BE9D00C54457 /* LoginAssembly.swift */; };
 		2580E4CD29B9BFC400C54457 /* TaskListAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2580E4CC29B9BFC400C54457 /* TaskListAssembly.swift */; };
@@ -20,7 +23,7 @@
 		25B6BFCF2999161800C3A43F /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B6BFCE2999161800C3A43F /* TaskListViewController.swift */; };
 		25B6BFD42999161900C3A43F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25B6BFD32999161900C3A43F /* Assets.xcassets */; };
 		25B6BFD72999161900C3A43F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25B6BFD52999161900C3A43F /* LaunchScreen.storyboard */; };
-		25B6BFE829995C6000C3A43F /* CellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B6BFE729995C6000C3A43F /* CellViewModel.swift */; };
+		25B6BFE829995C6000C3A43F /* ICellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B6BFE729995C6000C3A43F /* ICellViewModel.swift */; };
 		25B6BFF129995F1700C3A43F /* RegularTaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B6BFEF29995F1700C3A43F /* RegularTaskTableViewCell.swift */; };
 		25B6BFF929995F6E00C3A43F /* ImportantTaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B6BFF729995F6E00C3A43F /* ImportantTaskTableViewCell.swift */; };
 		25B6BFFC2999621F00C3A43F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B6BFFB2999621F00C3A43F /* Constants.swift */; };
@@ -39,8 +42,10 @@
 		25CF686B29A64B4B00E758E7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CF686529A64B4A00E758E7 /* LoginViewController.swift */; };
 		25CF686C29A64B4B00E758E7 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CF686629A64B4A00E758E7 /* LoginInteractor.swift */; };
 		25CF688329A6721B00E758E7 /* TaskLisInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CF687D29A6721B00E758E7 /* TaskLisInteractor.swift */; };
+		25F1A5F829EC3C1700849A36 /* TaskListScreenObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F1A5F629EC3C1700849A36 /* TaskListScreenObject.swift */; };
+		25F1A5F929EC3CFE00849A36 /* TaskListSceneAccessibilityIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0A6C8E29E3FE08003B2F5E /* TaskListSceneAccessibilityIdentifier.swift */; };
+		25F1A5FA29EC45E000849A36 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2507319229E017F0009CE65C /* Strings.swift */; };
 		5A48065A29DCDA500096B7D8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5A48065C29DCDA500096B7D8 /* Localizable.strings */; };
-		5A48065F29DCDAFD0096B7D8 /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A48065E29DCDAFC0096B7D8 /* String+Localized.swift */; };
 		6001584029D325BB0013D3A8 /* LoginPresenterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6001583F29D325BB0013D3A8 /* LoginPresenterSpy.swift */; };
 		6001584229D326760013D3A8 /* LoginWorkerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6001584129D326760013D3A8 /* LoginWorkerSpy.swift */; };
 		6001584429D327870013D3A8 /* LoginInteractorSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6001584329D327870013D3A8 /* LoginInteractorSpy.swift */; };
@@ -49,7 +54,6 @@
 		6001584A29D329D60013D3A8 /* LoginViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6001584929D329D60013D3A8 /* LoginViewControllerTests.swift */; };
 		6001584C29D329EF0013D3A8 /* LoginPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6001584B29D329EF0013D3A8 /* LoginPresenterTests.swift */; };
 		601D8D7329C22E8B00C25C4F /* TaskRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601D8D7229C22E8B00C25C4F /* TaskRepository.swift */; };
-		6044F92B29E474C600D4BC6E /* TaskListSceneAccessibilityIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0A6C8E29E3FE08003B2F5E /* TaskListSceneAccessibilityIdentifier.swift */; };
 		60993BD729C22C1900D4B908 /* TaskManagerPackage in Frameworks */ = {isa = PBXBuildFile; productRef = 60993BD629C22C1900D4B908 /* TaskManagerPackage */; };
 		60D8DDC529DEFB0A009606E5 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D8DDC429DEFB0A009606E5 /* UIColor+Hex.swift */; };
 		60D8DDC729DEFBD5009606E5 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D8DDC629DEFBD5009606E5 /* Theme.swift */; };
@@ -88,6 +92,9 @@
 		2507319129E017F0009CE65C /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		2507319229E017F0009CE65C /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		250F98AD29C3B5B600862615 /* WorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkerTests.swift; sourceTree = "<group>"; };
+		2521C2BC29EC61510005465D /* ImportantTaskCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportantTaskCellModel.swift; sourceTree = "<group>"; };
+		2521C2BE29EC61670005465D /* RegularTaskCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegularTaskCellModel.swift; sourceTree = "<group>"; };
+		2521C2C029EC61DA0005465D /* ICellAccessibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICellAccessibility.swift; sourceTree = "<group>"; };
 		2569096C29A24A9F00A0129C /* TaskListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListPresenter.swift; sourceTree = "<group>"; };
 		2580E4CA29B9BE9D00C54457 /* LoginAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAssembly.swift; sourceTree = "<group>"; };
 		2580E4CC29B9BFC400C54457 /* TaskListAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListAssembly.swift; sourceTree = "<group>"; };
@@ -102,7 +109,7 @@
 		25B6BFD32999161900C3A43F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		25B6BFD62999161900C3A43F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		25B6BFD82999161900C3A43F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		25B6BFE729995C6000C3A43F /* CellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellViewModel.swift; sourceTree = "<group>"; };
+		25B6BFE729995C6000C3A43F /* ICellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICellViewModel.swift; sourceTree = "<group>"; };
 		25B6BFEF29995F1700C3A43F /* RegularTaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegularTaskTableViewCell.swift; sourceTree = "<group>"; };
 		25B6BFF729995F6E00C3A43F /* ImportantTaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportantTaskTableViewCell.swift; sourceTree = "<group>"; };
 		25B6BFFB2999621F00C3A43F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -120,10 +127,10 @@
 		25CF686529A64B4A00E758E7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = taskManager/Scenes/Login/LoginViewController.swift; sourceTree = SOURCE_ROOT; };
 		25CF686629A64B4A00E758E7 /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginInteractor.swift; path = taskManager/Scenes/Login/LoginInteractor.swift; sourceTree = SOURCE_ROOT; };
 		25CF687D29A6721B00E758E7 /* TaskLisInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskLisInteractor.swift; sourceTree = "<group>"; };
+		25F1A5F629EC3C1700849A36 /* TaskListScreenObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListScreenObject.swift; sourceTree = "<group>"; };
 		5A48065729DC67F10096B7D8 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		5A48065B29DCDA500096B7D8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5A48065D29DCDA540096B7D8 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
-		5A48065E29DCDAFC0096B7D8 /* String+Localized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Localized.swift"; sourceTree = "<group>"; };
 		6001583F29D325BB0013D3A8 /* LoginPresenterSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenterSpy.swift; sourceTree = "<group>"; };
 		6001584129D326760013D3A8 /* LoginWorkerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWorkerSpy.swift; sourceTree = "<group>"; };
 		6001584329D327870013D3A8 /* LoginInteractorSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractorSpy.swift; sourceTree = "<group>"; };
@@ -196,6 +203,15 @@
 			path = LoginScene;
 			sourceTree = "<group>";
 		};
+		2521C2C229EC61F00005465D /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				2521C2C029EC61DA0005465D /* ICellAccessibility.swift */,
+				25B6BFE729995C6000C3A43F /* ICellViewModel.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		25B6BFBE2999161800C3A43F = {
 			isa = PBXGroup;
 			children = (
@@ -260,6 +276,7 @@
 			isa = PBXGroup;
 			children = (
 				25B6BFEF29995F1700C3A43F /* RegularTaskTableViewCell.swift */,
+				2521C2BE29EC61670005465D /* RegularTaskCellModel.swift */,
 			);
 			path = RegularTask;
 			sourceTree = "<group>";
@@ -268,6 +285,7 @@
 			isa = PBXGroup;
 			children = (
 				25B6BFF729995F6E00C3A43F /* ImportantTaskTableViewCell.swift */,
+				2521C2BC29EC61510005465D /* ImportantTaskCellModel.swift */,
 			);
 			path = ImportantTask;
 			sourceTree = "<group>";
@@ -275,7 +293,6 @@
 		25B6BFFD2999633800C3A43F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				5A48065E29DCDAFC0096B7D8 /* String+Localized.swift */,
 				25B6BFFE2999634600C3A43F /* UITableView.swift */,
 				25B6C00029996C9D00C3A43F /* Date.swift */,
 				60D8DDC429DEFB0A009606E5 /* UIColor+Hex.swift */,
@@ -317,8 +334,17 @@
 			children = (
 				6044F92329E46FF000D4BC6E /* UI-Common */,
 				25C3904A29E9D72500FE1ADF /* LoginScreen */,
+				25F1A5F529EC3BEE00849A36 /* TaskList */,
 			);
 			path = taskManagerUITests;
+			sourceTree = "<group>";
+		};
+		25F1A5F529EC3BEE00849A36 /* TaskList */ = {
+			isa = PBXGroup;
+			children = (
+				25F1A5F629EC3C1700849A36 /* TaskListScreenObject.swift */,
+			);
+			path = TaskList;
 			sourceTree = "<group>";
 		};
 		6001583E29D325900013D3A8 /* Test Doubles */ = {
@@ -397,10 +423,10 @@
 		8AC27F3229BE57B9003CB794 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				25B6BFE729995C6000C3A43F /* CellViewModel.swift */,
 				25B6BFFB2999621F00C3A43F /* Constants.swift */,
 				60D8DDC629DEFBD5009606E5 /* Theme.swift */,
 				25B6BFFD2999633800C3A43F /* Extensions */,
+				2521C2C229EC61F00005465D /* Protocols */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -656,19 +682,21 @@
 				AB0A6C8F29E3FE08003B2F5E /* TaskListSceneAccessibilityIdentifier.swift in Sources */,
 				25B6BFF129995F1700C3A43F /* RegularTaskTableViewCell.swift in Sources */,
 				258DB09D29A0E9D300C03B47 /* SectionManager.swift in Sources */,
+				2521C2BD29EC61510005465D /* ImportantTaskCellModel.swift in Sources */,
 				2580E4CB29B9BE9D00C54457 /* LoginAssembly.swift in Sources */,
 				2507319329E017F0009CE65C /* Assets.swift in Sources */,
 				25CF686829A64B4B00E758E7 /* LoginWorker.swift in Sources */,
 				2507319429E017F0009CE65C /* Strings.swift in Sources */,
 				60D8DDC529DEFB0A009606E5 /* UIColor+Hex.swift in Sources */,
-				25B6BFE829995C6000C3A43F /* CellViewModel.swift in Sources */,
+				25B6BFE829995C6000C3A43F /* ICellViewModel.swift in Sources */,
+				2521C2C129EC61DA0005465D /* ICellAccessibility.swift in Sources */,
 				2569096D29A24A9F00A0129C /* TaskListPresenter.swift in Sources */,
 				60D8DDC729DEFBD5009606E5 /* Theme.swift in Sources */,
+				2521C2BF29EC61670005465D /* RegularTaskCellModel.swift in Sources */,
 				25CF686C29A64B4B00E758E7 /* LoginInteractor.swift in Sources */,
 				25CF688329A6721B00E758E7 /* TaskLisInteractor.swift in Sources */,
 				25CF686729A64B4B00E758E7 /* LoginPresenter.swift in Sources */,
 				2580E4CD29B9BFC400C54457 /* TaskListAssembly.swift in Sources */,
-				5A48065F29DCDAFD0096B7D8 /* String+Localized.swift in Sources */,
 				25B6BFF929995F6E00C3A43F /* ImportantTaskTableViewCell.swift in Sources */,
 				25B6BFFF2999634600C3A43F /* UITableView.swift in Sources */,
 				AB0A6C8B29E3F6C7003B2F5E /* LoginSceneAccessibilityIdentifier.swift in Sources */,
@@ -693,7 +721,6 @@
 				AB0DC66729D3878500A2856C /* TaskListViewControllerSpy.swift in Sources */,
 				25B99EEB29C3584600761501 /* SectionManagerTests.swift in Sources */,
 				6001584C29D329EF0013D3A8 /* LoginPresenterTests.swift in Sources */,
-				6044F92B29E474C600D4BC6E /* TaskListSceneAccessibilityIdentifier.swift in Sources */,
 				60D8DDC929DEFD80009606E5 /* UIColorHexTests.swift in Sources */,
 				8A12969729D7504A0004651C /* TaskListPresenterSpy.swift in Sources */,
 				6001584229D326760013D3A8 /* LoginWorkerSpy.swift in Sources */,
@@ -712,7 +739,10 @@
 			files = (
 				25C3905C29E9DC8700FE1ADF /* LoginScreenObject.swift in Sources */,
 				25C3905B29E9DC8400FE1ADF /* LoginUITests.swift in Sources */,
+				25F1A5FA29EC45E000849A36 /* Strings.swift in Sources */,
+				25F1A5F929EC3CFE00849A36 /* TaskListSceneAccessibilityIdentifier.swift in Sources */,
 				25C3905D29E9DC8C00FE1ADF /* BaseScreenObject.swift in Sources */,
+				25F1A5F829EC3C1700849A36 /* TaskListScreenObject.swift in Sources */,
 				2513D8FA29E9DE3B0049E3AD /* LoginSceneAccessibilityIdentifier.swift in Sources */,
 				25C3905E29E9DC9000FE1ADF /* Predicates.swift in Sources */,
 			);

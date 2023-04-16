@@ -58,19 +58,16 @@ final class RegularTaskTableViewCell: UITableViewCell {
 	}
 }
 
-/// Модель для конфигурации ячейки
-struct RegularTaskCellModel {
-	let taskStatus: TaskStatus
-	let taskName: String
-}
+extension RegularTaskTableViewCell: ICellAccessibility {
+	func setupAccessibilityIds(at indexPath: IndexPath) {
+		let indexCellMark = "\(indexPath.section)_\(indexPath.row)"
+		let typeCellMark = TaskListSceneAccessibilityId.regularCell
+		accessibilityIdentifier = "\(typeCellMark)_\(indexCellMark)"
 
-extension RegularTaskCellModel: ICellViewModel {
-	func setup(cell: RegularTaskTableViewCell) {
-		cell.accessoryType = taskStatus == .completed ? .checkmark : .none
+		taskNameLabel.accessibilityIdentifier =
+		"\(typeCellMark)_\(TaskListSceneAccessibilityId.taskNameLabel)_\(indexCellMark)"
 
-		cell.taskNameLabel.text = taskName
-		cell.taskNameLabel.textColor = Theme.black
-
-		cell.backgroundColor = Theme.gray
+		accessoryView?.accessibilityIdentifier =
+		"\(typeCellMark)_\(TaskListSceneAccessibilityId.checkMark)_\(indexCellMark)"
 	}
 }
