@@ -19,7 +19,7 @@ final class LoginUITests: XCTestCase {
 			.tapLoginButton()
 	}
 
-	func test_login_withInValidCredentials_shouldBeSuccessed() {
+	func test_login_withInvalidCredentials_shouldBeSuccessed() {
 		let loginScreen = makeSut()
 
 		loginScreen
