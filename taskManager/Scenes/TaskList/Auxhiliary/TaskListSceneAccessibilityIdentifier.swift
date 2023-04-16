@@ -8,7 +8,12 @@
 import Foundation
 
 enum TaskListSceneAccessibilityId: String {
-	case view
 	case tableView
-	case tableViewCell
+	case importantCell
+	case regularCell
+
+	case taskNameLabel
+	case taskImportanceView
+	case taskDeadlineLabel
+	case checkMark
 }

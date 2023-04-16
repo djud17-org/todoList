@@ -34,7 +34,6 @@ final class TaskListViewController: UITableViewController {
 		navigationController?.navigationBar.tintColor = Theme.white
 
 		view.backgroundColor = Theme.gray
-		view.accessibilityIdentifier = TaskListSceneAccessibilityId.view.rawValue
 	}
 
 	private func setupTableView() {
@@ -84,8 +83,39 @@ extension TaskListViewController {
 			)
 		}
 		let cell = tableView.dequeueReusableCell(withModel: model, for: indexPath)
-		cell.accessibilityIdentifier = "\(TaskListSceneAccessibilityId.tableViewCell.rawValue)_\(indexPath.row)"
+		setupAccessibilityIds(for: cell, at: indexPath)
+
 		return cell
+	}
+
+	private func setupAccessibilityIds(for cell: UITableViewCell, at indexPath: IndexPath) {
+		let indexCellMark = "\(indexPath.section)_\(indexPath.row)"
+
+		if let importantCell = cell as? ImportantTaskTableViewCell {
+			let typeCellMark = TaskListSceneAccessibilityId.importantCell
+			cell.accessibilityIdentifier = "\(typeCellMark)_\(indexCellMark)"
+
+			importantCell.taskNameLabel.accessibilityIdentifier =
+			"\(typeCellMark)_\(TaskListSceneAccessibilityId.taskNameLabel)_\(indexCellMark)"
+
+			importantCell.taskDeadlineLabel.accessibilityIdentifier =
+			"\(typeCellMark)_\(TaskListSceneAccessibilityId.taskDeadlineLabel)_\(indexCellMark)"
+
+			importantCell.taskImportanceView.accessibilityIdentifier =
+			"\(typeCellMark)_\(TaskListSceneAccessibilityId.taskImportanceView)_\(indexCellMark)"
+
+			importantCell.accessoryView?.accessibilityIdentifier =
+			"\(typeCellMark)_\(TaskListSceneAccessibilityId.checkMark)_\(indexCellMark)"
+		} else if let regularCell = cell as? RegularTaskTableViewCell {
+			let typeCellMark = TaskListSceneAccessibilityId.regularCell
+			cell.accessibilityIdentifier = "\(typeCellMark)_\(indexCellMark)"
+
+			regularCell.taskNameLabel.accessibilityIdentifier =
+			"\(typeCellMark)_\(TaskListSceneAccessibilityId.taskNameLabel)_\(indexCellMark)"
+
+			regularCell.accessoryView?.accessibilityIdentifier =
+			"\(typeCellMark)_\(TaskListSceneAccessibilityId.checkMark)_\(indexCellMark)"
+		}
 	}
 }
 
