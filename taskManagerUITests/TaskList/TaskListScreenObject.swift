@@ -13,7 +13,6 @@ final class TaskListScreenObject: BaseScreenObject {
 	private lazy var firstSection = app.staticTexts[L10n.Section.CompletedTasks.title]
 	private lazy var secondSection = app.staticTexts[L10n.Section.UncompletedTasks.title]
 
-
 	private let importantCellId = TaskListSceneAccessibilityId.importantCell
 	private let importantCellIndex = "0_0"
 	private lazy var firstImportantCell = app.tables.cells[
