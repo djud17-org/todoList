@@ -19,9 +19,6 @@ class BaseScreenObject {
 
 	// MARK: - Private elements
 
-	private lazy var alert = app.alerts.firstMatch
-	private lazy var alertButton = alert.buttons.firstMatch
-
 	private lazy var navigationBar = app.navigationBars.firstMatch
 	private lazy var navigationBarButton = navigationBar.buttons.firstMatch
 	private lazy var navigationBarTitle = navigationBar.staticTexts.firstMatch

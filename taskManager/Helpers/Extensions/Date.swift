@@ -10,7 +10,7 @@ import Foundation
 extension Date {
 	private var dateFormatter: DateFormatter {
 		let dateFormatter = DateFormatter()
-		dateFormatter.dateFormat = "Date.format".localized
+		dateFormatter.dateFormat = L10n.Main.dateFormat
 
 		return dateFormatter
 	}
