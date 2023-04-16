@@ -73,4 +73,16 @@ extension RegularTaskCellModel: ICellViewModel {
 
 		cell.backgroundColor = Theme.gray
 	}
+
+	func setupAccessibilityIds(for cell: RegularTaskTableViewCell, at indexPath: IndexPath) {
+		let indexCellMark = "\(indexPath.section)_\(indexPath.row)"
+		let typeCellMark = TaskListSceneAccessibilityId.regularCell
+		cell.accessibilityIdentifier = "\(typeCellMark)_\(indexCellMark)"
+
+		cell.taskNameLabel.accessibilityIdentifier =
+		"\(typeCellMark)_\(TaskListSceneAccessibilityId.taskNameLabel)_\(indexCellMark)"
+
+		cell.accessoryView?.accessibilityIdentifier =
+		"\(typeCellMark)_\(TaskListSceneAccessibilityId.checkMark)_\(indexCellMark)"
+	}
 }

@@ -110,6 +110,24 @@ extension ImportantTaskCellModel: ICellViewModel {
 		cell.backgroundColor = Theme.gray
 	}
 
+	func setupAccessibilityIds(for cell: ImportantTaskTableViewCell, at indexPath: IndexPath) {
+		let indexCellMark = "\(indexPath.section)_\(indexPath.row)"
+		let typeCellMark = TaskListSceneAccessibilityId.importantCell
+		cell.accessibilityIdentifier = "\(typeCellMark)_\(indexCellMark)"
+
+		cell.taskNameLabel.accessibilityIdentifier =
+		"\(typeCellMark)_\(TaskListSceneAccessibilityId.taskNameLabel)_\(indexCellMark)"
+
+		cell.taskDeadlineLabel.accessibilityIdentifier =
+		"\(typeCellMark)_\(TaskListSceneAccessibilityId.taskDeadlineLabel)_\(indexCellMark)"
+
+		cell.taskImportanceView.accessibilityIdentifier =
+		"\(typeCellMark)_\(TaskListSceneAccessibilityId.taskImportanceView)_\(indexCellMark)"
+
+		cell.accessoryView?.accessibilityIdentifier =
+		"\(typeCellMark)_\(TaskListSceneAccessibilityId.checkMark)_\(indexCellMark)"
+	}
+
 	private func getImportanceColor(taskPriority: TaskPriority) -> UIColor {
 		switch taskPriority {
 		case .low:
