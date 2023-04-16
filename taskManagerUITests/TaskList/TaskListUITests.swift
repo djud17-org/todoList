@@ -9,10 +9,10 @@ import XCTest
 @testable import taskManager
 
 final class TaskListUITests: XCTestCase {
+	private let app = XCUIApplication()
+
 	func test_changeStatusForImportantCell_shouldBeSuccessed() {
 		let taskListScreen = makeSut()
-
-		login()
 
 		taskListScreen
 			.checkIsTaskListScene()
@@ -22,8 +22,6 @@ final class TaskListUITests: XCTestCase {
 	func test_changeStatusForRegularCell_shouldBeSuccessed() {
 		let taskListScreen = makeSut()
 
-		login()
-
 		taskListScreen
 			.checkIsTaskListScene()
 			.changeStatusForRegularCell()
@@ -32,16 +30,15 @@ final class TaskListUITests: XCTestCase {
 
 private extension TaskListUITests {
 	func makeSut() -> TaskListScreenObject {
-		let app = XCUIApplication()
 		let taskListScreen = TaskListScreenObject(app: app)
 
 		app.launch()
+		login()
 
 		return taskListScreen
 	}
 
-	func login() {
-		let app = XCUIApplication()
+	private func login() {
 		let loginScene = LoginScreenObject(app: app)
 
 		loginScene
@@ -53,5 +50,4 @@ private extension TaskListUITests {
 
 private enum LoginCredentials {
 	static let valid: (login: String, password: String) = ("Admin", "pa$$32!")
-	static let invalid: (login: String, password: String) = ("jjj", "123")
 }
