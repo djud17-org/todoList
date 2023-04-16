@@ -55,6 +55,7 @@
 		6001584C29D329EF0013D3A8 /* LoginPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6001584B29D329EF0013D3A8 /* LoginPresenterTests.swift */; };
 		601D8D7329C22E8B00C25C4F /* TaskRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601D8D7229C22E8B00C25C4F /* TaskRepository.swift */; };
 		6061DBB429EC857700A9ED79 /* TaskListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6061DBB329EC857700A9ED79 /* TaskListUITests.swift */; };
+		6061DBB529ECA8B800A9ED79 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5A48065C29DCDA500096B7D8 /* Localizable.strings */; };
 		60993BD729C22C1900D4B908 /* TaskManagerPackage in Frameworks */ = {isa = PBXBuildFile; productRef = 60993BD629C22C1900D4B908 /* TaskManagerPackage */; };
 		60D8DDC529DEFB0A009606E5 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D8DDC429DEFB0A009606E5 /* UIColor+Hex.swift */; };
 		60D8DDC729DEFBD5009606E5 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D8DDC629DEFBD5009606E5 /* Theme.swift */; };
@@ -624,6 +625,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6061DBB529ECA8B800A9ED79 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

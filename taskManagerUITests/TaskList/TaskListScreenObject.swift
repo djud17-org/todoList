@@ -43,8 +43,8 @@ final class TaskListScreenObject: BaseScreenObject {
 	@discardableResult
 	func checkIsTaskListScene() -> Self {
 		assertElement(tableView, [.exists])
-//		assertElement(firstSection, [.exists])
-//		assertElement(secondSection, [.exists])
+		assertElement(firstSection, [.exists])
+		assertElement(secondSection, [.exists])
 
 		assertElement(firstImportantCell, [.exists])
 		assertElement(importantCellNameLabel, [.exists])

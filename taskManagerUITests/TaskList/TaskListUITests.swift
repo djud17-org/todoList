@@ -9,8 +9,6 @@ import XCTest
 @testable import taskManager
 
 final class TaskListUITests: XCTestCase {
-	private let app = XCUIApplication()
-
 	func test_changeStatusForImportantCell_shouldBeSuccessed() {
 		let taskListScreen = makeSut()
 
@@ -30,15 +28,16 @@ final class TaskListUITests: XCTestCase {
 
 private extension TaskListUITests {
 	func makeSut() -> TaskListScreenObject {
+		let app = XCUIApplication()
 		let taskListScreen = TaskListScreenObject(app: app)
 
 		app.launch()
-		login()
+		login(with: app)
 
 		return taskListScreen
 	}
 
-	private func login() {
+	private func login(with app: XCUIApplication) {
 		let loginScene = LoginScreenObject(app: app)
 
 		loginScene
