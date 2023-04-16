@@ -41,8 +41,8 @@
 		25CF688329A6721B00E758E7 /* TaskLisInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CF687D29A6721B00E758E7 /* TaskLisInteractor.swift */; };
 		25F1A5F829EC3C1700849A36 /* TaskListScreenObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F1A5F629EC3C1700849A36 /* TaskListScreenObject.swift */; };
 		25F1A5F929EC3CFE00849A36 /* TaskListSceneAccessibilityIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0A6C8E29E3FE08003B2F5E /* TaskListSceneAccessibilityIdentifier.swift */; };
+		25F1A5FA29EC45E000849A36 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2507319229E017F0009CE65C /* Strings.swift */; };
 		5A48065A29DCDA500096B7D8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5A48065C29DCDA500096B7D8 /* Localizable.strings */; };
-		5A48065F29DCDAFD0096B7D8 /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A48065E29DCDAFC0096B7D8 /* String+Localized.swift */; };
 		6001584029D325BB0013D3A8 /* LoginPresenterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6001583F29D325BB0013D3A8 /* LoginPresenterSpy.swift */; };
 		6001584229D326760013D3A8 /* LoginWorkerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6001584129D326760013D3A8 /* LoginWorkerSpy.swift */; };
 		6001584429D327870013D3A8 /* LoginInteractorSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6001584329D327870013D3A8 /* LoginInteractorSpy.swift */; };
@@ -125,7 +125,6 @@
 		5A48065729DC67F10096B7D8 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		5A48065B29DCDA500096B7D8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5A48065D29DCDA540096B7D8 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
-		5A48065E29DCDAFC0096B7D8 /* String+Localized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Localized.swift"; sourceTree = "<group>"; };
 		6001583F29D325BB0013D3A8 /* LoginPresenterSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenterSpy.swift; sourceTree = "<group>"; };
 		6001584129D326760013D3A8 /* LoginWorkerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWorkerSpy.swift; sourceTree = "<group>"; };
 		6001584329D327870013D3A8 /* LoginInteractorSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractorSpy.swift; sourceTree = "<group>"; };
@@ -277,7 +276,6 @@
 		25B6BFFD2999633800C3A43F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				5A48065E29DCDAFC0096B7D8 /* String+Localized.swift */,
 				25B6BFFE2999634600C3A43F /* UITableView.swift */,
 				25B6C00029996C9D00C3A43F /* Date.swift */,
 				60D8DDC429DEFB0A009606E5 /* UIColor+Hex.swift */,
@@ -679,7 +677,6 @@
 				25CF688329A6721B00E758E7 /* TaskLisInteractor.swift in Sources */,
 				25CF686729A64B4B00E758E7 /* LoginPresenter.swift in Sources */,
 				2580E4CD29B9BFC400C54457 /* TaskListAssembly.swift in Sources */,
-				5A48065F29DCDAFD0096B7D8 /* String+Localized.swift in Sources */,
 				25B6BFF929995F6E00C3A43F /* ImportantTaskTableViewCell.swift in Sources */,
 				25B6BFFF2999634600C3A43F /* UITableView.swift in Sources */,
 				AB0A6C8B29E3F6C7003B2F5E /* LoginSceneAccessibilityIdentifier.swift in Sources */,
@@ -722,6 +719,7 @@
 			files = (
 				25C3905C29E9DC8700FE1ADF /* LoginScreenObject.swift in Sources */,
 				25C3905B29E9DC8400FE1ADF /* LoginUITests.swift in Sources */,
+				25F1A5FA29EC45E000849A36 /* Strings.swift in Sources */,
 				25F1A5F929EC3CFE00849A36 /* TaskListSceneAccessibilityIdentifier.swift in Sources */,
 				25C3905D29E9DC8C00FE1ADF /* BaseScreenObject.swift in Sources */,
 				25F1A5F829EC3C1700849A36 /* TaskListScreenObject.swift in Sources */,
