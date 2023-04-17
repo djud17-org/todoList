@@ -14,7 +14,10 @@ final class TaskListUITests: XCTestCase {
 
 		taskListScreen
 			.checkIsTaskListScene()
-			.changeStatusForImportantCell()
+			.changeStatusForImportantCell(initialCompletedStatus: false)
+			.checkImportantCell(isCompleted: true)
+			.changeStatusForImportantCell(initialCompletedStatus: true)
+			.checkImportantCell(isCompleted: false)
 	}
 
 	func test_changeStatusForRegularCell_shouldBeSuccessed() {
@@ -22,7 +25,10 @@ final class TaskListUITests: XCTestCase {
 
 		taskListScreen
 			.checkIsTaskListScene()
-			.changeStatusForRegularCell()
+			.changeStatusStatusForRegularCell(initialCompletedStatus: false)
+			.checkRegularCell(isCompleted: true)
+			.changeStatusStatusForRegularCell(initialCompletedStatus: true)
+			.checkRegularCell(isCompleted: false)
 	}
 }
 
