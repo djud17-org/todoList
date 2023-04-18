@@ -8,7 +8,13 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v3
+      - name: Install SwiftGen
+        run: brew install swiftgen
+      - name: Install SwiftLint
+        run: brew install swiftlint
       - name: Build
         run: xcodebuild -project "taskManager.xcodeproj" -scheme "taskManager" -destination "platform=iOS Simulator,name=iPhone 11"
-      - name: Run tests
-        run: swift test -v
+      - name: Run Unit tests
+        run: xcodebuild test -project "taskManager.xcodeproj" -scheme taskManagerTests -destination "platform=iOS Simulator,name=iPhone 13"
+      - name: Run UI tests
+        run: xcodebuild test -project "taskManager.xcodeproj" -scheme taskManagerUITests -destination "platform=iOS Simulator,name=iPhone 13"
