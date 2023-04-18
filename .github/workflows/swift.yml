@@ -16,7 +16,5 @@ jobs:
         run: brew install swiftlint
       - name: Build
         run: xcodebuild -project "taskManager.xcodeproj" -scheme "taskManager" -destination "platform=iOS Simulator,name=iPhone 11"
-      - name: Run Unit tests
-        run: xcodebuild test -project "taskManager.xcodeproj" -scheme taskManagerTests -destination "platform=iOS Simulator,name=iPhone 13"
-      - name: Run UI tests
-        run: xcodebuild test -project "taskManager.xcodeproj" -scheme taskManagerUITests -destination "platform=iOS Simulator,name=iPhone 13"
+      - name: Run tests
+        run: xcodebuild test -project "taskManager.xcodeproj" -scheme "taskManager" -destination "platform=iOS Simulator,name=iPhone 11"
