@@ -6,7 +6,7 @@ on:
       - develop
 jobs:
   build:
-    "runs\0-on": "macos\0-latest"
+    runs-on: "macos\0-latest"
     steps:
       - uses: actions/checkout@v3
       - name: Build
