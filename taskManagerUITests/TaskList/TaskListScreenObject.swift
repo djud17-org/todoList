@@ -81,6 +81,7 @@ final class TaskListScreenObject: BaseScreenObject {
 		return self
 	}
 }
+// MARK: - TestCell
 
 private struct TestCell {
 	private let app: XCUIApplication
