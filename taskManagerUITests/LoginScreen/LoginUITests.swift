@@ -17,6 +17,7 @@ final class LoginUITests: XCTestCase {
 			.setInLoginTextField(login: LoginCredentials.valid.login)
 			.setInPassTextField(password: LoginCredentials.valid.password)
 			.tapLoginButton()
+			.checkIsTaskListScene()
 	}
 
 	func test_login_withInvalidCredentials_shouldBeSuccessed() {

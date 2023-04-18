@@ -16,6 +16,8 @@ final class LoginScreenObject: BaseScreenObject {
 	private lazy var errorAlert = app.alerts.firstMatch
 	private lazy var alertOkButton = errorAlert.buttons.firstMatch
 
+	private lazy var tableView = app.tables[TaskListSceneAccessibilityId.tableView.rawValue]
+
 	// MARK: - Check funcs
 
 	///  Функция для проверки логин сцены
@@ -68,6 +70,14 @@ final class LoginScreenObject: BaseScreenObject {
 		assertElement(errorAlert, [.exists])
 		alertOkButton.tap()
 		assertElement(errorAlert, [.doesNotExist])
+
+		return self
+	}
+
+	/// Функция для проверки появления нового экрана при успешной авторизации
+	@discardableResult
+	func checkIsTaskListScene() -> Self {
+		assertElement(tableView, [.exists])
 
 		return self
 	}
