@@ -5,6 +5,7 @@ on:
       - develop
 jobs:
   build:
+    xcodebuild -project taskManager.xcodeproj -scheme taskManager -destination 'platform=iOS Simulator,name=iPhone 11’
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v3
