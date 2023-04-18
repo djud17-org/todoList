@@ -5,11 +5,10 @@ on:
       - develop
 jobs:
   build:
-    xcodebuild -project taskManager.xcodeproj -scheme taskManager -destination 'platform=iOS Simulator,name=iPhone 11’
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v3
       - name: Build
-        run: swift build -v
+        run: xcodebuild -project taskManager.xcodeproj -scheme taskManager -destination 'platform=iOS Simulator,name=iPhone 11’
       - name: Run tests
         run: swift test -v
