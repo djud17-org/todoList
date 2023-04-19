@@ -9,6 +9,8 @@ The main objective is to create a tiny task manager application for managing tas
 - XCTest
 	- The App is fully test covered
 - OOP/POP
+- SwiftGen
+	-  Used to solve localization issues
 - Swift Package Manager
 	- All business logic is carried away in the separate package - TaskManagerPackage
 - SwiftLint
@@ -50,6 +52,10 @@ The main objective is to create a tiny task manager application for managing tas
 - [x] Get rid of the storyboard
 - [x] Enable PinLayout usage via SPM
 - [x] Layout both scenes using PinLayout concise syntax
+### Fifth version
+- [x] Cover two scenes with UI tests
+- [x] Continuos Integration (CI) included into the project. It helps in stabilizing the git flow and makes sure that tests run outcome is successfull and the project compiles before merging
+
 
 ## Setup
 * Clone
